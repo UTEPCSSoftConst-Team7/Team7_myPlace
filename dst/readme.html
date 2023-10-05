@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MyPlace – ReadMe</title>
+    <meta
+      name="description"
+      content="A digital platform where users can create personalized profiles to express themselves and connect with others. 
+        Users have the ability to customize their profiles, post updates, photos, and other multimedia, and set profile songs or videos.
+        They can write and display personal blogs, manage their friend and follower lists, and engage in conversations through comments on their content and the content of others. 
+        The platform also supports an integrated search system, enabling users to find other users, blogs, or specific content. 
+        Admins on 'MyPlace' manage user-generated content, oversee platform security, handle user reports, and ensure overall platform performance. 
+        To enhance user interaction, a notification system is in place, sending real-time updates about various activities like new friend requests, comments, and content shares."
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="MyPlace – ReadMe" />
+    <meta
+      property="og:description"
+      content="Software Construction Team 7. Cultivating digital web experiences that focuses on responsive, and interactive content."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/img/icons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/img/icons/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <link rel="shortcut icon" href="/img/icons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="/img/icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <style>
+      /*
+            @import url("https://p.typekit.net/p.css?s=1&k=duo3tdm&ht=tk&f=19121.19123&a=12497077&app=typekit&e=css");@font-face {
+                font-family: "akzidenz-grotesk";
+                src: url("https://use.typekit.net/af/9d033e/000000000000000000013633/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/9d033e/000000000000000000013633/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/9d033e/000000000000000000013633/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+                font-style: normal;
+                font-weight: 500
+            }
+
+            @font-face {
+                font-family: "akzidenz-grotesk";
+                src: url("https://use.typekit.net/af/5556ca/000000000000000000013635/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/5556ca/000000000000000000013635/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/5556ca/000000000000000000013635/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+                font-style: normal;
+                font-weight: 400
+            }
+            */
+      html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      a {
+        background-color: transparent;
+      }
+
+      strong {
+        font-weight: bolder;
+      }
+
+      img {
+        border-style: none;
+      }
+
+      button {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+
+      button {
+        overflow: visible;
+      }
+
+      button {
+        text-transform: none;
+      }
+
+      [type="button"],
+      button {
+        -webkit-appearance: button;
+      }
+
+      [type="button"]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+
+      [type="button"]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+
+      body,
+      button {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-feature-settings: "liga", "kern";
+        font-feature-settings: "liga", "kern";
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /*
+            @font-face {
+                font-family: Druk Wide Web;
+                src: url(../fonts/DrukWide-Medium-Web.eot);
+                src: url(../fonts/DrukWide-Medium-Web.eot?#iefix) format("embedded-opentype"),url(../fonts/DrukWide-Medium-Web.woff2) format("woff2"),url(../fonts/DrukWide-Medium-Web.woff) format("woff");
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal
+            }
+
+            @font-face {
+                font-family: Druk Wide Web;
+                src: url(../fonts/DrukWide-Super-Web.eot);
+                src: url(../fonts/DrukWide-Super-Web.eot?#iefix) format("embedded-opentype"),url(../fonts/DrukWide-Super-Web.woff2) format("woff2"),url(../fonts/DrukWide-Super-Web.woff) format("woff");
+                font-weight: 900;
+                font-style: normal;
+                font-stretch: normal
+            }
+            */
+      h2,
+      h5,
+      strong {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+      }
+
+      h2:first-of-type,
+      h5:first-of-type {
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      h5 {
+        font-size: 18px;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-kerning: auto;
+        font-kerning: auto;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #f2f2f2;
+        overflow-x: hidden;
+      }
+
+      .curtain {
+        opacity: 0;
+      }
+
+      body.loading {
+        overflow: hidden;
+      }
+
+      body.loading .curtain {
+        opacity: 1;
+      }
+
+      button.link {
+        display: inline-block;
+        position: relative;
+        font: inherit;
+      }
+
+      button.link {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        outline: none;
+      }
+
+      body:not(.home-page):not(.night-mode):not(.ultra-mode) .color-mode .dot {
+        background-color: #000;
+      }
+
+      body:not(.isMobile) .basicScroll {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .basicScroll .container {
+        position: relative;
+        width: 100%;
+        transform: translateZ(0);
+      }
+
+      .basicScroll .content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .parallax-horizontal-tb-bt {
+        transform: translateX(var(--transform-x));
+      }
+
+      .ui {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+      }
+
+      .ui .logo {
+        display: block;
+        position: absolute;
+        bottom: calc(7.5vh + 67px);
+        left: 60px;
+        z-index: 1;
+        font-family: Inter;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        font-size: 40px;
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 0.85em;
+        font-smoothing: antialiased;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+
+      @supports (-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000) {
+        .ui .logo {
+          -webkit-text-stroke: 1px #000;
+          text-stroke: 1px #000;
+        }
+      }
+
+      .ui .logo .slideUp {
+        padding-bottom: 2px;
+      }
+
+      .ui ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .ui li {
+        margin-bottom: 5px;
+      }
+
+      .ui li span {
+        margin-right: 15px;
+        font-size: 10px;
+      }
+
+      .ui a {
+        text-decoration: none;
+      }
+
+      .ui a,
+      .ui button.link {
+        color: #000;
+      }
+
+      .ui .contact,
+      .ui .info,
+      .ui .left,
+      .ui .right,
+      .ui .social {
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .ui .left {
+        width: 70%;
+      }
+
+      .ui .left,
+      .ui .right {
+        -ms-flex-align: end;
+        align-items: flex-end;
+      }
+
+      .ui .right {
+        position: relative;
+        width: 30%;
+        max-width: 250px;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+
+      .ui .copyright {
+        position: absolute;
+        bottom: 22px;
+        left: 60px;
+        width: 50%;
+        font-size: 10px;
+        color: #000;
+        opacity: 0.25;
+      }
+
+      @media screen and (max-height: 550px) and (min-width: 1025px) {
+        .ui .copyright {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: 1025px) {
+        .ui .copyright {
+          opacity: 0;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .ui .copyright {
+          bottom: 10px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .ui .copyright {
+          width: calc(95% - 50px);
+          font-size: 12px;
+        }
+      }
+
+      .ui .info {
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        width: 100vw;
+        padding: 2.5vh 60px 5vh;
+      }
+
+      .ui .info a,
+      .ui .info button.link {
+        display: inline-block;
+        position: relative;
+        transform: rotateY(0deg) translateZ(0);
+        transform-origin: left center;
+      }
+
+      .ui .info li {
+        perspective: 250px;
+        perspective-origin: 0;
+      }
+
+      .ui .info .contact li {
+        perspective: 400px;
+      }
+
+      .ui .info .contact .email {
+        display: inline-block;
+      }
+
+      .ui .links .about-li:after,
+      .ui .links .journal-li:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 15px);
+        transform: translateY(-50%);
+        width: 40px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #000;
+        transform-origin: left center;
+        transform: scaleX(0) translateZ(0);
+      }
+
+      .ui .credit-link {
+        perspective: 250px;
+        perspective-origin: 0;
+      }
+
+      .ui .credit-link a {
+        transform-origin: left center;
+        margin-right: 12px;
+      }
+
+      .ui .contact ul {
+        margin-right: 3vw;
+      }
+
+      .ui .credits,
+      .ui .social {
+        width: 50%;
+      }
+
+      .ui .credits {
+        text-align: right;
+      }
+
+      .ui .credits div:not(:last-of-type) {
+        margin-bottom: 5px;
+      }
+
+      .ui .color-mode {
+        position: absolute;
+        top: 12px;
+        right: -55px;
+        opacity: 0;
+      }
+
+      @media screen and (max-width: 1355px) {
+        .ui .color-mode {
+          top: auto;
+          position: fixed;
+          bottom: 6px;
+          right: 6px;
+        }
+      }
+
+      .ui .color-mode .circle {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        border-radius: 50%;
+        border-top: 4px solid #f2f2f2;
+        border-right: 4px solid #000;
+        border-bottom: 4px solid #000;
+        border-left: 4px solid #f2f2f2;
+        box-shadow: inset 0 5px 5px 0 rgba(0, 0, 0, 0.25),
+          0 5px 5px 0 rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transform: rotate(-180deg) scale(0);
+      }
+
+      .ui .color-mode .circle:after,
+      .ui .color-mode .circle:before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        border-radius: 50%;
+      }
+
+      .ui .color-mode .circle:before {
+        border: 4px solid transparent;
+        border-top: 4px solid #4801ff;
+        transform: rotate(60deg);
+      }
+
+      .ui .color-mode .circle:after {
+        border: 4px solid transparent;
+        border-top: 4px solid #4801ff;
+        transform: rotate(30deg);
+      }
+
+      .ui .color-mode .dot {
+        position: absolute;
+        top: 50%;
+        right: calc(50% - 4px);
+        transform: translate3d(-50%, -50%, 0);
+        width: 4px;
+        height: 4px;
+        background-color: #f2f2f2;
+        border-radius: 50%;
+      }
+
+      .ui .color-mode button {
+        position: absolute;
+        z-index: 1;
+        border: 0;
+        background-color: transparent;
+        outline: 0;
+      }
+
+      .ui .color-mode button.night-mode {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+      }
+
+      .ui .color-mode button.light-mode {
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: calc(100% - 10px);
+      }
+
+      .ui .color-mode button.ultra-mode {
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: calc(100% - 10px);
+      }
+
+      .mobile-nav {
+        display: none;
+        border: 0;
+        margin: 0 -11px 0 0;
+        padding: 0;
+        overflow: visible;
+        background-color: transparent;
+        text-transform: none;
+        border: 1px solid #000;
+        border-radius: 50%;
+        outline: none;
+      }
+
+      .mobile-nav-box {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        position: relative;
+      }
+
+      .mobile-nav-inner {
+        display: block;
+      }
+
+      .mobile-nav-inner,
+      .mobile-nav-inner:after,
+      .mobile-nav-inner:before {
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #000;
+      }
+
+      .mobile-nav-inner {
+        position: relative;
+      }
+
+      .mobile-nav-inner:after,
+      .mobile-nav-inner:before {
+        content: "";
+        display: block;
+      }
+
+      .mobile-nav-inner:before {
+        top: -7px;
+      }
+
+      .mobile-nav-inner:after {
+        bottom: -7px;
+      }
+
+      @media screen and (width: 1024px) {
+        .ui .info {
+          opacity: 1;
+        }
+      }
+
+      @media screen and (width: 768px) {
+        .ui .info {
+          opacity: 1;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        body.navTop .logo {
+          transform: translate3d(0, calc(-87.5vh + 171px), 0);
+        }
+
+        body.navTop .ui .info {
+          opacity: 1;
+        }
+
+        body.navTop .ui .links ul {
+          transform: translate3d(0, calc(-90vh + 104px), 0);
+        }
+
+        body.navTop .ui .links li {
+          position: relative;
+        }
+
+        .ui li:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (width: 812px) and (height: 375px) {
+        .ui .logo {
+          position: relative;
+          bottom: auto;
+          top: 0;
+          left: 0;
+          font-size: 18px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .ui {
+          -ms-flex-align: start;
+          align-items: flex-start;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          width: 100%;
+          padding: 5vw 30px 0;
+        }
+
+        .ui,
+        .ui .logo {
+          top: 0;
+          bottom: auto;
+        }
+
+        .ui .logo {
+          position: relative;
+          left: 0;
+          font-size: 18px;
+        }
+
+        .ui .info {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          padding: 30vh 30px 25vh;
+          background-color: hsla(0, 0%, 95%, 0.95);
+          opacity: 0;
+        }
+
+        .ui .left {
+          width: 60%;
+        }
+
+        .ui .right {
+          width: 40%;
+        }
+
+        .ui .links .about-li:after,
+        .ui .links .journal-li:after {
+          display: none;
+        }
+
+        .ui .credits .label {
+          margin-bottom: 15px;
+          font-size: 16px;
+        }
+
+        .ui .contact {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+        }
+
+        .ui .contact ul {
+          width: 100%;
+        }
+
+        .ui .contact {
+          width: 55%;
+        }
+
+        .ui .links {
+          width: 45%;
+        }
+
+        .ui .info a,
+        .ui .info button.link {
+          padding-bottom: 15px;
+          font-size: 16px;
+        }
+
+        .ui li {
+          font-size: 16px;
+        }
+
+        .ui li span {
+          font-size: 12px;
+        }
+
+        .mobile-nav {
+          display: block;
+          position: relative;
+          z-index: 1;
+          opacity: 0;
+          border: 0;
+          animation: g 0.4s 0.5s forwards;
+        }
+      }
+
+      @media screen and (min-width: 420px) and (max-width: 767px) {
+        .ui .contact ul:first-of-type {
+          margin-bottom: 20px;
+        }
+      }
+
+      @media screen and (max-height: 414px) {
+        .credits {
+          margin-bottom: 5px;
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .ui .info {
+          padding: 15vh 30px 10vh;
+        }
+
+        .ui .contact,
+        .ui .left,
+        .ui .right {
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          width: 100%;
+        }
+
+        .ui .right {
+          max-width: 100%;
+        }
+
+        .ui .links {
+          width: 50%;
+        }
+
+        .ui .contact ul,
+        .ui .social ul {
+          width: 100%;
+        }
+
+        .ui .contact ul {
+          margin-right: 0;
+          margin-bottom: 5vw;
+        }
+
+        .ui .credits,
+        .ui .social {
+          width: 50%;
+        }
+
+        .ui .credit-link {
+          margin-bottom: 0;
+        }
+
+        .ui .info .links a,
+        .ui .info .links button.link,
+        .ui .info .social a {
+          display: block;
+          padding-top: 5vw;
+        }
+
+        .ui .info .social li:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      @keyframes g {
+        0% {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .slideUp {
+        display: block;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .slideUp span {
+        display: block;
+        transform: translateY(120%);
+        animation: h 1s forwards;
+      }
+
+      .slideUp:nth-child(2) span {
+        animation-delay: 0.2s;
+      }
+
+      .slideUp:nth-child(3) span {
+        animation-delay: 0.35s;
+      }
+
+      @keyframes h {
+        0% {
+          transform: translateY(120%);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .ui .contact ul,
+      .ui .credits,
+      .ui .links,
+      .ui .social {
+        opacity: 0;
+        transform: translateY(-101%);
+        animation: i 1s 0.4s forwards;
+      }
+
+      .ui .contact ul:nth-child(2) {
+        animation-delay: 0.6s;
+        animation-delay: 0.8s;
+      }
+
+      .ui .social {
+        animation-delay: 1s;
+      }
+
+      .ui .credits {
+        animation-delay: 1.2s;
+      }
+
+      @keyframes i {
+        0% {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      body.loading .journal {
+        opacity: 0;
+      }
+
+      .about {
+        opacity: 0;
+      }
+    </style>
+    <link
+      rel="preload"
+      href="https://rsms.me/inter/inter.css"
+      as="font"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="navTop loading">
+    <header class="ui">
+      <a class="logo" href="/">
+        <span class="slideUp">
+          <span>My</span>
+        </span>
+        <span class="slideUp">
+          <span>Place</span>
+        </span>
+      </a>
+
+      <button class="mobile-nav" type="button" role="button" aria-label="Menu">
+        <span class="mobile-nav-box">
+          <span class="mobile-nav-inner"></span>
+        </span>
+      </button>
+
+      <div class="info">
+        <div class="left">
+          <div class="contact">
+            <ul>
+              <li>Team 7</li>
+              <li>PLACEHOLDER</li>
+            </ul>
+            <ul>
+              <li>El Paso, Texas</li>
+              <li class="email">
+                <a href="mailto:contact@myplace.com">
+                  <strong>contact@myplace.com</strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <nav class="links">
+            <ul>
+              <li class="journal-li">
+                <a href="../index.html"><span>01</span> <strong>Main Menu</strong></a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="color-mode">
+            <div class="dot"></div>
+            <button class="night-mode" aria-label="Night Color Mode"></button>
+            <button class="light-mode" aria-label="Light Color Mode"></button>
+            <button class="ultra-mode" aria-label="Ultra Color Mode"></button>
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="copyright">Software Construction Spring 2023 | Team 7</div>
+      </div>
+    </header>
+    <div
+      class="curtain"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        background-color: #f2f2f2;
+      "
+    ></div>
+    <div id="barba-wrapper">
+      <div class="barba-container" data-namespace="journal-page">
+        <div class="barba-transition-container">
+          <section class="journal basicScroll">
+            <div class="container">
+              <div class="content">
+                <article class="post reveal">
+                  <div class="info">
+                    <a class="cta" href="">
+                      <h5 class="date">09/11/2023</h5>
+                      <h2 class="title">Collaboration</h2>
+                      <span class="read-more">read more</span>
+                    </a>
+                  </div>
+                  <div class="images">
+                    <div
+                      class="center image-container parallax-horizontal-tb-bt"
+                      data-from="-100%"
+                      data-to="25%"
+                      data-timing="quadOut"
+                    >
+                      <img
+                        src=""
+                        alt="howdy"
+                      />
+                    </div>
+                  </div>
+                </article>
+                <article class="post reveal">
+                  <div class="info">
+                    <a class="cta" href="">
+                      <h5 class="date">Today</h5>
+                      <h2 class="title">Placeholder<br />Here</h2>
+                      <span class="read-more">read more</span>
+                    </a>
+                  </div>
+                  <div class="images">
+                    <div
+                      class="center image-container parallax-horizontal-tb-bt"
+                      data-from="25%"
+                      data-to="-25%"
+                      data-timing="quadOut"
+                    >
+                      <img
+                        src=""
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </article>
+                <article class="post reveal">
+                  <div class="info">
+                    <a class="cta" href="">
+                      <h5 class="date">June 13, 2018</h5>
+                      <h2 class="title">The One<br />Year Plan</h2>
+                      <span class="read-more">read more</span>
+                    </a>
+                  </div>
+                  <div class="images">
+                    <div
+                      class="center image-container parallax-horizontal-tb-bt"
+                      data-from="-25%"
+                      data-to="0%"
+                      data-timing="quadOut"
+                    >
+                      <img
+                        src=""
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <section class="about">
+      <button class="btn-back" type="button" aria-label="Back">
+        <span class="btn-box">
+          <span class="icon-close"></span>
+        </span>
+      </button>
+      <div class="container">
+        <div class="left">
+          <h2 class="heading">
+            Specializing in refined digital web experiences with a focus on
+            responsive, and interactive &nbsp;content.
+          </h2>
+          <p>
+            Partnering with agencies and brands that value
+          </p>
+          <p>
+            Delivering highly executed front-end user experiences by paying
+            close attention to the nuances of design, optimization, and
+            performance.
+          </p>
+        </div>
+        <div class="right">
+          <div class="col-1">
+            <div class="info">
+              <h5 class="heading">Background</h5>
+              <h6 class="title">March 2019 &mdash;</h6>
+              <p>Remotely, PDX</p>
+              <h5 class="heading">Services</h5>
+              <h6 class="title">Development &mdash;</h6>
+              <ul>
+                <li>Technical Direction</li>
+                <li>Front-end Development</li>
+                <li>Craft CMS Solutions</li>
+                <li>Development Consulting</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2">
+            <h5 class="heading">Awards</h5>
+            <div class="info">
+              <h6 class="title">ADDY &mdash;</h6>
+              <ul>
+                <li>Best of, Gold, Silver</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">Awwwards &mdash;</h6>
+              <ul>
+                <li>
+                  SOTD, Developer, H.M.,<br />
+                  Nominations: SOTM,<br />Independent of the Year 2018
+                </li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">Communication Arts Web Picks &mdash;</h6>
+              <ul>
+                <li>SOTD</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">CSSDA &mdash;</h6>
+              <ul>
+                <li>WOTD, UI, UX, Innovation,<br />Nominations: SOTM, SOTY</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">CSS Winner &mdash;</h6>
+              <ul>
+                <li>SOTD</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">FWA &mdash;</h6>
+              <ul>
+                <li>FOTD, Public Short List</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">W3 &mdash;</h6>
+              <ul>
+                <li>Best of Show, Gold, Silver</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">The Webby Awards &mdash;</h6>
+              <ul>
+                <li>Honoree</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+    <script src="./js/app.js"></script>
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="./css/app.css" />
+    </noscript>
+    <script>
+      var loadDeferredStyles = function () {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf =
+        window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame;
+      if (raf)
+        raf(function () {
+          window.setTimeout(loadDeferredStyles, 0);
+        });
+      else window.addEventListener("load", loadDeferredStyles);
+    </script>
+  </body>
+</html>

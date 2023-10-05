@@ -1,0 +1,125 @@
+
+/* Global */
+::-moz-selection {
+  background: #fff;
+}
+::selection {
+  background: #fff;
+}
+
+.ui,
+.about {
+  ::-moz-selection {
+    background: #fff;
+  }
+  ::selection {
+    background: #fff;
+  }
+}
+
+body.home-page {
+  ::-moz-selection {
+    background: #fff;
+  }
+  ::selection {
+    background: #fff;
+  }
+}
+
+body.night-mode {
+  ::-moz-selection {
+    background: #333;
+  }
+  ::selection {
+    background: #333;
+  }
+}
+
+body.light-mode {
+  ::-moz-selection {
+    background: #ccc;
+  }
+  ::selection {
+    background: #ccc;
+  }
+}
+
+body.ultra-mode {
+  ::-moz-selection {
+    background: #000;
+  }
+  ::selection {
+    background: #000;
+  }
+}
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "liga", "kern";
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+strong {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+/* Paragraph */
+p {
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* Other */
+.strike-through {
+  text-decoration: line-through;
+}
