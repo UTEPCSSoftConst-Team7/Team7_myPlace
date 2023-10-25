@@ -1,1637 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>MyPlace</title>
-		<meta
-			name="description"
-			content="A digital platform where users can create personalized profiles to express themselves and connect with others. 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>MyPlace</title>
+    <meta
+      name="description"
+      content="A digital platform where users can create personalized profiles to express themselves and connect with others. 
 					Users have the ability to customize their profiles, post updates, photos, and other multimedia, and set profile songs or videos.
 					They can write and display personal blogs, manage their friend and follower lists, and engage in conversations through comments on their content and the content of others. 
 					The platform also supports an integrated search system, enabling users to find other users, blogs, or specific content. 
 					Admins on 'MyPlace' manage user-generated content, oversee platform security, handle user reports, and ensure overall platform performance. 
 					To enhance user interaction, a notification system is in place, sending real-time updates about various activities like new friend requests, comments, and content shares."
-		/>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"/>
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://github.com/UTEPCSSoftConst-Team7/Team7_myPlace"/>
-		<meta property="og:title" content="Software Construction: Team 7" />
-		<meta property="og:description" content="TSP based team consisting of 7 members. Attempting to create, structure, and facilitate a consistent digital web experience with a focus on responsive, and interactive content."/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/Users/alanochoa/Desktop/holtz/UTEP-Logo.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/Users/alanochoa/Desktop/holtz/UTEP-Logo.png"
-		/>
-		<link rel="preconnect" href="https://rsms.me/">
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        <link rel="manifest" href="/img/icons/site.webmanifest">
-        <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#000000">
-        <link rel="shortcut icon" href="/img/icons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
-        <meta name="theme-color" content="#ffffff">
-        <style>
-          /*
-            @import url("https://p.typekit.net/p.css?s=1&k=duo3tdm&ht=tk&f=19121.19123&a=12497077&app=typekit&e=css");
-            @font-face {
-                font-family: "Inter";
-                src: url("https://use.typekit.net/af/9d033e/000000000000000000013633/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/9d033e/000000000000000000013633/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/9d033e/000000000000000000013633/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
-                font-style: normal;
-                font-weight: 500
-            }
-          
-            @font-face {
-                font-family: "Inter";
-                /*src: url("https://use.typekit.net/af/5556ca/000000000000000000013635/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/5556ca/000000000000000000013635/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/5556ca/000000000000000000013635/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-                font-style: normal;
-                font-weight: 400
-            } 
-            */
-            
-            html {
-                line-height: 1.15;
-                -webkit-text-size-adjust: 100%
-            }
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://github.com/UTEPCSSoftConst-Team7/Team7_myPlace"
+    />
+    <meta property="og:title" content="Software Construction: Team 7" />
+    <meta
+      property="og:description"
+      content="TSP based team consisting of 7 members. Attempting to create, structure, and facilitate a consistent digital web experience with a focus on responsive, and interactive content."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Users/alanochoa/Desktop/holtz/UTEP-Logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Users/alanochoa/Desktop/holtz/UTEP-Logo.png"
+    />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="manifest" href="/img/icons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/img/icons/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <link rel="shortcut icon" href="/img/icons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="/img/icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
-            a {
-                background-color: transparent
-            }
+    <link
+      rel="preload"
+      href="https://rsms.me/"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <!-- Barba -->
+  </head>
 
-            strong {
-                font-weight: bolder
-            }
+  <!-- Bottom Left Project info title -->
+  <body class="home-page ultra-mode home-page-js">
+    <header class="ui">
+      <a
+        class="logo"
+        href="https://github.com/UTEPCSSoftConst-Team7/Team7_myPlace"
+      >
+        <span class="slideUp">
+          <span>MyPlace</span>
+        </span>
+        <span class="slideUp">
+          <span>Team 7</span>
+        </span>
+        <span class="slideUp">
+          <span>[Team Name]</span>
+        </span>
+      </a>
 
-            button {
-                font-family: inherit;
-                font-size: 100%;
-                line-height: 1.15;
-                margin: 0
-            }
+      <button class="mobile-nav" type="button" role="button" aria-label="Menu">
+        <span class="mobile-nav-box"
+          ><span class="mobile-nav-inner"></span
+        ></span>
+      </button>
 
-            button {
-                overflow: visible
-            }
+      <div class="info">
+        <div class="left">
+          <!-- Team Name Listing -->
+          <div class="contact">
+            <ul>
+              <li>Alan Ochoa</li>
+              <li>Didi Guillen</li>
+            </ul>
+            <ul>
+              <li>Nicholas Jara</li>
+              <li>Michelle Diaz</li>
+            </ul>
+            <ul>
+              <li>Isabella Gaytan</li>
+              <li>Thomas Sosa</li>
+            </ul>
+            <ul>
+              <li>Esai Flores</li>
+              <li>Dr. Bhanukiran Gurijala</li>
+            </ul>
+          </div>
 
-            button {
-                text-transform: none
-            }
-
-            [type=button],button {
-                -webkit-appearance: button
-            }
-
-            [type=button]::-moz-focus-inner,button::-moz-focus-inner {
-                border-style: none;
-                padding: 0
-            }
-
-            [type=button]:-moz-focusring,button:-moz-focusring {
-                outline: 1px dotted ButtonText
-            }
-
-            ::-webkit-file-upload-button {
-                -webkit-appearance: button;
-                font: inherit
-            }
-
-            body,button {
-                font-family: 'Inter',sans-serif;
-                font-size: 14px;
-                font-weight: 400;
-                -webkit-text-size-adjust: 100%;
-                -webkit-font-feature-settings: "liga","kern";
-                font-feature-settings: "liga","kern";
-                -webkit-font-smoothing: subpixel-antialiased;
-                -moz-osx-font-smoothing: grayscale
-            }
-            /*
-            @font-face {
-                font-family: Inter;
-                font-weight: 500;
-                font-style: normal;
-                font-stretch: normal
-            }
-
-            @font-face {
-                font-family: Inter;
-                src: url(../fonts/DrukWide-Super-Web.eot);
-                src: url(../fonts/DrukWide-Super-Web.eot?#iefix) format("embedded-opentype"),url(../fonts/DrukWide-Super-Web.woff2) format("woff2"),url(../fonts/DrukWide-Super-Web.woff) format("woff");
-                font-weight: 900;
-                font-style: normal;
-                font-stretch: normal
-            }
-            */
-            h2,h5,strong {
-                font-family: 'Inter',sans-serif;
-                font-weight: 500
-            }
-
-            h2:first-of-type,h5:first-of-type {
-                margin-top: 0
-            }
-
-            h2 {
-                font-size: 30px
-            }
-
-            h5 {
-                font-size: 18px
-            }
-
-            p:first-of-type {
-                margin-top: 0
-            }
-
-            p:last-of-type {
-                margin-bottom: 0
-            }
-
-            html {
-                box-sizing: border-box
-            }
-
-            *,:after,:before {
-                box-sizing: inherit;
-                text-rendering: optimizeLegibility;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                -webkit-font-kerning: auto;
-                font-kerning: auto
-            }
-
-            body {
-                padding: 0;
-                margin: 0;
-                background-color: #f2f2f2;
-                overflow-x: hidden
-            }
-
-            .curtain {
-                opacity: 0
-            }
-
-            body.loading {
-                overflow: hidden
-            }
-
-            body.loading .curtain {
-                opacity: 1
-            }
-
-            button.link {
-                display: inline-block;
-                position: relative;
-                font: inherit
-            }
-
-            .btn-back,button.link {
-                background-color: transparent;
-                border: 0;
-                padding: 0;
-                outline: none
-            }
-
-            .btn-back {
-                display: none;
-                position: fixed;
-                top: 5vh;
-                right: 60px;
-                z-index: 1;
-                margin: 0;
-                overflow: hidden;
-                text-transform: none;
-                transform: translateX(120px)
-            }
-
-            .btn-back:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 1px solid transparent;
-                border-radius: 50%;
-                transform: scale(.9)
-            }
-
-            @media screen and (max-width: 767px) {
-                .btn-back {
-                    top:5vw;
-                    right: 15px
-                }
-
-                .btn-back:before {
-                    display: none
-                }
-            }
-
-            @media screen and (min-width: 768px) {
-                .btn-back {
-                    display:block
-                }
-            }
-
-            .btn-box {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-pack: center;
-                justify-content: center;
-                -ms-flex-align: center;
-                align-items: center;
-                width: 50px;
-                height: 50px;
-                position: relative
-            }
-
-            .icon-close {
-                display: block
-            }
-
-            .icon-close:after,.icon-close:before {
-                position: absolute;
-                width: 25px;
-                height: 2px;
-                border-radius: 1px;
-                background-color: #000
-            }
-
-            .icon-close {
-                position: relative
-            }
-
-            .icon-close:after,.icon-close:before {
-                content: "";
-                display: block
-            }
-
-            .icon-close:before {
-                transform: translateX(-50%) rotate(-45deg)
-            }
-
-            .icon-close:after {
-                transform: translateX(-50%) rotate(45deg)
-            }
-
-            body.ultra-mode {
-                background-color: #000;
-                color: #f2f2f2
-            }
-
-            body.ultra-mode .ui {
-                color: #f2f2f2
-            }
-
-            body.ultra-mode .ui .copyright {
-                color: #fff
-            }
-
-            body.ultra-mode .mobile-nav {
-                border-color: #f2f2f2
-            }
-
-            body.ultra-mode .mobile-nav-inner,body.ultra-mode .mobile-nav-inner:after,body.ultra-mode .mobile-nav-inner:before {
-                background-color: #f2f2f2
-            }
-
-            body.ultra-mode .ui a:not(.logo),body.ultra-mode .ui button.link {
-                color: #f2f2f2
-            }
-
-            body.ultra-mode .ui .links .about-li:after,body.ultra-mode .ui .links .journal-li:after {
-                background-color: #f2f2f2
-            }
-
-            body.ultra-mode .icon-close:after,body.ultra-mode .icon-close:before {
-                background-color: #f2f2f2
-            }
-
-            body.ultra-mode .about:before {
-                background-color: rgba(0,0,0,.85)
-            }
-
-            body.ultra-mode .about .left,body.ultra-mode .about .right {
-                color: #f2f2f2
-            }
-
-            @media screen and (min-width: 768px) {
-                body.ultra-mode .about:before {
-                    display:none
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                body.ultra-mode .ui .info {
-                    background-color:rgba(0,0,0,.85)
-                }
-            }
-
-            body.ultra-mode {
-                background-color: #1e34bf
-            }
-
-            body.ultra-mode .curtain {
-                background-color: #0d7571!important
-            }
-
-            body.ultra-mode .about:before {
-                background-color: rgba(18, 37, 116, 0.85)
-            }
-
-            body.ultra-mode .logo {
-                color: #fff
-            }
-
-            @supports (-webkit-text-stroke:1px #fff) or (text-stroke:1px #fff) {
-                body.ultra-mode .logo {
-                    -webkit-text-stroke: 1px #fff;
-                    text-stroke: 1px #fff
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                body.ultra-mode .ui .info {
-                    background-color:rgba(72,1,255,.85)
-                }
-            }
-
-            @supports (-webkit-text-stroke:3px #000) or (text-stroke:3px #000) {
-                body.ultra-mode.home-page .projects a {
-                    color: #000;
-                    -webkit-text-stroke: 3px #000;
-                    text-stroke: 3px #000
-                }
-            }
-
-            @media screen and (min-width: 768px) and (max-width:1320px) {
-                @supports (-webkit-text-stroke:2px #000) or (text-stroke:2px #000) {
-                    body.ultra-mode.home-page .projects a {
-                        color:#000;
-                        -webkit-text-stroke: 2px #000;
-                        text-stroke: 2px #000
+          <nav class="links">
+            <!-- Two links in column beside team listings -->
+            <ul>
+              <li class="about-li">
+                <button class="link" aria-label="About">
+                  <span>01</span>
+                  <strong>About us</strong>
+                </button>
+              </li>
+              <li class="journal-li">
+                <button id="replaceButton">
+                  <span>02</span>
+                  <strong>ReadMe</strong>
+                </button>
+                <!-- Script to reload page once -->
+                <script>
+                  /* 
+                    When the button is clicked, set a flag in sessionStorage
+                    and navigate to the new page */
+                  document
+                    .getElementById("replaceButton")
+                    .addEventListener("click", function () {
+                      sessionStorage.setItem("reloadOnce", "true");
+                      location.href = "./dst/readme.html";
+                    });
+                  /* On page load, check for the flag */
+                  window.onload = function () {
+                    if (sessionStorage.getItem("reloadOnce") === "true") {
+                      sessionStorage.removeItem("reloadOnce"); // Clear the flag
+                      location.href = location.href; // Reload the page
                     }
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                @supports (-webkit-text-stroke:1px #151515) or (text-stroke:1px #151515) {
-                    body.ultra-mode.home-page .projects a {
-                        color:#000;
-                        -webkit-text-stroke: 0 #151515;
-                        text-stroke: 0 #151515
-                    }
-                }
-            }
-
-            .ui {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-                -ms-flex-align: end;
-                align-items: flex-end;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                z-index: 2;
-                width: 100%
-            }
-
-            .ui .logo {
-                display: block;
-                position: absolute;
-                bottom: calc(7.5vh + 67px);
-                left: 60px;
-                z-index: 1;
-                font-family: Inter;
-                font-weight: 500;
-                font-style: normal;
-                font-stretch: normal;
-                font-size: 40px;
-                text-transform: uppercase;
-                text-decoration: none;
-                line-height: .85em;
-                font-smoothing: antialiased;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                transform: translateZ(0)
-            }
-
-            @supports (-webkit-text-stroke:1px #000) or (text-stroke:1px #000) {
-                .ui .logo {
-                    -webkit-text-stroke: 1px #000;
-                    text-stroke: 1px #000
-                }
-            }
-
-            .ui .logo .slideUp {
-                padding-bottom: 2px
-            }
-
-            .ui ul {
-                margin: 0;
-                padding-left: 0;
-                list-style: none
-            }
-
-            .ui li {
-                margin-bottom: 5px
-            }
-
-            .ui li span {
-                margin-right: 15px;
-                font-size: 10px
-            }
-
-            .ui a {
-                text-decoration: none
-            }
-
-            .ui a,.ui button.link {
-                color: #000
-            }
-
-            .ui .contact,.ui .info,.ui .left,.ui .right,.ui .social {
-                display: -ms-flexbox;
-                display: flex
-            }
-
-            .ui .left {
-                width: 70%
-            }
-
-            .ui .left,.ui .right {
-                -ms-flex-align: end;
-                align-items: flex-end
-            }
-
-            .ui .right {
-                position: relative;
-                width: 30%;
-                max-width: 250px;
-                -ms-flex-pack: justify;
-                justify-content: space-between
-            }
-
-            .ui .copyright {
-                position: absolute;
-                bottom: 22px;
-                left: 60px;
-                width: 50%;
-                font-size: 10px;
-                color: #000;
-                opacity: .25
-            }
-
-            @media screen and (max-height: 550px) and (min-width:1025px) {
-                .ui .copyright {
-                    display:none
-                }
-            }
-
-            @media screen and (min-width: 1025px) {
-                .ui .copyright {
-                    opacity:0
-                }
-            }
-
-            @media screen and (min-width: 768px) {
-                .ui .copyright {
-                    bottom:10px
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                .ui .copyright {
-                    width:calc(95% - 50px);
-                    font-size: 12px
-                }
-            }
-
-            body.home-page .ui .copyright {
-                color: #fff;
-                opacity: .5
-            }
-
-            @media screen and (min-width: 1025px) {
-                body.home-page .ui .copyright {
-                    opacity:0
-                }
-            }
-
-            .ui .info {
-                -ms-flex-pack: justify;
-                justify-content: space-between;
-                -ms-flex-align: end;
-                align-items: flex-end;
-                width: 100vw;
-                padding: 2.5vh 60px 5vh
-            }
-
-            .ui .info a,.ui .info button.link {
-                display: inline-block;
-                position: relative;
-                transform: rotateY(0deg) translateZ(0);
-                transform-origin: left center
-            }
-
-            .ui .info li {
-                perspective: 250px;
-                perspective-origin: 0
-            }
-
-            .ui .info .contact li {
-                perspective: 400px
-            }
-
-            .ui .info .contact .email {
-                display: inline-block
-            }
-
-            .ui .links .about-li:after,.ui .links .journal-li:after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: calc(100% + 15px);
-                transform: translateY(-50%);
-                width: 40px;
-                height: 2px;
-                border-radius: 1px;
-                background-color: #000;
-                transform-origin: left center;
-                transform: scaleX(0) translateZ(0)
-            }
-
-            .ui .credit-link {
-                perspective: 250px;
-                perspective-origin: 0
-            }
-
-            .ui .credit-link a {
-                transform-origin: left center;
-                margin-right: 12px
-            }
-
-            .ui .contact ul {
-                margin-right: 3vw
-            }
-
-            .ui .credits,.ui .social {
-                width: 50%
-            }
-
-            .ui .credits {
-                text-align: right
-            }
-
-            .ui .credits div:not(:last-of-type) {
-                margin-bottom: 5px
-            }
-
-            .ui .color-mode {
-                position: absolute;
-                top: 12px;
-                right: -55px;
-                opacity: 0
-            }
-
-            @media screen and (max-width: 1355px) {
-                .ui .color-mode {
-                    top:auto;
-                    position: fixed;
-                    bottom: 6px;
-                    right: 6px
-                }
-            }
-
-            .ui .color-mode .circle {
-                width: 40px;
-                height: 40px;
-                margin: 0 auto;
-                border-radius: 50%;
-                border-top: 4px solid #f2f2f2;
-                border-right: 4px solid #000;
-                border-bottom: 4px solid #000;
-                border-left: 4px solid #f2f2f2;
-                box-shadow: inset 0 5px 5px 0 rgba(0,0,0,.25),0 5px 5px 0 rgba(0,0,0,.25);
-                opacity: 0;
-                transform: rotate(-180deg) scale(0)
-            }
-
-            .ui .color-mode .circle:after,.ui .color-mode .circle:before {
-                content: "";
-                position: absolute;
-                top: -4px;
-                right: -4px;
-                width: calc(100% + 8px);
-                height: calc(100% + 8px);
-                border-radius: 50%
-            }
-
-            .ui .color-mode .circle:before {
-                border: 4px solid transparent;
-                border-top: 4px solid #bc2514;
-                transform: rotate(60deg)
-            }
-
-            .ui .color-mode .circle:after {
-                border: 4px solid transparent;
-                border-top: 4px solid #cc6d2e;
-                transform: rotate(30deg)
-            }
-
-            .ui .color-mode .dot {
-                position: absolute;
-                top: 50%;
-                right: calc(50% - 4px);
-                transform: translate3d(-50%,-50%,0);
-                width: 4px;
-                height: 4px;
-                background-color: #f2f2f2;
-                border-radius: 50%
-            }
-
-            .ui .color-mode button {
-                position: absolute;
-                z-index: 1;
-                border: 0;
-                background-color: transparent;
-                outline: 0
-            }
-
-            .ui .color-mode button.night-mode {
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 10px
-            }
-
-            .ui .color-mode button.light-mode {
-                top: 0;
-                left: 0;
-                width: 50%;
-                height: calc(100% - 10px)
-            }
-
-            .ui .color-mode button.ultra-mode {
-                top: 0;
-                right: 0;
-                width: 50%;
-                height: calc(100% - 10px)
-            }
-
-            .mobile-nav {
-                display: none;
-                border: 0;
-                margin: 0 -11px 0 0;
-                padding: 0;
-                overflow: visible;
-                background-color: transparent;
-                text-transform: none;
-                border: 1px solid #000;
-                border-radius: 50%;
-                outline: none
-            }
-
-            .mobile-nav-box {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-pack: center;
-                justify-content: center;
-                -ms-flex-align: center;
-                align-items: center;
-                width: 50px;
-                height: 50px;
-                position: relative
-            }
-
-            .mobile-nav-inner {
-                display: block
-            }
-
-            .mobile-nav-inner,.mobile-nav-inner:after,.mobile-nav-inner:before {
-                position: absolute;
-                width: 25px;
-                height: 2px;
-                border-radius: 1px;
-                background-color: #000
-            }
-
-            .mobile-nav-inner {
-                position: relative
-            }
-
-            .mobile-nav-inner:after,.mobile-nav-inner:before {
-                content: "";
-                display: block
-            }
-
-            .mobile-nav-inner:before {
-                top: -7px
-            }
-
-            .mobile-nav-inner:after {
-                bottom: -7px
-            }
-
-            @media screen and (width: 1024px) {
-                .ui .info {
-                    opacity:1
-                }
-            }
-
-            @media screen and (width: 768px) {
-                .ui .info {
-                    opacity:1
-                }
-            }
-
-            @media screen and (min-width: 768px) {
-                .ui li:last-of-type {
-                    margin-bottom:0
-                }
-            }
-
-            @media screen and (width: 812px) and (height:375px) {
-                .ui .logo {
-                    position:relative;
-                    bottom: auto;
-                    top: 0;
-                    left: 0;
-                    font-size: 18px
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                .ui {
-                    -ms-flex-align:start;
-                    align-items: flex-start;
-                    -ms-flex-pack: justify;
-                    justify-content: space-between;
-                    width: 100%;
-                    padding: 5vw 30px 0
-                }
-
-                .ui,.ui .logo {
-                    top: 0;
-                    bottom: auto
-                }
-
-                .ui .logo {
-                    position: relative;
-                    left: 0;
-                    font-size: 18px
-                }
-
-                .ui .info {
-                    -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    z-index: 0;
-                    width: 100%;
-                    height: 100%;
-                    padding: 30vh 30px 25vh;
-                    background-color: hsla(0,0%,95%,.95);
-                    opacity: 0
-                }
-
-                .ui .left {
-                    width: 60%
-                }
-
-                .ui .right {
-                    width: 40%
-                }
-
-                .ui .links .about-li:after,.ui .links .journal-li:after {
-                    display: none
-                }
-
-                .ui .credits .label {
-                    margin-bottom: 15px;
-                    font-size: 16px
-                }
-
-                .ui .contact {
-                    -ms-flex-wrap: wrap;
-                    flex-wrap: wrap
-                }
-
-                .ui .contact ul {
-                    width: 100%
-                }
-
-                .ui .contact {
-                    width: 55%
-                }
-
-                .ui .links {
-                    width: 45%
-                }
-
-                .ui .info a,.ui .info button.link {
-                    padding-bottom: 15px;
-                    font-size: 16px
-                }
-
-                .ui li {
-                    font-size: 16px
-                }
-
-                .ui li span {
-                    font-size: 12px
-                }
-
-                .mobile-nav {
-                    display: block;
-                    position: relative;
-                    z-index: 1;
-                    opacity: 0;
-                    border: 0;
-                    animation: g .4s .5s forwards
-                }
-            }
-
-            @media screen and (min-width: 420px) and (max-width:767px) {
-                .ui .contact ul:first-of-type {
-                    margin-bottom:20px
-                }
-            }
-
-            @media screen and (max-height: 414px) {
-                .credits {
-                    margin-bottom:5px
-                }
-            }
-
-            @media screen and (max-width: 420px) {
-                .ui .info {
-                    padding:15vh 30px 10vh
-                }
-
-                .ui .contact,.ui .left,.ui .right {
-                    -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-                    -ms-flex-align: end;
-                    align-items: flex-end;
-                    width: 100%
-                }
-
-                .ui .right {
-                    max-width: 100%
-                }
-
-                .ui .links {
-                    width: 50%
-                }
-
-                .ui .contact ul,.ui .social ul {
-                    width: 100%
-                }
-
-                .ui .contact ul {
-                    margin-right: 0;
-                    margin-bottom: 5vw
-                }
-
-                .ui .credits,.ui .social {
-                    width: 50%
-                }
-
-                .ui .credit-link {
-                    margin-bottom: 0
-                }
-
-                .ui .info .links a,.ui .info .links button.link,.ui .info .social a {
-                    display: block;
-                    padding-top: 5vw
-                }
-
-                .ui .info .social li:last-of-type {
-                    margin-bottom: 0
-                }
-            }
-
-            @keyframes g {
-                0% {
-                    opacity: 0
-                }
-
-                to {
-                    opacity: 1
-                }
-            }
-
-            .slideUp {
-                display: block;
-                position: relative;
-                width: 100%;
-                overflow: hidden
-            }
-
-            .slideUp span {
-                display: block;
-                transform: translateY(120%);
-                animation: h 1s forwards
-            }
-
-            .slideUp:nth-child(2) span {
-                animation-delay: .2s
-            }
-
-            .slideUp:nth-child(3) span {
-                animation-delay: .35s
-            }
-
-            body.home-page .slideUp span {
-                animation-delay: 2s
-            }
-
-            body.home-page .slideUp:nth-child(2) span {
-                animation-delay: 2.2s
-            }
-
-            body.home-page .slideUp:nth-child(3) span {
-                animation-delay: 2.35s
-            }
-
-            @keyframes h {
-                0% {
-                    transform: translateY(120%)
-                }
-
-                to {
-                    transform: translateY(0)
-                }
-            }
-
-            .ui .contact ul,.ui .credits,.ui .links,.ui .social {
-                opacity: 0;
-                transform: translateY(-101%);
-                animation: i 1s .4s forwards
-            }
-
-            .ui .contact ul:nth-child(2) {
-                animation-delay: .6s;
-                animation-delay: .8s
-            }
-
-            .ui .social {
-                animation-delay: 1s
-            }
-
-            .ui .credits {
-                animation-delay: 1.2s
-            }
-
-            @keyframes i {
-                0% {
-                    opacity: 0;
-                    transform: translateY(50%)
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0)
-                }
-            }
-
-            .home-page .ui .contact ul,.home-page .ui .credits,.home-page .ui .links,.home-page .ui .social {
-                animation-delay: 2.4s
-            }
-
-            .home-page .ui .contact ul:nth-child(2) {
-                animation-delay: 2.6s
-            }
-
-            .home-page .ui .links {
-                animation-delay: 2.8s
-            }
-
-            .home-page .ui .social {
-                animation-delay: 3s
-            }
-
-            .home-page .ui .credits {
-                animation-delay: 3.2s
-            }
-
-            .home-page .stagePerspective {
-                position: relative;
-                width: 100%;
-                perspective: 100vw
-            }
-
-            .home-page:not(.isMobile) .stagePerspective {
-                height: 100vh;
-                overflow-x: hidden;
-                overflow-y: auto
-            }
-
-            .home-page .stageContainer {
-                position: relative;
-                width: 100%;
-                transform: translateZ(0);
-                transform-style: preserve-3d
-            }
-
-            .home-page .stage {
-                position: fixed;
-                top: 0;
-                left: 0;
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-align: center;
-                align-items: center;
-                -ms-flex-pack: end;
-                justify-content: flex-end;
-                width: 100%;
-                padding: 5vw 5vw calc(7.5vw + 67px) 0;
-                transform-style: preserve-3d;
-                opacity: 1
-            }
-
-            .home-page .projects {
-                position: relative;
-                margin: 0;
-                padding-left: 0;
-                list-style: none;
-                text-align: right;
-                width: 95%;
-                transform-style: preserve-3d
-            }
-
-            .home-page .projectsLi {
-                transform-style: preserve-3d
-            }
-
-            .home-page .projectContainer {
-                transform: rotateY(-45deg) translateZ(0) scale(1);
-                transform-origin: right center;
-                transform-style: preserve-3d;
-                will-change: transform
-            }
-
-            .home-page .projects a {
-                position: relative;
-                color: #000;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-family: Inter;
-                font-weight: 900;
-                font-style: normal;
-                font-stretch: normal;
-                font-size: 9.6vw;
-                letter-spacing: .02em;
-                line-height: .9em
-            }
-
-            @supports (-webkit-text-stroke:3px #000) or (text-stroke:3px #000) {
-                .home-page .projects a {
-                    -webkit-text-stroke: 3px #000;
-                    text-stroke: 3px #000
-                }
-            }
-
-            .home-page .projects a:before {
-                content: attr(data-info);
-                white-space: pre;
-                position: absolute;
-                top: 3.7em;
-                left: -250px;
-                width: 200px;
-                text-align: right;
-                font-size: .7vw;
-                font-weight: 500;
-                letter-spacing: 0;
-                line-height: 1em;
-                color: #000!important
-            }
-
-            @supports (-webkit-text-stroke:3px #000) or (text-stroke:3px #000) {
-                .home-page .projects a:before {
-                    -webkit-text-stroke: transparent;
-                    text-stroke: transparent
-                }
-            }
-
-            .home-page .projects a:after {
-                content: "";
-                position: absolute;
-                top: .23em;
-                left: -.3em;
-                width: 2px;
-                height: .85em;
-                background-color: #000;
-                transform: rotate(25deg)
-            }
-
-            @media screen and (min-width: 768px) and (max-width:1320px) {
-                .home-page .projects a {
-                    font-size:7.4vw
-                }
-
-                @supports (-webkit-text-stroke:2px #000) or (text-stroke:2px #000) {
-                    .home-page .projects a {
-                        -webkit-text-stroke-width: 2px;
-                        text-stroke-width: 2px
-                    }
-                }
-
-                .home-page .projects a:after {
-                    width: 2px
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                .home-page {
-                    overflow-x:hidden
-                }
-
-                .home-page .stagePerspective {
-                    perspective: 400vw
-                }
-
-                .home-page .stage {
-                    padding-top: 17vw;
-                    padding-bottom: 17vw
-                }
-
-                @supports (-webkit-text-stroke:1px #000) or (text-stroke:1px #000) {
-                    .home-page .projects a {
-                        -webkit-text-stroke-width: 1px;
-                        text-stroke-width: 1px
-                    }
-                }
-
-                .home-page .projects a:after {
-                    width: 1px
-                }
-            }
-
-            @media screen and (max-width: 420px) {
-                .home-page .stage {
-                    padding-top:25vw
-                }
-
-                .home-page .projects a:before {
-                    top: 10px;
-                    left: -220px;
-                    font-size: 7px
-                }
-
-                .home-page .projects a:after {
-                    top: 10px;
-                    left: -15px
-                }
-
-                .home-page .projects {
-                    width: 100%
-                }
-
-                .home-page .projects a {
-                    font-size: 13vw;
-                    letter-spacing: normal
-                }
-            }
-
-            .home-page .parallaxPerspective {
-                perspective-origin: 50% var(--perspective-origin-y);
-                will-change: perspective-origin
-            }
-
-            @media screen and (min-width: 768px) {
-                body:not(.aboutShow) .about .container {
-                    transform:translate3d(0,30px,0)
-                }
-            }
-
-            .about {
-                z-index: 1;
-                opacity: 0
-            }
-
-            .about,.about:before {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%
-            }
-
-            .about:before {
-                content: "";
-                z-index: -1;
-                background-color: hsla(0,0%,95%,.95)
-            }
-
-            .about .container {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-pack: justify;
-                justify-content: space-between;
-                width: 100%;
-                max-width: calc(1440px + 10vw);
-                height: calc(100vh - (106px + 15vh));
-                overflow-x: hidden;
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-                margin: calc(106px + 15vh) auto calc(107px + 5vh);
-                padding-left: 5vw;
-                padding-right: 5vw;
-                transform: translateZ(0)
-            }
-
-            .about .left {
-                width: 55%;
-                padding-right: 10%;
-                font-size: 30px;
-                line-height: 1.2em;
-                color: #000
-            }
-
-            .about .left p {
-                font-size: 24px
-            }
-
-            .about .left p:last-of-type {
-                margin-bottom: 50px
-            }
-
-            .about .right {
-                -ms-flex-pack: justify;
-                width: 45%;
-                padding-top: 8px;
-                color: #000
-            }
-
-            .about .col-1,.about .right {
-                display: -ms-flexbox;
-                display: flex;
-                justify-content: space-between
-            }
-
-            .about .col-1 {
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-                -ms-flex-line-pack: start;
-                align-content: flex-start;
-                -ms-flex-pack: justify;
-                width: 50%;
-                margin-bottom: 30px
-            }
-
-            .about .left .heading {
-                line-height: 1.2em
-            }
-
-            .about .right .heading {
-                width: 100%;
-                margin-bottom: 20px
-            }
-
-            .about p {
-                width: 100%;
-                margin-bottom: 5px
-            }
-
-            .about .info {
-                width: 100%;
-                padding-bottom: 30px
-            }
-
-            @media screen and (min-width: 768px) {
-                .about .right {
-                    position:relative
-                }
-            }
-
-            @media screen and (max-width: 1070px) {
-                .about .left {
-                    width:45%
-                }
-
-                .about .right {
-                    width: 55%
-                }
-            }
-
-            @media screen and (max-width: 767px) {
-                .about {
-                    z-index:2
-                }
-
-                .about .container {
-                    display: block;
-                    height: 100vh;
-                    margin-top: 0;
-                    margin-bottom: 0
-                }
-
-                .about .left {
-                    width: 100%;
-                    max-width: 414px;
-                    padding-top: calc(71px + 10vw);
-                    padding-right: 0
-                }
-
-                .about .left .heading {
-                    font-size: 24px
-                }
-
-                .about .left p {
-                    font-size: 20px;
-                    line-height: 1.4em
-                }
-
-                .about .right {
-                    -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-                    width: 100%;
-                    padding: 0
-                }
-
-                .about .col-1 {
-                    width: 100%
-                }
-            }
-        </style>
-        <link rel="preload" href="https://rsms.me/" as="font" crossorigin="anonymous">
-    </head>
-    <body class="home-page ultra-mode home-page-js">
-		<header class="ui">
-			<a class="logo" href="https://github.com/UTEPCSSoftConst-Team7/Team7_myPlace">
-				<span class="slideUp">
-					<span>MyPlace</span> 
-				</span>
-				<span class="slideUp">
-					<span>Team 7</span> 
-				</span>
-				<span class="slideUp">
-					<span>[Team Name]</span>
-				</span>
-			</a>
-			
-			<button class="mobile-nav" type="button" role="button" aria-label="Menu">
-				<span class="mobile-nav-box"><span class="mobile-nav-inner"></span></span>
-			</button>
-			
-			<div class="info">
-				<div class="left">
-					<div class="contact">
-						<ul>
-							<li>Alan Ochoa</li>
-							<li>Didi Guillen</li>
-						</ul>
-						<ul>
-							<li>Nicholas Jara</li>
-							<li>Michelle Diaz</li>
-						</ul>
-						<ul>
-							<li>Isabella Gaytan</li>
-							<li>Thomas Sosa</li>
-						</ul>
-						<ul>
-							<li>Esai Flores</li>
-							<li>Dr. Bhanukiran Gurijala</li>
-						</ul>
-					</div>
-
-                    <nav class="links">
-                        <ul>
-                            <li class="about-li">
-                                <button class="link" aria-label="About">
-                                    <span>01</span>
-                                    <strong>About us</strong>
-                                </button>
-                            </li>
-                            <li class="journal-li">
-                                <button id="replaceButton"> 
-                                    <span>02</span>
-                                    <strong>ReadMe</strong>
-                                </button>
-
-                                <script>
-                                    // When the button is clicked, set a flag in sessionStorage and navigate to the new page
-                                    document.getElementById('replaceButton').addEventListener('click', function() {
-                                        sessionStorage.setItem('reloadOnce', 'true');
-                                        location.href = './dst/readme.html';
-                                    });
-
-                                    // On page load, check for the flag
-                                    window.onload = function() {
-                                        if (sessionStorage.getItem('reloadOnce') === 'true') {
-                                            sessionStorage.removeItem('reloadOnce');  // Clear the flag
-                                            location.href = location.href;  // Reload the page
-                                        }
-                                    };
-                                </script>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="right">
-                    <div class="credits">      
-                        <div class="credit-link">
-                            <a class="no-barba" href="https://www.behance.net/feint_studio" target="_blank" rel="noopener">
-                                <strong>[ADMIN]</strong>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="color-mode">
-                        <div class="dot"></div>
-                        <button class="night-mode" aria-label="Night Color Mode"></button>
-                        <button class="light-mode" aria-label="Light Color Mode"></button>
-                        <button class="ultra-mode" aria-label="Ultra Color Mode"></button>
-                        <div class="circle"></div>
-                    </div>
-                </div>
-                <div class="copyright">Software Construction Spring 2023 | Team 7</div>
-            </div>
-        </header>
-
-        <div class="curtain" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; background-color: #f2f2f2"></div>
-        <div id="barba-wrapper">
-            <div class="barba-container" data-namespace="home-page">
-                <div class="barba-transition-container">
-                    <div class="stagePerspective parallaxPerspective perspective-origin-tt-bb">
-                        <div class="stageContainer" style="opacity: 0">
-                            <main class="stage">
-                                <ul class="projects">
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="Dash" data-barba="HomeTransition">
-                                                Home
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="Settings" data-barba="HomeTransition">
-                                                Account
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="Search" data-barba="HomeTransition">Browse</a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="View" data-barba="HomeTransition">Customize</a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="Post + Followers" data-barba="HomeTransition">
-                                                Manage
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="Discover" data-barba="HomeTransition">
-                                                Connect
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="API" data-barba="HomeTransition">
-                                                Services
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="projectsLi" data-barba="HomeTransition">
-                                        <div class="projectContainer">
-                                            <a href="" data-info="Docs" data-barba="HomeTransition">ReadMe</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </main>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                  };
+                </script>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <section class="about">
-            <button class="btn-back" type="button" aria-label="Back">
-                <span class="btn-box">
-                    <span class="icon-close"></span>
-                </span>
-            </button>
-            <div class="container">
-                <div class="left">
-                    <h2 class="heading">Specializing in refined digital web experiences with a focus on animated, responsive, and interactive &nbsp;content.</h2>
-                    <p>Partnering with agencies and brands that value design and development &nbsp;integrity.</p>
-                    <p>Delivering highly executed front-end user experiences by paying close attention to the nuances of design, optimization, and &nbsp;performance.</p>
-                </div>
-                <div class="right">
-                    <div class="col-1">
-                        <div class="info">
-                            <h5 class="heading">Background</h5>
-                            <h6 class="title">UTEP &mdash;</h6>
-                            <p>El Paso, Texas</p>
-                            <h5 class="heading">xxx</h5>
-                            <h6 class="title">Development &mdash;</h6>
-                            <ul>
-                                <li>Technical Direction</li>
-                                <li>Front-end Development</li>
-                                <li>Craft CMS Solutions</li>
-                                <li>Development Consulting</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <h5 class="heading">A</h5>
-                        <div class="info">
-                            <h6 class="title">AA &mdash;</h6>
-                            <ul>
-                                <li>AAA</li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">AAAAA &mdash;</h6>
-                            <ul>
-                                <li>
-                                    AAAAAA.,<br>
-                                    AAAAAAAA<br>AAAAAAAAAA
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">A &mdash;</h6>
-                            <ul>
-                                <li>AD</li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">ADA &mdash;</h6>
-                            <ul>
-                                <li>
-                                    A, UI, UX, Innovation
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">CSS &mdash;</h6>
-                            <ul>
-                                <li>A</li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">A &mdash;</h6>
-                            <ul>
-                                <li> List</li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">AAA &mdash;</h6>
-                            <ul>
-                                <li>A</li>
-                            </ul>
-                        </div>
-                        <div class="info">
-                            <h6 class="title">Aaaaaaaa &mdash;</h6>
-                            <ul>
-                                <li>H</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
-        <script src="./js/app.js"></script>
-        <noscript id="deferred-styles">
 
-            <link rel="stylesheet" type="text/css" href="./css/app.css">
-        </noscript>
-        <script>
-            var loadDeferredStyles = function() {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf)
-                raf(function() {
-                    window.setTimeout(loadDeferredStyles, 0);
-                });
-            else
-                window.addEventListener('load', loadDeferredStyles);
-        </script>
-    </body>
+        <!-- Bottom right section of index page -->
+        <div class="right">
+          <!-- Admins Page hotlink -->
+          <div class="credits">
+            <div class="credit-link">
+              <a class="no-barba" href="" target="_blank" rel="noopener">
+                <strong>[ADMIN]</strong>
+              </a>
+            </div>
+          </div>
+          <!-- 
+                Page Color Circle Selector 
+                Bottom Right Corner
+            -->
+          <div class="color-mode">
+            <div class="dot"></div>
+            <button class="night-mode" aria-label="Night Color Mode"></button>
+            <button class="light-mode" aria-label="Light Color Mode"></button>
+            <button class="ultra-mode" aria-label="Ultra Color Mode"></button>
+            <div class="circle"></div>
+          </div>
+        </div>
+        <!-- Class information popup underneath team member name listings -->
+        <div class="copyright"> Software Construction Spring 2023 | Team 7 </div>
+      </div>
+    </header>
+
+    <!-- Curtain -->
+    <div
+      class="curtain"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        background-color: #f2f2f2;
+      "
+    ></div>
+
+    <div id="barba-wrapper">
+      <div class="barba-container" data-namespace="home-page">
+        <div class="barba-transition-container">
+          <div
+            class="stagePerspective parallaxPerspective perspective-origin-tt-bb"
+          >
+            <div class="stageContainer" style="opacity: 0">
+              <main class="stage">
+                <ul class="projects">
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a href="" data-info="Dash" data-barba="HomeTransition">
+                        Home
+                      </a>
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a
+                        href=""
+                        data-info="Settings"
+                        data-barba="HomeTransition"
+                      >
+                        Account
+                      </a>
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a href="" data-info="Search" data-barba="HomeTransition"
+                        >Browse</a
+                      >
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a href="" data-info="View" data-barba="HomeTransition"
+                        >Customize</a
+                      >
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a
+                        href=""
+                        data-info="Post + Followers"
+                        data-barba="HomeTransition"
+                      >
+                        Manage
+                      </a>
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a
+                        href=""
+                        data-info="Discover"
+                        data-barba="HomeTransition"
+                      >
+                        Connect
+                      </a>
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a href="" data-info="API" data-barba="HomeTransition">
+                        Services
+                      </a>
+                    </div>
+                  </li>
+                  <li class="projectsLi" data-barba="HomeTransition">
+                    <div class="projectContainer">
+                      <a href="" data-info="Docs" data-barba="HomeTransition"
+                        >ReadMe</a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About us section's content ------------------------------------------->
+    <section class="about">
+      <!-- Button trigger -->
+      <button class="btn-back" type="button" aria-label="Back">
+        <span class="btn-box">
+          <span class="icon-close"></span>
+        </span>
+      </button>
+
+      <div class="container">
+        <!-- Leftmost column -->
+        <div class="left">
+          <h2 class="heading">
+            Specializing in refined digital web experiences with a focus on
+            animated, responsive, and interactive &nbsp;content.
+          </h2>
+          <p>
+            Partnering with agencies and brands that value design and
+            development &nbsp;integrity.
+          </p>
+          <p>
+            Delivering highly executed front-end user experiences by paying
+            close attention to the nuances of design, optimization, and
+            &nbsp;performance.
+          </p>
+        </div>
+
+        <div class="right">
+          <!-- Middle column's contents -->
+          <div class="col-1">
+            <div class="info">
+              <h5 class="heading">Project Background</h5>
+              <h6 class="title">UTEP &mdash;</h6>
+              <p>El Paso, Texas</p>
+              <h5 class="heading">xxx</h5>
+              <h6 class="title">Technologies Used &mdash;</h6>
+              <ul>
+                <li>Angular</li>
+                <li>Python</li>
+                <li>Javascript/Typescript</li>
+                <li>Google Firebase</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Rightmost column's contents -->
+          <div class="col-2">
+            <h5 class="heading">A</h5>
+            <div class="info">
+              <h6 class="title">AA &mdash;</h6>
+              <ul>
+                <li>AAA</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">AAAAA &mdash;</h6>
+              <ul>
+                <li>
+                  AAAAAA.,<br />
+                  AAAAAAAA<br />AAAAAAAAAA
+                </li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">A &mdash;</h6>
+              <ul>
+                <li>AD</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">ADA &mdash;</h6>
+              <ul>
+                <li>A, UI, UX, Innovation</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">CSS &mdash;</h6>
+              <ul>
+                <li>A</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">A &mdash;</h6>
+              <ul>
+                <li>List</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">AAA &mdash;</h6>
+              <ul>
+                <li>A</li>
+              </ul>
+            </div>
+            <div class="info">
+              <h6 class="title">Aaaaaaaa &mdash;</h6>
+              <ul>
+                <li>H</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script Imports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+    <!-- Barba.js -->
+    <script src="./js/app.js"></script>
+    <!-- Javascript logic from app.js -->
+
+    <!-- Defer loading of CSS -->
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="./css/app.css" />
+      <link rel="stylesheet" href="./css/app.css" />
+    </noscript>
+
+    <!-- Defer loading of JS -->
+    <script>
+      /* load deferred styles */
+      var loadDeferredStyles = function () {
+        var addStylesNode = document.getElementById("deferred-styles");
+        if (addStylesNode) {
+          var replacement = document.createElement("div");
+          replacement.innerHTML = addStylesNode.textContent;
+          document.body.appendChild(replacement);
+          addStylesNode.parentElement.removeChild(addStylesNode);
+        }
+      };
+
+      /* run deferred styles */
+      var raf =
+        window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame;
+      if (raf)
+        raf(function () {
+          window.setTimeout(loadDeferredStyles, 0);
+        });
+      else window.addEventListener("load", loadDeferredStyles);
+    </script>
+  </body>
 </html>

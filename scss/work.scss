@@ -3,8 +3,7 @@
     .case-study {
       .hero {
         &:after {
-          animation: scaleDown 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06)
-            forwards;
+          animation: scaleDown 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) forwards;
         }
 
         @keyframes scaleDown {
@@ -36,8 +35,7 @@
     .case-study {
       .hero {
         &:after {
-          animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s
-            forwards;
+          animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s forwards;
         }
         .title {
           animation: fadeIn 1s forwards;
@@ -99,7 +97,6 @@
         background-color: $offWhite;
         transform: scaleY(1);
         transform-origin: center top;
-        // animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 2s forwards;
       }
 
       @keyframes scaleUp {
@@ -138,7 +135,6 @@
           -webkit-text-stroke: 2px #000;
           text-stroke: 2px #000;
         }
-        // animation: fadeIn 1s forwards;
       }
     }
 
@@ -220,7 +216,8 @@
           .col-2 {
             opacity: 0;
             transform: translateY(100px);
-            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            transition:
+              opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           }
 
@@ -251,7 +248,6 @@
     }
 
     // Responsive
-
     @media screen and (max-height: 768px) {
       .hero {
         min-height: 418px;
@@ -286,12 +282,9 @@
     }
 
     @media screen and (max-width: 1024px) {
-      @supports (
-        (-webkit-text-stroke: 0.03em #000) or (text-stroke: 0.03em #000)
-      ) {
+      @supports ((-webkit-text-stroke: 0.03em #000) or (text-stroke: 0.03em #000)) {
         .hero .title {
           -webkit-text-stroke: 0.03em #000;
-          text-stroke: 0.03em #000;
         }
       }
     }
@@ -348,7 +341,7 @@
     }
   }
 
-  // Case Studies
+  // images-carousel
   .push {
     .hero {
       background-position: center center;

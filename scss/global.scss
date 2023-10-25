@@ -23,7 +23,9 @@ body {
 .curtain {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s, background-color 0.5s;
+  transition:
+    opacity 0.5s,
+    background-color 0.5s;
 }
 
 .overflowHidden,
@@ -40,13 +42,7 @@ body.loading .curtain {
   transition: opacity 0.5s;
 }
 
-// body.uiHover:not(.aboutShow) .ui ~ #barba-wrapper .barba-container {
-// 	opacity: 0.25;
-// 	transition-delay: 0.5s;
-// }
-
 // Buttons
-
 button.link {
   display: inline-block;
   position: relative;
@@ -86,7 +82,9 @@ button.link {
     border: solid 1px transparent;
     border-radius: 50%;
     transform: scale(0.9);
-    transition: transform 0.25s, border-color 0.25s;
+    transition:
+      transform 0.25s,
+      border-color 0.25s;
   }
 
   @media screen and (max-width: 767px) {
@@ -95,8 +93,6 @@ button.link {
 
     &:before {
       display: none;
-      // border-color: #000;
-      // transform: scale(1);
     }
   }
 }
@@ -118,8 +114,7 @@ button.link {
   .btn-box {
     transform: translateX(0) scale(1);
     opacity: 1;
-    animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045)
-      0.25s infinite forwards;
+    animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.25s infinite forwards;
   }
 }
 
@@ -155,8 +150,7 @@ button.link {
   .btn-box {
     transform: translateY(0) scale(1);
     opacity: 1;
-    animation: scaleSlideDownscaleSlideUp 2s
-      cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s infinite forwards;
+    animation: scaleSlideDownscaleSlideUp 2s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s infinite forwards;
   }
 }
 
@@ -199,7 +193,6 @@ button.link {
 }
 
 // Icon Back
-
 .icon-back {
   display: block;
 }
@@ -212,7 +205,9 @@ button.link {
   height: 2px;
   border-radius: 1px;
   background-color: #000;
-  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
 }
 
 .icon-back {
@@ -242,7 +237,6 @@ button.link {
 }
 
 // Icon Close
-
 .icon-close {
   display: block;
 }
@@ -254,7 +248,9 @@ button.link {
   height: 2px;
   border-radius: 1px;
   background-color: #000;
-  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
 }
 
 .icon-close {
@@ -267,14 +263,6 @@ button.link {
   display: block;
 }
 
-// .icon-close:before {
-// 	top: -7px;
-// }
-
-// .icon-close:after {
-// 	bottom: -7px;
-// }
-
 .icon-close:before {
   transform: translateX(-50%) rotate(-45deg);
 }
@@ -284,7 +272,6 @@ button.link {
 }
 
 // Color Schemes
-
 body:not(.home-page):not(.night-mode):not(.ultra-mode) {
   .color-mode .dot {
     background-color: #000;
@@ -297,7 +284,6 @@ body.ultra-mode {
   color: $offWhite;
 
   // UI
-
   .ui {
     color: $offWhite;
   }
@@ -330,12 +316,11 @@ body.ultra-mode {
   }
 
   .ui .links .about-li:after,
-  .ui .links .journal-li:after {
+  .ui .links .readMe-li:after {
     background-color: $offWhite;
   }
 
   // Buttons
-
   .btn-back,
   .btn-page-back {
     &:hover:before {
@@ -357,7 +342,6 @@ body.ultra-mode {
   }
 
   // About
-
   &.aboutShow .stagePerspective,
   &.aboutShow .content {
     opacity: 0.1;
@@ -390,12 +374,9 @@ body.ultra-mode {
   }
 
   // Home
-
   &.home-page:not(.ultra-mode) {
     .projects a {
-      @supports (
-        (-webkit-text-stroke: 2px $offWhite) or (text-stroke: 2px $offWhite)
-      ) {
+      @supports ((-webkit-text-stroke: 2px $offWhite) or (text-stroke: 2px $offWhite)) {
         color: transparent;
 
         -webkit-text-stroke: 2px $offWhite;
@@ -406,9 +387,7 @@ body.ultra-mode {
     &:not(.intro):not(.outro) .projects.isHovering li:hover a,
     &:not(.outro) .projects li.isSelected a,
     &:not(.outro) .projects li.isSelected:hover a {
-      @supports (
-        (-webkit-text-stroke: 0px $offWhite) or (text-stroke: 0px $offWhite)
-      ) {
+      @supports ((-webkit-text-stroke: 0px $offWhite) or (text-stroke: 0px $offWhite)) {
         color: $offWhite;
       }
     }
@@ -416,11 +395,11 @@ body.ultra-mode {
     &.outro .projects.isHovering li:hover a,
     &.outro .projects li.isSelected a,
     &.outro .projects li.isSelected:hover a {
-      @supports (
-        (-webkit-text-stroke: 2px $offWhite) or (text-stroke: 2px $offWhite)
-      ) {
+      @supports ((-webkit-text-stroke: 2px $offWhite) or (text-stroke: 2px $offWhite)) {
         color: transparent;
-        transition: color 0.5s 0.5s, opacity 1s;
+        transition:
+          color 0.5s 0.5s,
+          opacity 1s;
 
         -webkit-text-stroke: 2px $offWhite;
         text-stroke: 2px $offWhite;
@@ -437,9 +416,7 @@ body.ultra-mode {
 
     @media screen and (max-width: 767px) {
       .projects a {
-        @supports (
-          (-webkit-text-stroke: 1px $offWhite) or (text-stroke: 1px $offWhite)
-        ) {
+        @supports ((-webkit-text-stroke: 1px $offWhite) or (text-stroke: 1px $offWhite)) {
           -webkit-text-stroke: 1px $offWhite;
           text-stroke: 1px $offWhite;
         }
@@ -448,14 +425,11 @@ body.ultra-mode {
   }
 
   // Work
-
   &.work-page {
     .case-study {
       .hero {
         .title {
-          @supports (
-            (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)
-          ) {
+          @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
             -webkit-text-stroke: 1px #fff;
             text-stroke: 1px #fff;
           }
@@ -468,9 +442,9 @@ body.ultra-mode {
     }
   }
 
-  // Journal
+  // readMe
 
-  &.journal-page .journal {
+  &.readMe-page .readMe {
     .cta {
       color: $offWhite;
     }
@@ -481,7 +455,6 @@ body.ultra-mode {
   }
 
   // Modules
-
   .module-copy .col-1 a,
   .module-copy .col-2 a {
     color: $offWhite;
@@ -500,9 +473,7 @@ body.ultra-mode {
 
     @media screen and (min-width: 768px) {
       .project-name {
-        @supports (
-          (-webkit-text-stroke: 2px $offWhite) or (text-stroke: 2px $offWhite)
-        ) {
+        @supports ((-webkit-text-stroke: 2px $offWhite) or (text-stroke: 2px $offWhite)) {
           color: transparent;
           -webkit-text-stroke: 2px $offWhite;
           text-stroke: 2px $offWhite;
@@ -541,18 +512,6 @@ body.ultra-mode {
 }
 
 body.night-mode {
-  // #barba-wrapper {
-  // 	filter: grayscale(100%);
-  // }
-
-  // @-moz-document url-prefix() {
-
-  // 	#barba-wrapper {
-  // 		filter: none;
-  // 	}
-
-  // }
-
   .content {
     opacity: 1;
     transition: opacity 0.5s;
@@ -563,7 +522,6 @@ body.night-mode {
   }
 
   // UI
-
   .logo {
     color: #fff;
 
@@ -582,7 +540,6 @@ body.night-mode {
   }
 
   // Work
-
   &.work-page {
     .case-study {
       .hero {
@@ -599,18 +556,12 @@ body.night-mode {
 
   @media screen and (max-width: 767px) {
     .module-copy-image .image:after {
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
+      background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
     .project-name {
       font-size: 40px;
-      @supports (
-        (-webkit-text-stroke: 1px $offWhite) or (text-stroke: 1px $offWhite)
-      ) {
+      @supports ((-webkit-text-stroke: 1px $offWhite) or (text-stroke: 1px $offWhite)) {
         color: transparent;
         -webkit-text-stroke: 1px $offWhite;
         text-stroke: 1px $offWhite;
@@ -620,27 +571,13 @@ body.night-mode {
 }
 
 body.light-mode {
-  // #barba-wrapper {
-  // 	filter: grayscale(100%);
-  // }
-
-  // @-moz-document url-prefix() {
-
-  // 	#barba-wrapper {
-  // 		filter: none;
-  // 	}
-
-  // }
-
   .color-mode .dot {
     background-color: #000;
   }
 
   &.home-page .projectsLi.isSelected .projectContainer a,
   &.home-page .projectsLi.isSelected:hover .projectContainer a {
-    @supports (
-      (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)
-    ) {
+    @supports ((-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)) {
       color: transparent;
 
       -webkit-text-stroke: 3px #151515;
@@ -651,9 +588,7 @@ body.light-mode {
   @media screen and (max-width: 767px) {
     &.home-page .projectsLi.isSelected .projectContainer a,
     &.home-page .projectsLi.isSelected:hover .projectContainer a {
-      @supports (
-        (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)
-      ) {
+      @supports ((-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)) {
         -webkit-text-stroke: 1px #151515;
         text-stroke: 1px #151515;
       }
@@ -664,7 +599,7 @@ body.light-mode {
 body.ultra-mode {
   background-color: $ultra;
 
-  &.journal-page {
+  &.readMe-page {
     #barba-wrapper:after {
       content: "";
       pointer-events: none;
@@ -703,7 +638,6 @@ body.ultra-mode {
   }
 
   // About & UI
-
   &:not(.home-page) {
     @supports ((-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000)) {
       .ui.outline .logo:hover {
@@ -744,7 +678,6 @@ body.ultra-mode {
   }
 
   // Home
-
   &.home-page {
     .projects a {
       @supports ((-webkit-text-stroke: 3px #000) or (text-stroke: 3px #000)) {
@@ -758,9 +691,7 @@ body.ultra-mode {
     &:not(.intro):not(.outro) .projects.isHovering li:hover a,
     &:not(.outro) .projects li.isSelected a,
     &:not(.outro) .projects li.isSelected:hover a {
-      @supports (
-        (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)
-      ) {
+      @supports ((-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)) {
         color: transparent;
 
         -webkit-text-stroke: 3px #151515;
@@ -770,23 +701,13 @@ body.ultra-mode {
 
     &.outro .projectsLi.isSelected .projectContainer a,
     &.outro .projectsLi.isSelected:hover .projectContainer a {
-      @supports (
-        (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)
-      ) {
+      @supports ((-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)) {
         color: transparent;
 
         -webkit-text-stroke: 3px #151515;
         text-stroke: 3px #151515;
       }
     }
-
-    // .projects a:before {
-    // 	color: $offWhite !important;
-    // }
-
-    // .projects a:after {
-    // 	background-color: $offWhite;
-    // }
 
     @media screen and (min-width: 768px) and (max-width: 1320px) {
       .projects a {
@@ -805,9 +726,7 @@ body.ultra-mode {
       .projectsLi.isSelected:hover .projectContainer a,
       &.outro .projectsLi.isSelected .projectContainer a,
       &.outro .projectsLi.isSelected:hover .projectContainer a {
-        @supports (
-          (-webkit-text-stroke: 2px #151515) or (text-stroke: 2px #151515)
-        ) {
+        @supports ((-webkit-text-stroke: 2px #151515) or (text-stroke: 2px #151515)) {
           color: transparent;
 
           -webkit-text-stroke: 2px #151515;
@@ -818,9 +737,7 @@ body.ultra-mode {
 
     @media screen and (max-width: 767px) {
       .projects a {
-        @supports (
-          (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)
-        ) {
+        @supports ((-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)) {
           color: #000;
 
           -webkit-text-stroke: 0px #151515;
@@ -835,9 +752,7 @@ body.ultra-mode {
       .projectsLi.isSelected:hover .projectContainer a,
       &.outro .projectsLi.isSelected .projectContainer a,
       &.outro .projectsLi.isSelected:hover .projectContainer a {
-        @supports (
-          (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)
-        ) {
+        @supports ((-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)) {
           color: transparent;
 
           -webkit-text-stroke: 1px #151515;
@@ -848,7 +763,6 @@ body.ultra-mode {
   }
 
   // Work
-
   &.work-page {
     .case-study {
       .hero {
@@ -865,18 +779,12 @@ body.ultra-mode {
 
   @media screen and (max-width: 767px) {
     .module-copy-image .image:after {
-      background: linear-gradient(
-        to top,
-        rgba(72, 1, 255, 1) 0%,
-        rgba(72, 1, 255, 0) 100%
-      );
+      background: linear-gradient(to top, #e17014 0%, rgba(72, 1, 255, 0) 100%);
     }
 
     .project-name {
       font-size: 40px;
-      @supports (
-        (-webkit-text-stroke: 1px $offWhite) or (text-stroke: 1px $offWhite)
-      ) {
+      @supports ((-webkit-text-stroke: 1px $offWhite) or (text-stroke: 1px $offWhite)) {
         color: transparent;
         -webkit-text-stroke: 1px $offWhite;
         text-stroke: 1px $offWhite;
@@ -886,7 +794,6 @@ body.ultra-mode {
 }
 
 // Basic Scroll
-
 body:not(.isMobile) {
   .basicScroll {
     height: 100vh;
@@ -906,7 +813,6 @@ body:not(.isMobile) {
   top: 0;
   left: 0;
   width: 100%;
-  // will-change: transform;
 }
 
 body.isMobile {
@@ -917,17 +823,15 @@ body.isMobile {
 
 body.safari .basicScroll .content {
   position: absolute;
-  // padding-bottom: 0;
 }
 
 // Parallax
-
 .parallax-horizontal-tb-bt {
   transform: translateX(var(--transform-x));
   transition: transform 3s ease-out;
 }
 
-.journal .parallax-horizontal-tb-bt {
+.readMe .parallax-horizontal-tb-bt {
   &.left {
     transition-duration: 1.5s;
   }
@@ -955,7 +859,6 @@ body.safari .basicScroll .content {
 }
 
 // Modules
-
 .module-copy-image {
   position: relative;
   padding: 10vh 30px 0;
@@ -983,8 +886,7 @@ body.safari .basicScroll .content {
 
     @media screen and (max-width: 767px) {
       .image.reveal-show img {
-        animation: imageSlideUpMobile 1s cubic-bezier(0.215, 0.61, 0.355, 1)
-          forwards;
+        animation: imageSlideUpMobile 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
       }
 
       @keyframes imageSlideUpMobile {
@@ -1006,7 +908,6 @@ body.safari .basicScroll .content {
     bottom: 0;
     right: 0;
     width: calc(66.66% - 10vw);
-    // max-width: 640px;
     margin-top: calc(-1 * (108px + 10vh));
     margin-left: 100px;
     margin-bottom: 1.6em;
@@ -1015,7 +916,6 @@ body.safari .basicScroll .content {
     img {
       position: relative;
       z-index: -1;
-      // width: 100%;
       width: auto;
       max-width: 100%;
       max-height: 100vh;
@@ -1026,8 +926,7 @@ body.safari .basicScroll .content {
 
     &.reveal-show {
       img {
-        animation: imageScaleUp 1.5s cubic-bezier(0.215, 0.61, 0.355, 1)
-          forwards;
+        animation: imageScaleUp 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
       }
 
       .caption {
@@ -1064,11 +963,6 @@ body.safari .basicScroll .content {
 
   .flex-3 {
     padding: 0;
-
-    // div p:first-of-type,
-    // .next-post {
-    // 	margin-top: 0;
-    // }
   }
 
   .copy {
@@ -1128,7 +1022,8 @@ body.safari .basicScroll .content {
       margin-bottom: 70px;
       opacity: 0;
       transform: translateX(-50px);
-      transition: opacity 1s 0.25s,
+      transition:
+        opacity 1s 0.25s,
         transform 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
     }
 
@@ -1178,30 +1073,11 @@ body.safari .basicScroll .content {
     }
 
     .copy {
-      // .post-info,
-      // p {
-      // 	width: 50%;
-      // 	padding-left: 5vw;
-      // }
-
       .heading {
         margin-top: 5vw;
         margin-bottom: 5vw;
         font-size: 50px;
       }
-
-      // .columns-3 {
-
-      // 	columns: 2;
-      // 	width: 100%;
-      // 	max-width: 100%;
-
-      // 	p {
-      // 		width: 100%;
-      // 		padding-left: 5vw;
-      // 	}
-
-      // }
     }
   }
 
@@ -1221,8 +1097,7 @@ body.safari .basicScroll .content {
       transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &.reveal-show img {
-        animation: imageSlideDownMobile 1.5s cubic-bezier(0.215, 0.61, 0.355, 1)
-          forwards;
+        animation: imageSlideDownMobile 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
       }
 
       @keyframes imageSlideDownMobile {
@@ -1244,11 +1119,7 @@ body.safari .basicScroll .content {
         z-index: 1;
         width: 100%;
         height: calc(150px + 5vh);
-        background: linear-gradient(
-          to top,
-          rgba(242, 242, 242, 1) 0%,
-          rgba(242, 242, 242, 0) 100%
-        );
+        background: linear-gradient(to top, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 0) 100%);
         pointer-events: none;
       }
 
@@ -1368,7 +1239,7 @@ body.safari .basicScroll .content {
   }
 }
 
-body.journal-post-page .module-quote {
+body.readMe-post-page .module-quote {
   @media screen and (max-width: 767px) {
     padding-left: 30px;
   }
@@ -1536,10 +1407,6 @@ body.journal-post-page .module-quote {
     left: 0;
     width: 100%;
     vertical-align: middle;
-
-    // &:not(:last-of-type) {
-    // 	margin-right: 5vw;
-    // }
   }
 
   .info {
@@ -1624,8 +1491,9 @@ body.journal-post-page .module-quote {
   }
 }
 
-// Flickity
-
+/* Flickity carousel 
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+*/
 .flickity-viewport {
   transition: height 0.3s ease-in-out;
 }
@@ -1651,18 +1519,10 @@ body.journal-post-page .module-quote {
 
   &.previous {
     left: 0;
-
-    // &:not([disabled]) {
-    // 	cursor: url("/img/ui/arrow-left-green.svg") 24 24, auto;
-    // }
   }
 
   &.next {
     right: 0;
-
-    // &:not([disabled]) {
-    // 	cursor: url("/img/ui/arrow-right-green.svg") 24 24, auto;
-    // }
   }
 
   svg {
@@ -1893,7 +1753,9 @@ body.journal-post-page .module-quote {
       }
       transform: rotate3d(0, 1, 0, -45deg) translateZ(0);
       transform-origin: right center;
-      transition: color 0.2s ease-in-out, transform 0.5s;
+      transition:
+        color 0.2s ease-in-out,
+        transform 0.5s;
     }
 
     &.reveal-show {
@@ -1967,11 +1829,6 @@ body.journal-post-page .module-quote {
     margin-bottom: 0;
   }
 
-  // p strong {
-  // 	font-size: 30px;
-  // 	line-height: 1.2em;
-  // }
-
   p:not(:first-of-type) {
     margin-top: 1.6em;
   }
@@ -2010,8 +1867,6 @@ body.journal-post-page .module-quote {
 
   .module-gallery {
     display: block;
-    // padding-left: 5vw;
-    // margin-right: 4vw;
 
     .info {
       width: 100%;
@@ -2032,15 +1887,6 @@ body.journal-post-page .module-quote {
     .description {
       clear: both;
     }
-
-    // @media screen and (max-width: 1024px) {
-    // 	width: 50%;
-    // 	padding-left: 5vw;
-    // }
-    // @media screen and (max-width: 767px) {
-    // 	width: 100%;
-    // 	padding-left: 0;
-    // }
   }
 
   .module-image {
@@ -2122,7 +1968,6 @@ body.journal-post-page .module-quote {
   }
 
   @media screen and (max-width: 767px) {
-    // flex-wrap: nowrap;
     padding-top: 10vw;
     padding-left: 0;
     padding-right: 0;
@@ -2137,17 +1982,12 @@ body.journal-post-page .module-quote {
       padding-right: 0;
     }
 
-    // > .module-image:first-child {
-    // 	margin-top: 5vw;
-    // }
-
     .module-image + .module-copy {
       margin-top: 10vw;
     }
 
     .module-copy + .module-image {
       margin-top: 10vw;
-      // margin-bottom: 5vw;
     }
 
     .module-copy {
@@ -2171,10 +2011,6 @@ body.journal-post-page .module-quote {
 
   @media screen and (max-width: 550px) {
     flex-wrap: wrap;
-
-    // &.theme-reduce-top-padding {
-    // 	padding-top: 0;
-    // }
     .col-2,
     .col-3 {
       margin-top: 10vw;
@@ -2182,7 +2018,6 @@ body.journal-post-page .module-quote {
 
     > * {
       width: 100%;
-      // padding-right: 5vw;
     }
 
     p {
@@ -2268,8 +2103,6 @@ body.journal-post-page .module-quote {
 div.next-post,
 div.end-post,
 p.end-post {
-  // width: 100%;
-  // margin-top: 100vh;
   padding-top: 3px;
   font-size: 14px;
   line-height: 2em;
@@ -2309,14 +2142,14 @@ div {
 }
 
 // Reveal
-// @media screen and (min-width: 1025px) {
 .reveal {
   &.module-copy {
     .col-1,
     .col-2 {
       opacity: 0;
       transform: translateY(100px);
-      transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transition:
+        opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
         transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -2341,11 +2174,10 @@ div {
     .title,
     .description {
       opacity: 0;
-      // transform: translateY(20px);
-      // transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
       transform: rotate3d(0, 1, 0, 35deg) translateZ(0);
       transform-origin: left center;
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
+      transition:
+        opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
         transform 0.5s 0.25s;
     }
 
@@ -2369,11 +2201,10 @@ div {
     .title,
     .description {
       opacity: 0;
-      // transform: translateY(20px);
-      // transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
       transform: rotate3d(0, 1, 0, 35deg) translateZ(0);
       transform-origin: left center;
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
+      transition:
+        opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
         transform 0.5s 0.25s;
     }
 
@@ -2392,22 +2223,20 @@ div {
 
     blockquote {
       opacity: 0;
-      // transform: translateX(10vw);
-      // transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transform: rotate3d(0, 1, 0, 25deg) translateZ(0);
       transform-origin: left top;
-      transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transition:
+        opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
         transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .attribution {
       display: block;
       opacity: 0;
-      // transform: translateY(20px);
-      // transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
       transform: rotate3d(0, 1, 0, 35deg) translateZ(0);
       transform-origin: left top;
-      transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
+      transition:
+        opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
         transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
     }
   }
@@ -2436,7 +2265,6 @@ div {
       .title,
       .description {
         opacity: 1;
-        // transform: translateY(0);
         transform: rotate3d(0, 1, 0, 0deg) translateZ(0);
       }
     }
@@ -2450,7 +2278,6 @@ div {
       .title,
       .description {
         opacity: 1;
-        // transform: translateY(0);
         transform: rotate3d(0, 1, 0, 0deg) translateZ(0);
       }
     }
@@ -2472,4 +2299,3 @@ div {
     }
   }
 }
-// }

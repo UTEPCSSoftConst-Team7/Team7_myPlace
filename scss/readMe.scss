@@ -1,20 +1,18 @@
 body.loading {
-  .journal {
+  .readMe {
     opacity: 0;
   }
 }
 
-.journal-page {
-  &:not(.aboutShow) .ui .links .journal-li:after {
+.readMe-page {
+  &:not(.aboutShow) .ui .links .readMe-li:after {
     transform: scaleX(1) translateZ(0);
     transition-delay: 0.25s;
   }
 
-  .journal {
+  .readMe {
     position: relative;
     width: 100%;
-    // will-change: transform;
-
     opacity: 1;
     transition: opacity 2s ease-in-out;
 
@@ -61,12 +59,6 @@ body.loading {
       padding-left: 10vw;
       padding-right: 10vw;
       overflow: hidden;
-
-      // @media screen and (min-width: 768px) {
-      // 	&:not(:last-of-type) {
-      // 		margin-bottom: 10vh;
-      // 	}
-      // }
     }
 
     .info {
@@ -84,7 +76,7 @@ body.loading {
     .date {
       width: 100%;
       margin-bottom: 0;
-      @include drukWideMedium;
+      @include interWideMedium;
       font-size: 10px;
       text-transform: uppercase;
     }
@@ -93,7 +85,7 @@ body.loading {
       width: 100%;
       margin-top: 70px;
       margin-bottom: 80px;
-      @include drukWideMedium;
+      @include interWideMedium;
       font-size: 60px;
     }
 
@@ -103,7 +95,7 @@ body.loading {
       justify-content: center;
       flex-wrap: wrap;
       position: relative;
-      @include akzidenzGrotesk;
+      @include Intern;
       font-size: 14px;
       font-weight: 500;
       color: #000;
@@ -142,27 +134,25 @@ body.loading {
     .image-container img {
       display: block;
       height: calc(100vh - (106px + 15vh) - 130px);
-      transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+      transition:
+        width 0.5s ease-in-out,
+        height 0.5s ease-in-out;
     }
 
     .center {
       z-index: 1;
-      // width: 40%;
     }
 
-    // .center img {
-    // 	width: 100%;
-    // }
-
     // Reveal
-
     .reveal {
       .date,
       .title,
       .read-more {
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s;
+        transition:
+          opacity 0.5s ease-out 0.3s,
+          transform 0.5s ease-out 0.3s;
       }
 
       .title {
@@ -184,7 +174,6 @@ body.loading {
     }
 
     // Responsive
-
     @media screen and (min-width: 769px) {
       .image-container {
         bottom: 160px;
@@ -198,15 +187,6 @@ body.loading {
     }
 
     @media screen and (max-width: 768px) {
-      // .post {
-      // 	padding-top: 5vh;
-      // 	padding-bottom: 5vh;
-      // }
-
-      // .post:not(:last-of-type) {
-      // 	margin-bottom: 10vh;
-      // }
-
       .info {
         width: 100%;
       }
@@ -270,7 +250,6 @@ body.loading {
 
     @media screen and (max-height: 420px) {
       .image-container img {
-        // max-width: 100%;
         height: 80vh;
       }
     }

@@ -1,5 +1,5 @@
-.journal-post-page {
-  &:not(.aboutShow) .ui .links .journal-li:after {
+.readMe-post-page {
+  &:not(.aboutShow) .ui .links .readMe-li:after {
     transform: scaleX(1) translateZ(0);
     transition-delay: 0.25s;
   }
