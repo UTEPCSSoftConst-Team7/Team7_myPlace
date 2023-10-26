@@ -1,0 +1,52 @@
+/* Global */
+@mixin hide-on-desktop {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+@mixin hide-on-mobile {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+/* Layout */
+@mixin clear-fix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+
+  & {
+    *zoom: 1;
+  }
+}
+
+/* Fonts */
+@mixin Inter {
+  font-family: "Inter", sans-serif;
+}
+
+@mixin interWideMedium {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@mixin interWideSuper {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
