@@ -1,0 +1,519 @@
+/* Pages */
+.home-page .stagePerspective {
+  position: relative;
+  width: 100%;
+  -webkit-perspective: 100vw;
+  perspective: 100vw;
+}
+
+.home-page:not(.isMobile) .stagePerspective {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.home-page .stageContainer {
+  position: relative;
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.home-page .stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 5vw 5vw calc(7.5vw + 67px) 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.home-page.safari .stage {
+  position: absolute;
+  padding-bottom: 0;
+}
+
+.home-page.isMobile .stage {
+  position: static;
+}
+
+.home-page .projects {
+  position: relative;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: right;
+  width: 95%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.home-page .projectsLi {
+  cursor: pointer;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.home-page .projectContainer {
+  -webkit-transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+  transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+  -webkit-transform-origin: right center;
+  transform-origin: right center;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@media screen and (min-width: 768px) {
+  .home-page .projectContainer {
+    -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+.home-page:not(.intro) .projectsLi:hover .projectContainer,
+.home-page:not(.intro) .projectsLi.isHovered .projectContainer {
+  -webkit-transform: rotate3d(0, 1, 0, -35deg) translateZ(0) scale(1);
+  transform: rotate3d(0, 1, 0, -35deg) translateZ(0) scale(1);
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+.home-page .projectsLi.isSelected .projectContainer,
+.home-page .projectsLi.isSelected:hover .projectContainer {
+  -webkit-transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
+  transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(1);
+}
+
+@media screen and (max-width: 767px) {
+
+  .home-page .projectsLi.isSelected .projectContainer,
+  .home-page .projectsLi.isSelected:hover .projectContainer {
+    -webkit-transition: opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+@supports (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515) {
+
+  .home-page .projectsLi.isSelected .projectContainer a,
+  .home-page .projectsLi.isSelected:hover .projectContainer a {
+    -webkit-text-stroke: 0px #151515;
+  }
+}
+
+.home-page:not(.intro) .projects.isHovering .projectsLi:hover a,
+.home-page:not(.intro) .projects.isHovering .projectsLi.isHovered a {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+@supports (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515) {
+
+  .home-page:not(.intro) .projects.isHovering .projectsLi:hover a,
+  .home-page:not(.intro) .projects.isHovering .projectsLi.isHovered a {
+    color: transparent;
+  }
+}
+
+.home-page .projects a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Inter";
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: 9.6vw;
+  letter-spacing: 0.02em;
+  line-height: 0.9em;
+  -webkit-transition: color 0.5s, opacity 0.5s;
+  transition: color 0.5s, opacity 0.5s;
+}
+
+@supports (-webkit-text-stroke: 3px #000) or (text-stroke: 3px #000) {
+  .home-page .projects a {
+    -webkit-text-stroke: 3px #000;
+  }
+}
+
+.home-page .projects a:before {
+  content: attr(data-info);
+  white-space: pre;
+  position: absolute;
+  top: 3.7em;
+  left: -250px;
+  width: 200px;
+  text-align: right;
+  font-size: 0.7vw;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  color: #000 !important;
+  pointer-events: none;
+  -webkit-transition: none;
+  transition: none;
+}
+
+@supports (-webkit-text-stroke: 3px #000) or (text-stroke: 3px #000) {
+  .home-page .projects a:before {
+    -webkit-text-stroke: transparent;
+  }
+}
+
+.home-page .projects a:after {
+  content: "";
+  position: absolute;
+  top: 0.23em;
+  left: -0.3em;
+  width: 2px;
+  height: 0.85em;
+  background-color: #000;
+  -webkit-transform: rotateZ(25deg);
+  transform: rotateZ(25deg);
+  pointer-events: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1320px) {
+  .home-page .projects a {
+    font-size: 7.4vw;
+  }
+
+  @supports (-webkit-text-stroke: 2px #000) or (text-stroke: 2px #000) {
+    .home-page .projects a {
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  .home-page .projects a:after {
+    width: 2px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-page {
+    overflow-x: hidden;
+  }
+
+  .home-page .stagePerspective {
+    -webkit-perspective: 400vw;
+    perspective: 400vw;
+  }
+
+  .home-page .stage {
+    padding-top: 17vw;
+    padding-bottom: 17vw;
+  }
+
+  @supports (-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000) {
+    .home-page .projects a {
+      -webkit-text-stroke-width: 1px;
+    }
+  }
+
+  .home-page .projects a:after {
+    width: 1px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .home-page .stage {
+    padding-top: 25vw;
+  }
+
+  .home-page .projects a:before {
+    top: 10px;
+    left: -220px;
+    font-size: 7px;
+  }
+
+  .home-page .projects a:after {
+    top: 10px;
+    left: -15px;
+  }
+
+  .home-page .projects {
+    width: 100%;
+  }
+
+  .home-page .projects a {
+    font-size: 13vw;
+    letter-spacing: normal;
+  }
+}
+
+.home-page:not(.isMobile).intro {
+  pointer-events: none;
+}
+
+.home-page.intro .stage {
+  -webkit-transform: translate3d(0, -110%, 0);
+  transform: translate3d(0, -110%, 0);
+  -webkit-animation: introStage 2s forwards;
+  animation: introStage 2s forwards;
+}
+
+.home-page:not(.isMobile).intro .stage {
+  position: absolute;
+}
+
+.home-page.intro .projectContainer {
+  visibility: hidden;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-animation: introProjectContainer 2s forwards;
+  animation: introProjectContainer 2s forwards;
+}
+
+.home-page.intro .projectsLi:nth-child(1) .projectContainer {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.home-page.intro .projectsLi:nth-child(2) .projectContainer {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.home-page.intro .projectsLi:nth-child(3) .projectContainer {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.home-page.intro .projectsLi:nth-child(4) .projectContainer {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.home-page.intro .projectsLi:nth-child(5) .projectContainer {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.home-page.intro .projectsLi:nth-child(6) .projectContainer {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.home-page.intro .projectsLi:nth-child(7) .projectContainer {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.home-page.intro .projectsLi:nth-child(8) .projectContainer {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes introStage {
+  0% {
+    -webkit-transform: translate3d(0, -110%, 0);
+    transform: translate3d(0, -110%, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes introStage {
+  0% {
+    -webkit-transform: translate3d(0, -110%, 0);
+    transform: translate3d(0, -110%, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes introProjectContainer {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: rotate3d(0, 1, 0, -100deg) translateZ(0) scale(1);
+    transform: rotate3d(0, 1, 0, -100deg) translateZ(0) scale(1);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+    transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+  }
+}
+
+@keyframes introProjectContainer {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: rotate3d(0, 1, 0, -100deg) translateZ(0) scale(1);
+    transform: rotate3d(0, 1, 0, -100deg) translateZ(0) scale(1);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+    transform: rotate3d(0, 1, 0, -45deg) translateZ(0) scale(1);
+  }
+}
+
+.home-page.outro:not(.isMobile) {
+  pointer-events: none;
+}
+
+.home-page.outro .stageContainer {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: outro 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1.15s forwards;
+  animation: outro 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1.15s forwards;
+}
+
+.home-page.outro .projectContainer {
+  -webkit-transition: opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 1.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    -webkit-transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.home-page.outro .projectsLi:not(.isSelected) .projectContainer {
+  -webkit-transform: rotate3d(0, 1, 0, -114deg) translateZ(0) scale(1);
+  transform: rotate3d(0, 1, 0, -114deg) translateZ(0) scale(1);
+  opacity: 0;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(1) .projectContainer {
+  -webkit-transition-delay: 0.9s;
+  transition-delay: 0.9s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(2) .projectContainer {
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(3) .projectContainer {
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(4) .projectContainer {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(5) .projectContainer {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(6) .projectContainer {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(7) .projectContainer {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(8) .projectContainer {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.home-page.outro .projectsLi:not(.isSelected):nth-child(9) .projectContainer {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.home-page.outro .projectsLi.isSelected .projectContainer,
+.home-page.outro .projectsLi.isSelected:hover .projectContainer {
+  -webkit-transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(0.7);
+  transform: rotate3d(0, 1, 0, 0deg) translateZ(0) scale(0.7);
+  opacity: 0;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+.home-page.outro .projectsLi.isSelected .projectContainer a {
+  -webkit-transition-delay: 1.15s;
+  transition-delay: 1.15s;
+}
+
+.home-page.outro .projectsLi.isSelected .projectContainer a:before,
+.home-page.outro .projectsLi.isSelected .projectContainer a:after {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-out 0.15s;
+  transition: opacity 0.2s ease-out 0.15s;
+}
+
+@-webkit-keyframes outro {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, -25vh, 0);
+    transform: translate3d(0, -25vh, 0);
+  }
+}
+
+@keyframes outro {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, -25vh, 0);
+    transform: translate3d(0, -25vh, 0);
+  }
+}
+
+.home-page .parallaxPerspective {
+  -webkit-perspective-origin: 50% var(--perspective-origin-y);
+  perspective-origin: 50% var(--perspective-origin-y);
+  will-change: perspective-origin;
+}

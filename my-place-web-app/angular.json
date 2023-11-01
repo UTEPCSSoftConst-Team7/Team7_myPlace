@@ -23,10 +23,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/stylings.css"
+              "src/js/"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/stylings/css/normalize.css",
+              "src/stylings/css/flickity.css",
+              "src/stylings/css/about.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -34,7 +37,10 @@
                 "./stylings"
               ]
             },
-            "scripts": []
+            "scripts": [
+              "src/assets/js/appMenu.js",
+              "src/assets/js/barba.min.js"
+            ]
           },
           "configurations": {
             "production": {
