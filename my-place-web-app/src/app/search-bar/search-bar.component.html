@@ -1,0 +1,11 @@
+<p>search-bar works!</p>
+<div>
+    <input type="text" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search by username">
+</div>
+  
+<ul>
+    <li *ngFor="let user of users">
+      {{ user.name }} ({{ user.username }})
+    </li>
+</ul>
+

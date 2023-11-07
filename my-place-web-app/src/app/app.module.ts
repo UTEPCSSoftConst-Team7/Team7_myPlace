@@ -12,6 +12,7 @@ import { MessagingComponent } from './messaging/messaging.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { UserComponent } from './user/user.component';
     CreateAccountComponent,
     SignInComponent,
     UserComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
