@@ -64,3 +64,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+my-place-web-app/angular.json
+package.json
+package-lock.json
+my-place-web-app/angular.json
