@@ -15,6 +15,8 @@ import { UserComponent } from './user/user.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

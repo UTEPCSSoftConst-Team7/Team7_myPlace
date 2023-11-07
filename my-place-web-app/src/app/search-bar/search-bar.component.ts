@@ -1,18 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
+import {Observable} from 'rxjs';
+
 import { UserService } from '../user.service';
-import { NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from '../User';
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.css']
+  styleUrls: ['./search-bar.component.css'],
 })
 
 export class SearchBarComponent implements OnInit {
-  users: any[] = [];
+  options: string[] = [];
+  filteredOptions: any | undefined;
+  serchUser:any;
   searchTerm: string = '';
+  autoFilterTop:string ='';
+  users: User[] = [];
 
-  constructor(private userService: UserService){ }
+  constructor(private userService: UserService, private router: Router ){ }
 
   ngOnInit() {
     this.userService.getUsers().subscribe((data: any) => {
@@ -20,12 +28,24 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
+  onSearchInputChange(event:any){
+    for (let i=0;i<this.users.length;i++){
+      this.options.push(this.users[i].username)
+    }
 
-  Search(event: string, ngModel: NgModel) {
-    if (ngModel.valid) {
-      console.log(ngModel)
+    this.serchUser=event.value
+    this.filteredOptions = this.options.filter(user =>
+      user.toLowerCase().includes(this.serchUser.toLowerCase())
+    );
+    this.autoFilterTop=this.filteredOptions[0]
+  }
+
+  search() {
+    const user = this.users.find(u => u.username === this.autoFilterTop);
+    if (user) {
+      this.router.navigate(['/user', user.username]);
     } else {
-      console.log(Error)
+      alert('User not found');
     }
   }
 

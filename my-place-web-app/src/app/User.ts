@@ -16,5 +16,5 @@ export interface Message {
     type: 'text' | 'image';
     imageUrl?: string; 
     timestamp: string; 
-  }
+}
   
