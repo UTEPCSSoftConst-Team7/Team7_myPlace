@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -19,13 +20,13 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
-  search() {
-    if (this.searchTerm) {
-      this.users = this.users.filter(user => user.username.toLowerCase().includes(this.searchTerm.toLowerCase()));
+
+  Search(event: string, ngModel: NgModel) {
+    if (ngModel.valid) {
+      console.log(ngModel)
     } else {
-      this.userService.getUsers().subscribe((data: any) => {
-        this.users = data;
-      });
+      console.log(Error)
     }
   }
+
 }

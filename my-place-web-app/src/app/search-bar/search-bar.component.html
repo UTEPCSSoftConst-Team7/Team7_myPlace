@@ -1,11 +1,21 @@
 <p>search-bar works!</p>
 <div>
-    <input type="text" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search by username">
+    <!-- <ng-container>
+        <input
+          matInput
+          required
+          [ngModel]="UserName"
+          (ngModelChange)="Search($event, inputModel)"
+          #inputModel="ngModel"
+        />
+    
+        <span *ngIf="inputModel.valid">:)</span>
+        <span *ngIf="inputModel.invalid">:(</span>
+      </ng-container> -->
 </div>
-  
 <ul>
-    <li *ngFor="let user of users">
-      {{ user.name }} ({{ user.username }})
-    </li>
+    <!-- <li *ngFor="let user of users">
+      
+    </li> -->
 </ul>
 
