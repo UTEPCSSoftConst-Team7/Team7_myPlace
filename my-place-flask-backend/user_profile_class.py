@@ -1,4 +1,3 @@
-# author: Esai b   11/4/23
 # skeleton code for the UserProfile class
 
 class UserProfile:
@@ -78,7 +77,6 @@ class UserProfile:
             self._friend_list.remove(friend_username)
 
 
-# author: Esai b   11/4/23
 # skeleton code for subclass: Admin
 
 class Admin(UserProfile):
@@ -94,9 +92,17 @@ class Admin(UserProfile):
         self._admin_id = ""
 
 # admin only function to delete a user's account (parameter: username <to be deleted>, admin_id <verification>
-    def delete_user_account(self, username, admin_id):
+    @staticmethod
+    def delete_user_account(username, admin_id):
         # Implement logic to delete a user account, e.g., from a database
-        pass
+        # try and except for validating admin account
+        # todo: implement removal designated username user_profile from database
+        try:
+            if validate_admin_id(admin_id):
+                pass
+        except validate_admin_id(admin_id) == False:
+            print("Invalid admin_id passed, please try again")
+
 
 # <possible> admin only function to delete a post (parameter: post_id <to be deleted, admin_id <verification>
     def delete_post(self, post_id):
@@ -107,3 +113,6 @@ class Admin(UserProfile):
 # allows outside classes to retrieve a user account's information
 def get_information(user_profile):
     return user_profile.get_information()
+
+def validate_admin_id(user_profile, admin_id):
+    return admin_id in user_profile.get_information()

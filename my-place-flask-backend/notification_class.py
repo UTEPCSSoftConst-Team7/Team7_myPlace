@@ -1,7 +1,5 @@
-# author: Esai 11/4/23
 # skeleton for the notification class
 import user_profile_class
-
 
 class Notification:
     def __init__(self, notification_type, content, user_profile):
