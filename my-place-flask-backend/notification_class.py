@@ -1,5 +1,7 @@
 # author: Esai 11/4/23
 # skeleton for the notification class
+import user_profile_class
+
 
 class Notification:
     def __init__(self, notification_type, content, user_profile):
@@ -7,6 +9,9 @@ class Notification:
         self.content = content
         self.user_profile = user_profile
         self.viewed = False
+
+    def get_user(self):
+        self.user_profile = user_profile_class.get_information(self.user_profile)
 
     def view_notification(self):
         self.viewed = True
