@@ -45,7 +45,7 @@ class Message:
         # Implement logic to receive and display messages
         print(f"Message received from {sender}: {content} ({timestamp})")
 
-    def delete_message(self, content):
+    def delete_message_history(self, content):
         # Implement logic to delete a message from the sender's and recipient(s') message histories
         self.sender.delete_message(content)
         for recipient in self.recipients:
