@@ -1,1 +1,13 @@
-<p>messaging works!</p>
+<div class="messaging-container">
+    <div class="messages-display">
+      <div class="message" *ngFor="let message of messages" [ngClass]="{'from-me': message.fromMe, 'from-them': !message.fromMe}">
+        <span class="username">{{ message.username }}:</span>
+        <span class="text">{{ message.text }}</span>
+      </div>
+    </div>
+    <div class="message-input-container">
+      <input type="text" class="message-input" placeholder="Type a message..." />
+      <button class="send-button">Send</button>
+    </div>
+  </div>
+  

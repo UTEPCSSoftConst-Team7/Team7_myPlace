@@ -1,0 +1,108 @@
+.messaging-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ff5722; /* Dark orange background for the entire container */
+  font-family: 'Arial', sans-serif;
+}
+
+.messages-display {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns children (messages) to the center */
+  background-color: #ff6d00; /* Slightly lighter orange for the messages display */
+}
+
+.message {
+  max-width: 60%; /* Maximum width of the message bubble */
+  min-width: 10%; /* Minimum width to ensure small messages don't look too tiny */
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 4px; /* Space between messages */
+  border: 1px solid #ddd; /* Subtle border for separation */
+}
+
+.from-me {
+  align-self: flex-end; /* Aligns the user's messages to the right */
+  background-color: #ffffff; /* White background for the user's messages */
+  color: #333; /* Dark text for readability */
+}
+
+.from-them {
+  align-self: flex-start; /* Aligns other messages to the left */
+  background-color: #e0e0e0; /* Light grey background for others' messages */
+  color: #333; /* Dark text for readability */
+}
+
+/* Stylistic separator for messages */
+.message + .message {
+  border-top: 1px solid #f3f3f3; /* Light border for separation */
+}
+
+.message-input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #e64a19; /* Darker shade of orange for the input area */
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ffffff; /* White border for the input */
+  border-radius: 20px;
+  outline: none;
+  color: #ffffff; /* White text for input */
+  background-color: transparent; /* Let the container color show through */
+}
+
+.message-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+}
+
+.message-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ffffff;
+}
+
+.message-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ffffff;
+}
+
+.send-button {
+  padding: 10px 20px;
+  background-color: #ffffff; /* White background for send button */
+  color: #ff5722; /* Dark orange text for send button */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.send-button:hover {
+  background-color: #cccccc; /* Light gray on hover for send button */
+}
+
+/* Scrollbar styles for the messages display */
+.messages-display::-webkit-scrollbar {
+  width: 5px;
+}
+
+.messages-display::-webkit-scrollbar-track {
+  background: #e64a19; /* Darker shade of orange for scrollbar track */
+}
+
+.messages-display::-webkit-scrollbar-thumb {
+  background: #ffffff; /* White for scrollbar thumb */
+}
+
+.messages-display::-webkit-scrollbar-thumb:hover {
+  background: #cccccc; /* Light gray on hover for scrollbar thumb */
+}
