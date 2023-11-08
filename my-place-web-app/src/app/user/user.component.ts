@@ -12,15 +12,15 @@ import { User } from './user.interface'
 
 export class UserComponent {
 
-  user: User[] = [];
+  // user: User[] = [];
 
-  constructor(private userService: UserService) { }
+  // constructor(private userService: UserService) { }
 
-  ngOnInit() {
-    // Fetch user data from the service
-    this.userService.getUsers().subscribe(data => {
-      this.user = data; // Assign the user data to the user property
-    });
-  }
+  // ngOnInit() {
+  //   // Fetch user data from the service
+  //   this.userService.getUsers().subscribe(data => {
+  //     this.user = data; // Assign the user data to the user property
+  //   });
+  // }
 
 }
