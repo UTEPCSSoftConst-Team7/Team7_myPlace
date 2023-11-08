@@ -1,0 +1,72 @@
+[
+  {
+    "username": "john_doe",
+    "password": "password123",
+    "email": "john.doe@example.com",
+    "bio": "I love coding!",
+    "profilePicture": "default.jpg",
+    "blogPosts": ["First post!", "Another post."],
+    "friends": ["jane_doe", "sam_smith"]
+  },
+  {
+    "username": "jane_doe",
+    "password": "securepass",
+    "email": "jane.doe@example.com",
+    "bio": "Tech enthusiast",
+    "profilePicture": "default.jpg",
+    "blogPosts": ["Intro to Angular", "JavaScript tips"],
+    "friends": ["john_doe"]
+  },
+
+  {
+    "username": "sam_smith",
+    "password": "strongpassword",
+    "email": "sam.smith@example.com",
+    "bio": "Nature lover",
+    "profilePicture": "default.jpg",
+    "blogPosts": ["Hiking adventures"],
+    "friends": ["john_doe"]
+  },
+
+  {
+    "username": "nicoJ115",
+    "password": "nico1234",
+    "email": "nicoJ115@example.com",
+    "bio": "Gamer and developer",
+    "profilePicture": "default.jpg",
+    "blogPosts": ["Game review"],
+    "friends": ["isaba3lla", "litcowboykiller"]
+  },
+
+  {
+    "username": "isaba3lla",
+    "password": "isaba3llaPass",
+    "email": "isaba3lla@example.com",
+    "bio": "Art and design lover",
+    "profilePicture": "default.jpg",
+    "blogPosts": ["Painting progress"],
+    "friends": ["nicoJ115"]
+  },
+
+  {
+    "username": "litcowboykiller",
+    "password": "cowboykill123",
+    "email": "litcowboykiller@example.com",
+    "bio": "Wild west enthusiast",
+    "profilePicture": "default.jpg",
+    "blogPosts": ["Western movie reviews"],
+    "friends": ["nicoJ115"]
+  },
+
+  {
+    "username": "empty_user",
+    "password": "emptypass",
+    "email": "empty.user@example.com",
+    "bio": "",
+    "profilePicture": "default.jpg",
+    "blogPosts": [],
+    "friends": []
+  }
+  
+]
+
