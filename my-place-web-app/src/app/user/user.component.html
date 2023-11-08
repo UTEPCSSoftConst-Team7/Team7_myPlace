@@ -91,20 +91,47 @@
         </div>
         <div class="right-content">
           <!-- <button>Button 1</button> -->
-          <button><i class="fa-regular fa-message"></i></button>
+          <button><i class="fa-regular fa-message"></i>Messages</button>
         </div>
       </div>
+
+    
     <div class="profilepic">
-        <img [src]="'assets/pizzabella.png'" alt="Profile Picture">
+        <img [src]="ProfileUser.profilePicture" alt="Profile Picture">
     </div>
+
     <div class="username">
         <!-- TODO: Change for the actual value for username in the JSON -->
-        <h2>Jane Doe</h2>
-        <label>Friends: 30</label>
+        <h2>{{ ProfileUser.username }}</h2> 
+            <div *ngIf="ProfileUser.friends">
+                <label>Friends:  {{ProfileUser.friends.length}}</label>
+            </div>
     </div>
+    <!-- <app-search-bar></app-search-bar> -->
     <div class="bio">
-        <p style="color: black">Welcome to my page, I'm Jane Doe and this is my cool bio.</p>
+        <p style="color: black ">{{ProfileUser.bio}}</p>
     </div>
+    <br>
+    <br>
+    <br>
+
+    
+    <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
+
+    <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
+    <ul>
+        <div class="blogs">
+            <li *ngFor="let post of ProfileUser.blogPosts" >
+                <div class="blogs">
+                <p style="color: black;">
+                    {{ post }}
+                </p>
+                </div>
+            </li>
+        </div>
+    </ul>
+    <br>
+
     
 </body>
 
