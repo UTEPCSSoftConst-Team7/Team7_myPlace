@@ -81,7 +81,7 @@
         } */
     </style>
 
-       
+
 </head>
 
 <body class="ultra-mode" style="background-color: white;">
@@ -95,14 +95,14 @@
         </div>
       </div>
 
-    
+
     <div class="profilepic">
         <img [src]="ProfileUser.profilePicture" alt="Profile Picture">
     </div>
 
     <div class="username">
         <!-- TODO: Change for the actual value for username in the JSON -->
-        <h2>{{ ProfileUser.username }}</h2> 
+        <h2>{{ ProfileUser.username }}</h2>
             <div *ngIf="ProfileUser.friends">
                 <label>Friends:  {{ProfileUser.friends.length}}</label>
             </div>
@@ -115,7 +115,7 @@
     <br>
     <br>
 
-    
+
     <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
 
     <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
@@ -132,7 +132,7 @@
     </ul>
     <br>
 
-    
+
 </body>
 
 </html>
