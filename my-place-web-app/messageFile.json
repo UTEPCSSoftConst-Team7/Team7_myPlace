@@ -1,48 +1,92 @@
+[
 {
-    "messages": [
+    "Recipients": ["john_doe", "jane_doe", "sam_smith"],
+    "Messages": [
       {
-        "sender": "john_doe",
-        "content": "Hello, Jane!",
-        "type": "text",
-        "timestamp": "2023-09-18T16:30:00",
-        "recipients": ["jane_doe"]
+        "Sender": "sam_smith",
+        "content": "Hey folks!"
       },
       {
-        "sender": "jane_doe",
-        "content": "Hi John!",
-        "type": "text",
-        "timestamp": "2023-09-18T16:35:00",
-        "recipients": ["john_doe"]
+        "Sender": "john_doe",
+        "content": "Hey Man!"
+      }
+    ]
+  },
+  
+  
+  {
+    "Recipients": ["isaba3lla", "nicoJ115"],
+    "Messages": [
+      {
+        "Sender": "isaba3lla",
+        "content": "Hey litcowboykiller, what's up?"
       },
       {
-        "sender": "sam_smith",
-        "content": "Hey folks!",
-        "type": "text",
-        "timestamp": "2023-09-18T16:40:00",
-        "recipients": ["john_doe", "jane_doe", "sam_smith"]
+        "Sender": "nicoJ115",
+        "content": "I heard you're into westerns. Any recommendations?"
+      }
+    ]
+  },
+  
+  
+  {
+    "Recipients": ["isaba3lla", "litcowboykiller", "sam_smith"],
+    "Messages": [
+      {
+        "Sender": "isaba3lla",
+        "content": "Hey nicoJ115, what's going on?"
       },
       {
-        "sender": "nicoJ115",
-        "content": "Anybody up for a game?",
-        "type": "text",
-        "timestamp": "2023-09-18T17:00:00",
-        "recipients": ["john_doe", "jane_doe", "sam_smith"]
+        "Sender": "litcowboykiller",
+        "content": "Looking for some rootin' tootin' shootin' action?"
       },
       {
-        "sender": "jane_doe",
-        "content": "Sure, I'm in!",
-        "type": "text",
-        "timestamp": "2023-09-18T17:05:00",
-        "recipients": ["john_doe", "jane_doe", "sam_smith"]
+        "Sender": "sam_smith",
+        "content": "Hey Nico! Ready to hit the trail?"
+      }
+    ]
+  },
+  {
+    "Recipients": ["john_doe", "jane_doe"],
+    "Messages": [
+      {
+        "Sender": "john_doe",
+        "content": "Howdy!"
       },
       {
-        "sender": "jane_doe",
-        "content": "Here's a picture of my latest project!",
-        "type": "image",
-        "imageUrl": "project.jpg",
-        "timestamp": "2023-09-18T17:10:00",
-        "recipients": ["john_doe", "jane_doe", "sam_smith"]
+        "Sender": "jane_doe",
+        "content": "Hi Sam, how are you?"
+      }
+    ]
+  },
+  
+  {
+    "Recipients": ["john_doe", "sam_smith"],
+    "Messages": [
+      {
+        "Sender": "john_doe",
+        "content": "Hi Jane, how's it going?"
+      },
+      {
+        "Sender": "sam_smith",
+        "content": "Jane, always a pleasure to chat with you!"
+      }
+    ]
+  },
+  
+  {
+    "Recipients": ["isaba3lla", "jane_doe"],
+    "Messages": [
+      {
+        "Sender": "isaba3lla",
+        "content": "Hey john_doe, what's new?"
+      },
+      {
+        "Sender": "jane_doe",
+        "content": "Hi john_doe, how's everything?"
       }
     ]
   }
+]
+  
   
