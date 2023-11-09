@@ -1,72 +1,64 @@
 # skeleton code for the UserProfile class
 
 class UserProfile:
-    def __init__(self, username, password):
+    def __init__(self, username, password, email, bio, profile_picture, blog_post, friend_list):
         self._username = username  # type: str
         self._password = password  # type: str
-        self._preferences = {}
-        self._information = {}
-        self._settings = {}
-        self._friend_list = []
-        self._notifications = []
+        self._email = email # type: str
+        self._bio = bio # type: str
+        self._profile_picture = profile_picture # type: img
+        self._friend_list = [] # type: lst
+        self._blog_post = blog_post # type: Blog
 
     # getters and setters for UserProfile class
     ###################################################################
+
     def get_username(self):
         return self._username
 
-    def set_username(self):
-        self._username = ""
+    def set_username(self, username):
+        self._username = username
 
     def get_password(self):
         return self._password
 
-    def set_password(self):
-        self._password = ""
+    def set_password(self, password):
+        self._password = password
 
-    def get_preferences(self):
-        return self._preferences
+    def get_email(self):
+        return self._email
 
-    def set_preferences(self):
-        self._preferences = {}
+    def set_email(self, email):
+        self._email = email
 
-    def get_information(self):
-        return self._information
+    def get_bio(self):
+        return self._bio
 
-    def set_information(self):
-        self._information = {}
+    def set_bio(self, bio):
+        self._bio = bio
 
-    def get_settings(self):
-        return self._settings
+    def get_profile_pic(self):
+        return self._profile_picture
 
-    def set_settings(self):
-        self._settings = {}
+    def set_profile_pic(self, img):
+        self._profile_picture = profile_picture
 
     def get_friend_list(self):
         return self._friend_list
 
-    def set_friend_list(self):
-        self._friend_list = []
+    def set_friend_list(self, friend_list):
+        self._friend_list = friend_list
 
-    def get_notifications(self):
-        return self._notifications
+    def get_blog_post(self):
+        return self._blog_post
 
-    def set_notifications(self):
-        self._notifications = []
+    def set_blog_post(self, blog_to_be_posted):
+        self._blog_post = blog_to_be_posted
 
     ################################################################
 
     def authenticate_user(self, username, password):
         return username == self._username and password == self._password
-
-    def update_preferences(self, preferences):
-        self._preferences = preferences
-
-    def update_information(self, information):
-        self._information = information
-
-    def update_settings(self, settings):
-        self._settings = settings
 
     def add_friend(self, friend_username):
         if friend_username not in self._friend_list:
@@ -82,14 +74,14 @@ class UserProfile:
 class Admin(UserProfile):
     def __init__(self, username, password, admin_id):
         super().__init__(username, password)
-        self._admin_id = admin_id
+        self._admin_id = admin_id # type: int
 
 # getter and setter for admin ID
     def get_admin_id(self):
         return self._admin_id
 
     def set_admin_id(self):
-        self._admin_id = ""
+        self._admin_id = none
 
 # admin only function to delete a user's account (parameter: username <to be deleted>, admin_id <verification>
     @staticmethod
