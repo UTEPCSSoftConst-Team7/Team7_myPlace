@@ -7,14 +7,21 @@ from datetime import datetime
 # Create/Add to/Remove from/Delete
 
 class Message:
-    def __init__(self, sender, recipients, content, timestamp):
+    def __init__(self, m_type, sender, recipients, content, timestamp):
         self._sender = sender
         self._recipients = recipients
         self._content = content # str
         self._timestamp = timestamp
+        self._m_type = m_type # cannot use 'type' as it is a case-sensitive word for python
 
     # getters and setters for Message class
     ################################
+    def get_m_type(self):
+        return self._m_type
+
+    def set_m_type(self, _m_type):
+        self._m_type = type
+
     def get_sender(self):
         return self._sender
 
