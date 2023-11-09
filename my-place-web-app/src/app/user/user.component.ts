@@ -4,6 +4,7 @@ import { User } from '../User';
 import { UserService } from '../user.service';
 import { MyServiceService } from '../my-service.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -25,12 +26,22 @@ export class UserComponent implements OnInit {
     blogPosts: ["Painting progress","Coding my project","Going to Camp Flogna","Ban for Ban who work at MaterCard."],
     friends: [this.Friend],
   };
+  user: any;
 
 
-  constructor(private router: Router,private MyService:MyServiceService ){ }
+  constructor(private router: ActivatedRoute,private userService: UserService){ }
 
-  ngOnInit() {
-    this.grabUser();
+  ngOnInit() :void{
+    
+    const storedUser = localStorage.getItem('ProfileUser');
+    if (storedUser != null){
+      this.user = JSON.parse(storedUser);
+      var username=this.user.username
+      this.router.paramMap.subscribe(params => {
+        const username = params.get(this.user.username); // Access the route parameter 'id'
+      });
+    
+    }
 
     
   }

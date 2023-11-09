@@ -57,6 +57,7 @@ export class SearchBarComponent implements OnInit {
   search() {
     const user = this.users.find(u => u.username === this.autoFilterTop);
     if (user) {
+      // console.log(user)
       console.log(this.autoFilterTop)
       // this.router.navigate(['/user', user.username]);
     } else {
