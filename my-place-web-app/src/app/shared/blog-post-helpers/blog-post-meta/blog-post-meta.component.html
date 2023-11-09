@@ -1,0 +1,16 @@
+<div class="blog-post-meta">
+  <a [routerLink]="['/user', blogPost.author.username]">
+    <img [src]="blogPost.author.profilePicture" />
+  </a>
+
+  <div class="info">
+    <a class="author" [routerLink]="['/user', blogPost.author.username]">
+      {{ blogPost.author.username }}
+    </a>
+    <span class="date">
+      {{ blogPost.createdAt | date : "longDate" }}
+    </span>
+  </div>
+
+  <ng-content></ng-content>
+</div>

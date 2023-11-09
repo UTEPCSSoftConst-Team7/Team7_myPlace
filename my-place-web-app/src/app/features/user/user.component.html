@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head > <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.3/css/all.min.css">
+    <title>User Registration</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter";
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            font-size: 1.5vw;
+            letter-spacing: 0.02em;
+            line-height: 0.9em;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+
+        .bio {
+            position: absolute;
+            top: 100px; /* Position the bio at the top of its parent container */
+            left: 180px;
+            text-align: center; /* Center-align the text inside the bio */
+            background-color: transparent;
+            padding: 20px;
+            border: 5px solid lightblue;
+            border-radius: 10px;
+            justify-content: center; /* Horizontally center-align the content */
+            align-items: flex-start; /* Vertically align content to the top */
+        }
+
+        .banner {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .profilepic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            line-height: 150px;
+        }
+
+        h2 {
+            text-align: left;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: black;
+            text-align: left;
+            bottom: 100px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        } */
+    </style>
+
+
+</head>
+
+<body class="ultra-mode" style="background-color: white;">
+    <div class="banner">
+        <div class="left-content">
+          <h1>MyPlace</h1>
+        </div>
+        <div class="right-content">
+          <!-- <button>Button 1</button> -->
+          <button [routerLink]="['/messaging']"><i class="fa-regular fa-message"></i>Messages</button>
+        </div>
+      </div>
+
+
+    <div class="profilepic">
+        <img [src]="ProfileUser.profilePicture" alt="Profile Picture">
+    </div>
+
+    <div class="username">
+        <!-- TODO: Change for the actual value for username in the JSON -->
+        <h2>{{ ProfileUser.username }}</h2>
+            <div *ngIf="ProfileUser.friends">
+                <label>Friends:  {{ProfileUser.friends.length}}</label>
+            </div>
+    </div>
+    <!-- <app-search-bar></app-search-bar> -->
+    <div class="bio">
+        <p style="color: black ">{{ProfileUser.bio}}</p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
+
+    <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
+    <ul>
+        <div class="blogs">
+            <li *ngFor="let post of ProfileUser.blogPosts" >
+                <div class="blogs">
+                <p style="color: black;">
+                    {{ post }}
+                </p>
+                </div>
+            </li>
+        </div>
+    </ul>
+    <br>
+
+
+</body>
+
+</html>

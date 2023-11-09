@@ -1,0 +1,139 @@
+<div class="blog-post-page" *ngIf="blogPost">
+  <div class="banner">
+    <div class="container">
+      <h1>{{ blogPost.title }}</h1>
+
+      <app-blog-post-meta [blogPost]="blogPost">
+        <span *ngIf="canModify">
+          <a
+            class="btn btn-sm btn-outline-secondary"
+            [routerLink]="['/post-editor', blogPost.slug]"
+          >
+            <i class="ion-edit"></i> Edit Blog Post
+          </a>
+
+          <button
+            class="btn btn-sm btn-outline-danger"
+            [ngClass]="{ disabled: isDeleting }"
+            (click)="deleteBlogPost()"
+          >
+            <i class="ion-trash-a"></i> Delete Blog Post
+          </button>
+        </span>
+
+        <span *ngIf="!canModify">
+          <app-follow-button
+            [user]="blogPost.author"
+            (toggle)="toggleFollowing($event)"
+          >
+          </app-follow-button>
+
+          <app-favorite-button
+            [blogPost]="blogPost"
+            (toggle)="onToggleFavorite($event)"
+          >
+            {{ blogPost.favorited ? "Unfavorite" : "Favorite" }} Blog Post
+            <span class="counter">({{ blogPost.favoritesCount }})</span>
+          </app-favorite-button>
+        </span>
+      </app-blog-post-meta>
+    </div>
+  </div>
+
+  <div class="container-page">
+    <div class="row blogPost-content">
+      <div class="col-md-12">
+        <div [innerHTML]="blogPost.body"></div>
+        <ul class="tag-list">
+          <li
+            *ngFor="let tag of blogPost.tagList"
+            class="tag-default tag-pill tag-outline"
+          >
+            {{ tag }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="blog-post-actions">
+      <app-blog-post-meta [blogPost]="blogPost">
+        <span *ngIf="canModify">
+          <a
+            class="btn btn-sm btn-outline-secondary"
+            [routerLink]="['/post-editor', blogPost.slug]"
+          >
+            <i class="ion-edit"></i> Edit blog post
+          </a>
+
+          <button
+            class="btn btn-sm btn-outline-danger"
+            [ngClass]="{ disabled: isDeleting }"
+            (click)="deleteBlogPost()"
+          >
+            <i class="ion-trash-a"></i> Delete blog post
+          </button>
+        </span>
+
+        <span *ngIf="!canModify">
+          <app-follow-button
+            [user]="blogPost.author"
+            (toggle)="toggleFollowing($event)"
+          >
+          </app-follow-button>
+
+          <app-favorite-button
+            [blogPost]="blogPost"
+            (toggle)="onToggleFavorite($event)"
+          >
+            {{ blogPost.favorited ? "Unfavorite" : "Favorite" }} Blog Post
+            <span class="counter">({{ blogPost.favoritesCount }})</span>
+          </app-favorite-button>
+        </span>
+      </app-blog-post-meta>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div *appShowAuthentication="true">
+          <app-list-errors [errors]="commentFormErrors"></app-list-errors>
+          <form class="card comment-form" (ngSubmit)="addComment()">
+            <fieldset [disabled]="isSubmitting">
+              <div class="card-block">
+                <textarea
+                  class="form-control"
+                  placeholder="Write a comment..."
+                  rows="3"
+                  [formControl]="commentControl"
+                ></textarea>
+              </div>
+              <div class="card-footer">
+                <img
+                  [src]="currentUser?.profilePicture === null ? '' : currentUser?.profilePicture"
+                  class="comment-author-img"
+                />
+                <button class="btn btn-sm btn-primary" type="submit">
+                  Post Comment
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div *appShowAuthentication="false">
+          <a [routerLink]="['/signin']">Sign in</a> or
+          <a [routerLink]="['/createaccount']"> sign up</a> to add comments on this
+          blog post.
+        </div>
+
+        <blog-post-comment
+          *ngFor="let comment of comments; trackBy: trackById"
+          [comment]="comment"
+          (delete)="deleteComment(comment)"
+        >
+        </blog-post-comment>
+      </div>
+    </div>
+  </div>
+</div>
