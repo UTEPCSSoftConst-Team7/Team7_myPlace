@@ -9,7 +9,7 @@
       class="comment-author"
       [routerLink]="['/user', comment.author.username]"
     >
-      <img [src]="comment.author.profilePicture" class="comment-author-img" />
+      <img [src]="comment.author.profilePicture" class="comment-author-img" alt="Profile picture of {{ comment.author.username }}" />
     </a>
     &nbsp;
     <a
@@ -22,7 +22,7 @@
       {{ comment.createdAt | date : "longDate" }}
     </span>
     <span class="mod-options" *ngIf="canModify$ | async">
-      <i class="ion-trash-a" (click)="delete.emit(true)"></i>
+      <button class="ion-trash-a" (click)="delete.emit(true)" type="button" aria-label="Delete comment"></button>
     </span>
   </div>
 </div>

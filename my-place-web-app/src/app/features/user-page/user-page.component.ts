@@ -18,19 +18,22 @@ import { AsyncPipe, NgIf } from "@angular/common";
 
 @Component({
   selector: "app-user-page",
-  imports: [CommonModule, FollowButtonComponent,
+  imports: [
+    CommonModule,
+    FollowButtonComponent,
     NgIf,
     RouterLink,
     AsyncPipe,
     RouterLinkActive,
-    RouterOutlet,],
+    RouterOutlet,
+  ],
   templateUrl: './user-page.component.html',
-  styleUrl: './user-page.component.css',
+  styleUrls: ['./user-page.component.css'],
   standalone: true,
 })
 export class UserPageComponent implements OnInit, OnDestroy {
   user!: User;
-  isUser: boolean = false;
+  isUser = false;
   destroy$ = new Subject<void>();
 
   constructor(

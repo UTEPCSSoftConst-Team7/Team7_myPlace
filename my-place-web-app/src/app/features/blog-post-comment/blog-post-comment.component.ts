@@ -13,7 +13,7 @@ import { Comment } from "../../core/models/comment/comment.model";
   standalone: true,
   imports: [CommonModule,RouterLink, DatePipe, NgIf, AsyncPipe],
   templateUrl: './blog-post-comment.component.html',
-  styleUrl: './blog-post-comment.component.css'
+  styleUrls: ['./blog-post-comment.component.css']
 })
 
 export class BlogPostCommentComponent {

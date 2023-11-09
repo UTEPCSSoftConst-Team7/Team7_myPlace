@@ -28,7 +28,8 @@ import { Errors } from "../../core/models/errors/errors.model";
 @Component({
   selector: "app-blog-post-page",
   templateUrl: './blog-post.component.html',
-  styleUrl: './blog-post.component.css',
+  styleUrls: ['./blog-post.component.scss'],
+  providers: [BlogPostsService, CommentsService],
   imports: [
     BlogPostMetaComponent,
     RouterLink,
@@ -52,7 +53,7 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   blogPost!: BlogPost;
   currentUser!: User | null;
   comments: Comment[] = [];
-  canModify: boolean = false;
+  canModify = false;
 
   commentControl = new FormControl<string>("", { nonNullable: true });
   commentFormErrors: Errors | null = null;

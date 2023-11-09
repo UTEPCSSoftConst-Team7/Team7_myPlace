@@ -17,6 +17,8 @@ import { BlogPostComponent } from '../features/blog-post/blog-post.component';
 import { MarkdownPipe } from '../features/blog-post/markdown.pipe';
 import { TagsService } from '../core/services/tags.service';
 import { UserPageComponent } from '../features/user-page/user-page.component';
+import { AdminPageComponent } from '../features/admin-page/admin-page.component';
+import { ReadMePageComponent } from '../features/read-me-page/read-me-page.component';
 
 
 const routes: Routes = [
@@ -46,6 +48,14 @@ const routes: Routes = [
     path: 'user',
     component: UserComponent
   },
+  {
+    path: 'admin-page',
+    component: AdminPageComponent
+  },
+  {
+    path: 'read-me-page',
+    component: ReadMePageComponent
+  }
 
   ];
 

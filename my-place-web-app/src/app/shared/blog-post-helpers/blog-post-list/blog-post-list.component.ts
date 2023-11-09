@@ -26,6 +26,7 @@ export class BlogPostListComponent implements OnDestroy {
   destroy$ = new Subject<void>();
 
   @Input() limit!: number;
+blogPost: BlogPost | undefined;
   @Input()
   set config(config: UserPostsConfig) {
     if (config) {

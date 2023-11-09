@@ -44,6 +44,7 @@
   <body class="home-page ultra-mode home-page-js">
     <header class="ui">
       <a
+        [routerLink]="''"
         class="logo"
         href="https://github.com/UTEPCSSoftConst-Team7/Team7_myPlace"
       >
@@ -113,7 +114,7 @@
           <!-- Admins Page hotlink -->
           <div class="credits">
             <div class="credit-link">
-              <a class="no-barba" href="" target="_blank" rel="noopener">
+              <a [routerLink]="'/admin-page'"class="no-barba" href="" target="_blank" rel="noopener">
                 <strong>[ADMIN]</strong>
               </a>
             </div>
@@ -177,7 +178,7 @@
 
                   <li class="projectsLi" data-barba="HomeTransition">
                     <div class="projectContainer">
-                      <a href="./" data-info="Docs" data-barba="HomeTransition">
+                      <a [routerLink]="'/read-me-page'" data-info="Docs" data-barba="HomeTransition">
                         ReadMe
                       </a>
                     </div>

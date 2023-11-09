@@ -29,8 +29,9 @@ interface BlogPostForm {
   standalone: true,
   imports: [CommonModule, ListErrorsComponent, ReactiveFormsModule, NgForOf],
   templateUrl: './post-editor.component.html',
-  styleUrl: './post-editor.component.css'
+  styleUrls: ['./post-editor.component.css'],
 })
+
 export class PostEditorComponent implements OnInit, OnDestroy {
   tagList: string[] = [];
   blogPostForm: UntypedFormGroup = new FormGroup<BlogPostForm>({
