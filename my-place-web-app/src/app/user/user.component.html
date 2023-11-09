@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head > <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>User Registration</title>
     <style>
@@ -20,19 +18,6 @@
             height: 100vh;
         }
 
-        .bio {
-            position: absolute;
-            top: 100px; /* Position the bio at the top of its parent container */
-            left: 180px;
-            text-align: center; /* Center-align the text inside the bio */
-            background-color: transparent;
-            padding: 20px;
-            border: 5px solid lightblue;
-            border-radius: 10px;
-            justify-content: center; /* Horizontally center-align the content */
-            align-items: flex-start; /* Vertically align content to the top */
-        }
-
         .banner {
             background-color: #007bff;
             color: white;
@@ -42,17 +27,66 @@
             padding: 10px;
         }
 
+        .left-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .right-content {
+            display: flex;
+            gap: 10px;
+        }
+
+        .left-content img {
+            margin-right: 5px; /* Add spacing between the logo and header */
+        }
+
+        .userspecs {
+            display: flex;
+            align-items: center;
+        }
+
         .profilepic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
             line-height: 150px;
+            /* margin-bottom: 20px; */
+        }
+
+        .bio {
+            position: relative; /* Change to relative to banner*/
+            margin-left: 100px;
+            /* gap: 20px; */
+            text-align: center;
+            background-color: transparent;
+            padding: 20px;
+            border: 5px solid lightblue;
+            border-radius: 10px;
+            flex: 1;
         }
 
         h2 {
             text-align: left;
             color: darkblue;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 30px;
+            font-size: 60px;
+            font-family: 'Trebuchet MS', sans-serif;
+
+        }
+
+        h3{
+            color: white;
+            background-color: lightblue;
+            text-align: left;
+            top: 0;
+            height: 10;
+
         }
 
         label {
@@ -87,30 +121,38 @@
 <body class="ultra-mode" style="background-color: white;">
     <div class="banner">
         <div class="left-content">
-          <h1>MyPlace</h1>
+          <img src="assets/test1.png" alt="logo" width="115px" height="115px">
+          <h1>myplace</h1>
         </div>
         <div class="right-content">
-          <!-- <button>Button 1</button> -->
-          <button><i class="fa-regular fa-message"></i>Messages</button>
+          <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
+          <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
       </div>
 
-    
-    <div class="profilepic">
-        <img [src]="ProfileUser.profilePicture" alt="Profile Picture">
-    </div>
-
-    <div class="username">
-        <!-- TODO: Change for the actual value for username in the JSON -->
-        <h2>{{ ProfileUser.username }}</h2> 
+    <div class="userspecs">
+        
+        <div class="userprofile">
+            <!-- TODO: Change for the actual value for username in the JSON -->
+            <ng-template #defaultImage>
+                <img src="assets/pizzabella.png" alt="Default Profile Picture">
+              </ng-template>
+            <div class="profilepic">
+                <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
+            </div>
+            <h2>{{ ProfileUser.username }}</h2> 
             <div *ngIf="ProfileUser.friends">
                 <label>Friends:  {{ProfileUser.friends.length}}</label>
             </div>
+        </div>
+        <div class="bio">
+            <h3>My Bio</h3>
+            <p style="color: black ">{{ProfileUser.bio}}</p>
+        </div>    
     </div>
+    
     <!-- <app-search-bar></app-search-bar> -->
-    <div class="bio">
-        <p style="color: black ">{{ProfileUser.bio}}</p>
-    </div>
+    
     <br>
     <br>
     <br>
