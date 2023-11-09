@@ -11,7 +11,7 @@ class Multimedia:
     # getters and setters for Multimedia class
     ################################
 
-    def get_file(self):\
+    def get_file(self):
         return self.file
 
     def set_file(self, file):
