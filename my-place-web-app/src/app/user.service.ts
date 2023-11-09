@@ -8,12 +8,29 @@ import { User } from './User';
   providedIn: 'root'
 })
 export class UserService {
-  private usersUrl = 'assets/users.json';
+  private usersUrl = 'assets/UserFile.json';
+  private messageUrl = 'assets/messageFile.json'
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.usersUrl);
+  }
+
+  getMessages(): Observable<any[]> {
+    return this.http.get<any[]>(this.messageUrl);
+  }
+
+  storeUsersInLocalStorage() {
+    this.getUsers().subscribe(data => {
+      localStorage.setItem('users', JSON.stringify(data));
+    });
+  }
+
+  storeMessagesInLocalStorage() {
+    this.getMessages().subscribe(data => {
+      localStorage.setItem('messages', JSON.stringify(data));
+    });
   }
   
 }

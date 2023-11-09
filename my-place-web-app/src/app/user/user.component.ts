@@ -1,6 +1,9 @@
 import { Component,OnInit } from '@angular/core';
-import { SearchBarComponent } from '../search-bar/search-bar.component';
+// import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { User } from '../User';
+import { UserService } from '../user.service';
+import { MyServiceService } from '../my-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -24,17 +27,19 @@ export class UserComponent implements OnInit {
   };
 
 
+  constructor(private router: Router,private MyService:MyServiceService ){ }
 
   ngOnInit() {
-    this.grabUser()
+    this.grabUser();
+
     
   }
 
   grabUser(){
   //  this.ProfileUser= localStorage.getItem('profileUser')
    this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
-   
-
   }
+
+
 
 }

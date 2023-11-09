@@ -1,9 +1,22 @@
-<p>search-bar works!</p>
 
-<!-- <div class="search-container">
-    <input type="text" 
-    (input)="onSearchInputChange($event)" 
-    placeholder="Search by username" />
-    <button (click)="search()">Search</button>
-</div> -->
+<div>
+    <input
+        required
+        [(ngModel)]="inputText" name="inputField"
+        (ngModelChange)="onInputChange($event, inputModel)"
+        #inputModel="ngModel"
+    /> 
+    <button (click)="search()">Search User</button>
+    <br>
+    <ul>
+        <div class="blogs">
+            <li *ngFor="let post of filteredOptions" >
+                <p style="color: black;">
+                    {{post}}
+                </p>
+            </li>
+        </div>
+    </ul>
+  </div>
+
 
