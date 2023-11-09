@@ -116,6 +116,7 @@ class UserProfile:
         except type_error:
             print("Profile picture must be of type: png,jpg, or jpeg")
 
+    # todo: implement logic for creating a new blog post (including exception handling)
     def new_blog_post(self, blog_post):
         pass
 
@@ -151,7 +152,7 @@ class Admin(UserProfile):
     def delete_post(post_id):
         # Implement logic to delete a post, e.g., from a database
         # try and except for validating admin account
-        # todo: implement removal designated username user_profile from database
+        # todo: implement removal designated post from database
         try:
             if validate_admin_id(admin_id):
                 pass
@@ -160,12 +161,10 @@ class Admin(UserProfile):
 
 # <param> user profile whose information will be retrieved
 # allows outside classes to retrieve a user account's information
-@staticmethod
 def get_information(user_profile):
     return user_profile.get_information()
 
 # <param> user profile to be verified, admin_id unique to only admin user accounts
 # validates if user is an admin to allow for use of deletion functionality
-@staticmethod
 def validate_admin_id(user_profile, admin_id):
     return admin_id in user_profile.get_information()

@@ -45,20 +45,24 @@ class Multimedia:
 
     # allows users to react/like a multimedia content item
     # <param> int likes attribute of media object
+    # todo: implement logic for a post to receive likes
     def react_to_content(self, likes):
         pass
 
     # allows users to upload multimedia content
     # <param> file to be uploaded
+    # todo: implement logic to upload media
     def upload_media(self, file):
         pass
 
     # allows users to remove uploaded multimedia content
     # <param> file to be removed
+    # todo: implement logic to remove data
     def remove_media(self, file):
         pass
 
     # allows users to set a song or video for their profile
     # <param> file to be set
+    # todo: implement logic to set a song or video as a profile
     def set_profile_song_or_video(self, file):
         pass

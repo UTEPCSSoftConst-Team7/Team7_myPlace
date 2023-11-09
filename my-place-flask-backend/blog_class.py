@@ -39,9 +39,11 @@ class Blog:
 
     # comment_on_blog: <params> comment: str, user: user_profile, post: post user is commenting on
     # adds an entry to the comment list of a post
+    # todo: implement logic to receive comments on a blog post
     def comment_on_blog(self, comment, user, blog_id):
         pass
 
     # edit_blog_entry: <params> blog_id: identifier of the blog to be edited
+    # todo: implement logic to edit a blog entry
     def edit_blog_entry(self, blog_id):
         pass
