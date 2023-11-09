@@ -44,17 +44,21 @@ class Multimedia:
     ######################################
 
     # allows users to react/like a multimedia content item
-    def react_to_content(self):
+    # <param> int likes attribute of media object
+    def react_to_content(self, likes):
         pass
 
     # allows users to upload multimedia content
-    def upload_media(self):
+    # <param> file to be uploaded
+    def upload_media(self, file):
         pass
 
     # allows users to remove uploaded multimedia content
-    def remove_media(self):
+    # <param> file to be removed
+    def remove_media(self, file):
         pass
 
     # allows users to set a song or video for their profile
-    def set_profile_song_or_video(self):
+    # <param> file to be set
+    def set_profile_song_or_video(self, file):
         pass
