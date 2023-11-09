@@ -12,38 +12,31 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Aligns children (messages) to the center */
   background-color: #ff6d00; /* Slightly lighter orange for the messages display */
+  width: 100%;
 }
 
 .message {
-  max-width: 60%; /* Maximum width of the message bubble */
-  min-width: 10%; /* Minimum width to ensure small messages don't look too tiny */
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Space between messages */
   padding: 10px;
+  background-color: #ffffff; /* White background for individual messages */
+  color: #333; /* Dark text for messages */
   border-radius: 15px;
-  display: flex;
+  display: block; /* Changed from flex to block */
   word-wrap: break-word;
+  overflow-wrap: break-word; /* Ensures the text breaks to prevent overflow */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 4px; /* Space between messages */
-  border: 1px solid #ddd; /* Subtle border for separation */
+  max-width: 45%; /* Maximum width of the message bubble before text wraps */
+  min-width: 10%; /* Minimum width to ensure small messages don't look too tiny */
 }
 
 .from-me {
   align-self: flex-end; /* Aligns the user's messages to the right */
-  background-color: #ffffff; /* White background for the user's messages */
-  color: #333; /* Dark text for readability */
 }
 
 .from-them {
   align-self: flex-start; /* Aligns other messages to the left */
   background-color: #e0e0e0; /* Light grey background for others' messages */
-  color: #333; /* Dark text for readability */
-}
-
-/* Stylistic separator for messages */
-.message + .message {
-  border-top: 1px solid #f3f3f3; /* Light border for separation */
 }
 
 .message-input-container {
@@ -66,14 +59,6 @@
 .message-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #ffffff;
   opacity: 1; /* Firefox */
-}
-
-.message-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #ffffff;
-}
-
-.message-input::-ms-input-placeholder { /* Microsoft Edge */
-  color: #ffffff;
 }
 
 .send-button {
