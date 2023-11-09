@@ -1,5 +1,6 @@
-# skeleton code for the UserProfile class
+from PIL import Image
 
+# class UserProfile
 class UserProfile:
     def __init__(self, username, password, email, bio, profile_picture, blog_post, friend_list):
         self._username = username  # type: str
@@ -57,20 +58,69 @@ class UserProfile:
 
     ################################################################
 
+    # <param> username, password
+    # authenticates the user as a member of the my_place_platform
     def authenticate_user(self, username, password):
-        return username == self._username and password == self._password
+        try:
+            return username == self._username and password == self._password
+        except key_error:
+            print("Authentication failed: please try again")
+        except invalid_user_error:
+            print("User not found: please try again")
 
+    # <param> username of user to be added to friend list of current user
+    # attempts to add the desired user to friend list of current user
     def add_friend(self, friend_username):
-        if friend_username not in self._friend_list:
-            self._friend_list.append(friend_username)
+        try:
+            if friend_username not in self._friend_list:
+                self._friend_list.append(friend_username)
+        except already_in_friend_list_error:
+            print("User already a part of friend list")
+        except not_found_error:
+            print("User not found")
 
+    # <param> username of user to be removed from the friend list of current user
+    # attempts to remove the desired user from the friend list of the current user
     def remove_friend(self, friend_username):
-        if friend_username in self._friend_list:
-            self._friend_list.remove(friend_username)
+        try:
+            if friend_username in self._friend_list:
+                self._friend_list.remove(friend_username)
+        except not_found_error:
+            print("User not found in friend list")
+
+    # <param> string containing user's new profile bio
+    # changes the current user's profile bio
+    def update_bio(self, new_bio):
+        try:
+            if type(new_bio) == str:
+                self._bio = new_bio
+        except type_error:
+            print("Bio must be a string")
+
+    # <param> string containing user's new email
+    # changes the current user's email
+    def update_email(self, new_email):
+        try:
+            if (type(new_email) == str and
+                    ("gmail.com" in self._email or "outlook.com" in self._email or "miners.utep.edu" in self._email)):
+                self._email = new_email
+        except type_error:
+            print("Invalid string: must contain valid email domain")
+
+    # <param> string containing user's new profile picture
+    # changes the current user's profile picture
+    def update_profile_picture(self, new_profile_picture):
+        try:
+            if ".png" in new_profile_picture or ".jpg" in new_profile_picture or ".jpeg" in new_profile_picture:
+                self._profile_picture = new_profile_picture
+        except type_error:
+            print("Profile picture must be of type: png,jpg, or jpeg")
+
+    def new_blog_post(self, blog_post):
+        pass
 
 
-# skeleton code for subclass: Admin
-
+# class Admin: subclass of UserProfile
 class Admin(UserProfile):
     def __init__(self, username, password, admin_id):
         super().__init__(username, password)
@@ -97,14 +147,25 @@ class Admin(UserProfile):
 
 
 # <possible> admin only function to delete a post (parameter: post_id <to be deleted, admin_id <verification>
-    def delete_post(self, post_id):
+    @staticmethod
+    def delete_post(post_id):
         # Implement logic to delete a post, e.g., from a database
-        pass
+        # try and except for validating admin account
+        # todo: implement removal designated username user_profile from database
+        try:
+            if validate_admin_id(admin_id):
+                pass
+        except validate_admin_id(admin_id) == False:
+            print("Invalid admin_id passed, please try again")
 
-
+# <param> user profile whose information will be retrieved
 # allows outside classes to retrieve a user account's information
+@staticmethod
 def get_information(user_profile):
     return user_profile.get_information()
 
+# <param> user profile to be verified, admin_id unique to only admin user accounts
+# validates if user is an admin to allow for use of deletion functionality
+@staticmethod
 def validate_admin_id(user_profile, admin_id):
     return admin_id in user_profile.get_information()
