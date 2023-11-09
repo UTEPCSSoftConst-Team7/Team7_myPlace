@@ -34,8 +34,10 @@ export class UserComponent implements OnInit {
   ngOnInit() :void{
     
     const storedUser = localStorage.getItem('ProfileUser');
+    
     if (storedUser != null){
-      this.user = JSON.parse(storedUser);
+      this.ProfileUser=JSON.parse(storedUser)
+      // this.user = JSON.parse(storedUser);
       var username=this.user.username
       this.router.paramMap.subscribe(params => {
         const username = params.get(this.user.username); // Access the route parameter 'id'
