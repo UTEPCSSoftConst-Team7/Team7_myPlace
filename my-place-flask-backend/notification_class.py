@@ -1,6 +1,7 @@
 # skeleton for the notification class
 import user_profile_class
 
+
 class Notification:
     def __init__(self, notification_type, content, user_profile, viewed):
         self._notification_type = notification_type

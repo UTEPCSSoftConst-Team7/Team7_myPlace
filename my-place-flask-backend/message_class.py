@@ -1,6 +1,7 @@
 import user_profile_class
 from datetime import datetime
 
+
 # Direct Messaging:
 # Send Message
 # Receive message
@@ -10,9 +11,9 @@ class Message:
     def __init__(self, m_type, sender, recipients, content, timestamp):
         self._sender = sender
         self._recipients = recipients
-        self._content = content # str
+        self._content = content  # str
         self._timestamp = timestamp
-        self._m_type = m_type # cannot use 'type' as it is a case-sensitive word for python
+        self._m_type = m_type  # cannot use 'type' as it is a case-sensitive word for python
 
     # getters and setters for Message class
     ################################

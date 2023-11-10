@@ -1,11 +1,13 @@
 import user_profile_class
 from datetime import datetime
+
+
 class Blog:
     def __init__(self, comments, content, blog_id, blog_info):
-        self._comments = comments # dictionary: key: value <user(user_profile_class): comment(str)>
-        self._content = content # img, mp4, mp3, etc
-        self._blog_id = blog_id # int: unique identifier for a blog
-        self._blog_info = blog_info # dictionary: key: value <metadata: metadata details>
+        self._comments = comments  # dictionary: key: value <user(user_profile_class): comment(str)>
+        self._content = content  # img, mp4, mp3, etc
+        self._blog_id = blog_id  # int: unique identifier for a blog
+        self._blog_info = blog_info  # dictionary: key: value <metadata: metadata details>
 
     # getters and setters for Blog class
     ################################
@@ -35,6 +37,7 @@ class Blog:
 
     def set_content(self, content):
         self._content = content
+
     #################################
 
     # comment_on_blog: <params> comment: str, user: user_profile, post: post user is commenting on

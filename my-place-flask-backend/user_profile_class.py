@@ -1,15 +1,16 @@
 from PIL import Image
 
+
 # class UserProfile
 class UserProfile:
     def __init__(self, username, password, email, bio, profile_picture, blog_post, friend_list):
         self._username = username  # type: str
         self._password = password  # type: str
-        self._email = email # type: str
-        self._bio = bio # type: str
-        self._profile_picture = profile_picture # type: img
-        self._friend_list = [] # type: lst
-        self._blog_post = blog_post # type: Blog
+        self._email = email  # type: str
+        self._bio = bio  # type: str
+        self._profile_picture = profile_picture  # type: img
+        self._friend_list = []  # type: lst
+        self._blog_post = blog_post  # type: Blog
 
     # getters and setters for UserProfile class
     ###################################################################
@@ -92,7 +93,7 @@ class UserProfile:
     # changes the current user's profile bio
     def update_bio(self, new_bio):
         try:
-            if type(new_bio) == str:
+            if type(new_bio) is str:
                 self._bio = new_bio
         except type_error:
             print("Bio must be a string")
@@ -101,7 +102,7 @@ class UserProfile:
     # changes the current user's email
     def update_email(self, new_email):
         try:
-            if (type(new_email) == str and
+            if (type(new_email) is str and
                     ("gmail.com" in self._email or "outlook.com" in self._email or "miners.utep.edu" in self._email)):
                 self._email = new_email
         except type_error:
@@ -116,8 +117,12 @@ class UserProfile:
         except type_error:
             print("Profile picture must be of type: png,jpg, or jpeg")
 
-    # todo: implement logic for creating a new blog post (including exception handling)
     def new_blog_post(self, blog_post):
+        try:
+            if type(blog_post) is str and blog_post is not None:
+                self._blog_post = blog_post
+        except TypeError:
+            print("Blog post must be of type string and not empty")
         pass
 
 
@@ -125,16 +130,16 @@ class UserProfile:
 class Admin(UserProfile):
     def __init__(self, username, password, admin_id):
         super().__init__(username, password)
-        self._admin_id = admin_id # type: int
+        self._admin_id = admin_id  # type: int
 
-# getter and setter for admin ID
+    # getter and setter for admin ID
     def get_admin_id(self):
         return self._admin_id
 
     def set_admin_id(self):
         self._admin_id = none
 
-# admin only function to delete a user's account (parameter: username <to be deleted>, admin_id <verification>
+    # admin only function to delete a user's account (parameter: username <to be deleted>, admin_id <verification>
     @staticmethod
     def delete_user_account(username, admin_id):
         # Implement logic to delete a user account, e.g., from a database
@@ -143,11 +148,10 @@ class Admin(UserProfile):
         try:
             if validate_admin_id(admin_id):
                 pass
-        except validate_admin_id(admin_id) == False:
+        except validate_admin_id(admin_id) is False:
             print("Invalid admin_id passed, please try again")
 
-
-# <possible> admin only function to delete a post (parameter: post_id <to be deleted, admin_id <verification>
+    # <possible> admin only function to delete a post (parameter: post_id <to be deleted, admin_id <verification>
     @staticmethod
     def delete_post(post_id):
         # Implement logic to delete a post, e.g., from a database
@@ -156,13 +160,15 @@ class Admin(UserProfile):
         try:
             if validate_admin_id(admin_id):
                 pass
-        except validate_admin_id(admin_id) == False:
+        except validate_admin_id(admin_id) is False:
             print("Invalid admin_id passed, please try again")
+
 
 # <param> user profile whose information will be retrieved
 # allows outside classes to retrieve a user account's information
 def get_information(user_profile):
     return user_profile.get_information()
+
 
 # <param> user profile to be verified, admin_id unique to only admin user accounts
 # validates if user is an admin to allow for use of deletion functionality
