@@ -14,6 +14,7 @@ import { MessagingComponent } from './messaging/messaging.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
+import { MessageListComponent } from './message-list/message-list.component';
 
 
 
@@ -29,6 +30,7 @@ import { UserComponent } from './user/user.component';
     CreateAccountComponent,
     SignInComponent,
     UserComponent,
+    MessageListComponent,
   ],
   imports: [
     HttpClientModule,

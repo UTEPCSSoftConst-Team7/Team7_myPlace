@@ -6,6 +6,7 @@ import { MessagingComponent } from './messaging/messaging.component';
 import { CreateAccountComponent } from './create-account/create-account.component'; 
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
+import { MessageListComponent } from './message-list/message-list.component';
 
 const routes: Routes = [
   { 
@@ -32,7 +33,9 @@ const routes: Routes = [
     path: 'user', 
     component: UserComponent
   },
-
+  { 
+    path: 'message-list', component: MessageListComponent 
+  },
 ];
 
 @NgModule({
