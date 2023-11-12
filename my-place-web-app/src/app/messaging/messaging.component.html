@@ -1,13 +1,18 @@
 <div class="messaging-container">
-    <div class="messages-display">
-      <div class="message" *ngFor="let message of messages" [ngClass]="{'from-me': message.fromMe, 'from-them': !message.fromMe}">
-        <span class="username">{{ message.username }}:</span>
-        <span class="text">{{ message.text }}</span>
-      </div>
-    </div>
-    <div class="message-input-container">
-      <input type="text" class="message-input" placeholder="Type a message..." />
-      <button class="send-button">Send</button>
+  <!-- Main container for the messaging component -->
+  <div class="messages-display">
+    <!-- Container for displaying messages -->
+    <div *ngFor="let message of messages" class="message" [ngClass]="{'from-me': message.sender === currentUser, 'from-them': message.sender !== currentUser}">
+      <!-- Iterates over each message and applies different classes based on the sender -->
+      {{ message.content }}
+      <!-- Displays the message content -->
     </div>
   </div>
-  
+  <div class="message-input-container">
+    <!-- Container for the input field and send button -->
+    <input [(ngModel)]="newMessage" class="message-input" type="text" placeholder="Type a message...">
+    <!-- Input field bound to the newMessage property -->
+    <button (click)="sendMessage()" class="send-button">Send</button>
+    <!-- Button to trigger the sendMessage function -->
+  </div>
+</div>

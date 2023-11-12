@@ -1,93 +1,76 @@
 .messaging-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: #ff5722; /* Dark orange background for the entire container */
-  font-family: 'Arial', sans-serif;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #ff5722; /* Background color */
+  font-family: 'Arial', sans-serif; /* Font style */
 }
 
 .messages-display {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow-y: auto; /* Allows scrolling for overflow content */
   padding: 20px;
   display: flex;
   flex-direction: column;
-  background-color: #ff6d00; /* Slightly lighter orange for the messages display */
+  background-color: #ff6d00; /* Slightly different background color for contrast */
   width: 100%;
 }
 
 .message {
-  margin-bottom: 10px; /* Space between messages */
+  margin-bottom: 10px;
   padding: 10px;
-  background-color: #ffffff; /* White background for individual messages */
-  color: #333; /* Dark text for messages */
-  border-radius: 15px;
-  display: block; /* Changed from flex to block */
-  word-wrap: break-word;
-  overflow-wrap: break-word; /* Ensures the text breaks to prevent overflow */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 45%; /* Maximum width of the message bubble before text wraps */
-  min-width: 10%; /* Minimum width to ensure small messages don't look too tiny */
+  background-color: #ffffff; /* White background for messages */
+  color: #333; /* Dark text color for readability */
+  border-radius: 15px; /* Rounded corners for message bubbles */
+  display: block;
+  word-wrap: break-word; /* Ensures long words don't overflow */
+  overflow-wrap: break-word; /* Ensures text wraps within the bubble */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 45%; /* Maximum width of message bubbles */
+  min-width: 10%; /* Minimum width of message bubbles */
 }
 
 .from-me {
-  align-self: flex-end; /* Aligns the user's messages to the right */
+  align-self: flex-end; /* Aligns current user's messages to the right */
 }
 
 .from-them {
-  align-self: flex-start; /* Aligns other messages to the left */
-  background-color: #e0e0e0; /* Light grey background for others' messages */
+  align-self: flex-start; /* Aligns other users' messages to the left */
+  background-color: #e0e0e0; /* Different background for other users' messages */
 }
 
 .message-input-container {
   display: flex;
   padding: 10px;
-  background-color: #e64a19; /* Darker shade of orange for the input area */
+  background-color: #e64a19; /* Background color for the input area */
 }
 
 .message-input {
-  flex-grow: 1;
+  flex-grow: 1; /* Allows the input field to grow and fill available space */
   padding: 10px;
   margin-right: 10px;
-  border: 1px solid #ffffff; /* White border for the input */
-  border-radius: 20px;
-  outline: none;
-  color: #ffffff; /* White text for input */
-  background-color: transparent; /* Let the container color show through */
+  border: 1px solid #ffffff; /* White border for the input field */
+  border-radius: 20px; /* Rounded corners for the input field */
+  outline: none; /* Removes the default focus outline */
+  color: #ffffff; /* White text color */
+  background-color: transparent; /* Transparent background */
 }
 
-.message-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #ffffff;
-  opacity: 1; /* Firefox */
+.message-input::placeholder {
+  color: #ffffff; /* White color for placeholder text */
+  opacity: 1; /* Fully opaque placeholder text */
 }
 
 .send-button {
   padding: 10px 20px;
-  background-color: #ffffff; /* White background for send button */
-  color: #ff5722; /* Dark orange text for send button */
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #ffffff; /* White background for the send button */
+  color: #ff5722; /* Color that matches the main theme */
+  border: none; /* No border for the button */
+  border-radius: 20px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 .send-button:hover {
-  background-color: #cccccc; /* Light gray on hover for send button */
-}
-
-/* Scrollbar styles for the messages display */
-.messages-display::-webkit-scrollbar {
-  width: 5px;
-}
-
-.messages-display::-webkit-scrollbar-track {
-  background: #e64a19; /* Darker shade of orange for scrollbar track */
-}
-
-.messages-display::-webkit-scrollbar-thumb {
-  background: #ffffff; /* White for scrollbar thumb */
-}
-
-.messages-display::-webkit-scrollbar-thumb:hover {
-  background: #cccccc; /* Light gray on hover for scrollbar thumb */
+  background-color: #cccccc; /* Color change on hover for visual feedback */
 }

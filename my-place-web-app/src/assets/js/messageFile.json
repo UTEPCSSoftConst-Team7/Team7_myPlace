@@ -1,0 +1,92 @@
+[
+    {
+        "Recipients": ["john_doe", "jane_doe", "sam_smith"],
+        "Messages": [
+          {
+            "Sender": "sam_smith",
+            "content": "Hey folks!"
+          },
+          {
+            "Sender": "john_doe",
+            "content": "Hey Man!"
+          }
+        ]
+      },
+      
+      
+      {
+        "Recipients": ["isaba3lla", "nicoJ115"],
+        "Messages": [
+          {
+            "Sender": "isaba3lla",
+            "content": "Hey litcowboykiller, what's up?"
+          },
+          {
+            "Sender": "nicoJ115",
+            "content": "I heard you're into westerns. Any recommendations?"
+          }
+        ]
+      },
+      
+      
+      {
+        "Recipients": ["isaba3lla", "litcowboykiller", "sam_smith"],
+        "Messages": [
+          {
+            "Sender": "isaba3lla",
+            "content": "Hey nicoJ115, what's going on?"
+          },
+          {
+            "Sender": "litcowboykiller",
+            "content": "Looking for some rootin' tootin' shootin' action?"
+          },
+          {
+            "Sender": "sam_smith",
+            "content": "Hey Nico! Ready to hit the trail?"
+          }
+        ]
+      },
+      {
+        "Recipients": ["john_doe", "jane_doe"],
+        "Messages": [
+          {
+            "Sender": "john_doe",
+            "content": "Howdy!"
+          },
+          {
+            "Sender": "jane_doe",
+            "content": "Hi Sam, how are you?"
+          }
+        ]
+      },
+      
+      {
+        "Recipients": ["john_doe", "sam_smith"],
+        "Messages": [
+          {
+            "Sender": "john_doe",
+            "content": "Hi Jane, how's it going?"
+          },
+          {
+            "Sender": "sam_smith",
+            "content": "Jane, always a pleasure to chat with you!"
+          }
+        ]
+      },
+      
+      {
+        "Recipients": ["isaba3lla", "jane_doe"],
+        "Messages": [
+          {
+            "Sender": "isaba3lla",
+            "content": "Hey john_doe, what's new?"
+          },
+          {
+            "Sender": "jane_doe",
+            "content": "Hi john_doe, how's everything?"
+          }
+        ]
+      }
+    ]
+      
+      
