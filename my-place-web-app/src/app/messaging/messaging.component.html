@@ -10,7 +10,7 @@
   </div>
   <div class="message-input-container">
     <!-- Container for the input field and send button -->
-    <input [(ngModel)]="newMessage" class="message-input" type="text" placeholder="Type a message...">
+    <input [(ngModel)]="newMessage" class="message-input" type="text" placeholder="Type a message..." (keydown.enter)="sendMessage()">
     <!-- Input field bound to the newMessage property -->
     <button (click)="sendMessage()" class="send-button">Send</button>
     <!-- Button to trigger the sendMessage function -->
