@@ -1,5 +1,28 @@
-/* Basic styling for now, can be expanded later */
 .message-list-container {
     padding: 20px;
-    text-align: center;
+    color: #fff;
+    background-color: #ff7f50; /* Orange theme */
+}
+
+.message-preview {
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.participants {
+    color: #ff7f50;
+}
+
+.last-message {
+    color: #666;
+    font-size: 0.9em;
 }

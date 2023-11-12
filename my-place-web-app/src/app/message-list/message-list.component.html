@@ -1,3 +1,11 @@
 <div class="message-list-container">
-    <h2>Message List Works!</h2>
+    <h2>Your Messages</h2>
+    <div class="message-preview" *ngFor="let messageGroup of messageGroups">
+        <div class="message-header">
+            <span class="participants">{{ messageGroup.participants }}</span>
+        </div>
+        <div class="last-message">
+            {{ messageGroup.lastMessage }}
+        </div>
+    </div>
 </div>
