@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "team7-myplace"
+  }
+}

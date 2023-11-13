@@ -1,0 +1,27 @@
+<app-blog-post-preview *ngFor="let blog-post of results" [blogPost]="blogPost">
+</app-blog-post-preview>
+
+<div class="blog-post-preview" *ngIf="loading === LoadingState.LOADING">
+  Loading blog posts...
+</div>
+
+<div
+  class="blog-post-preview"
+  *ngIf="loading === LoadingState.LOADED && !results.length"
+>
+  No tunes heard here... yet.
+</div>
+
+<nav *ngIf="loading === LoadingState.LOADED && totalPages.length > 1">
+  <ul class="pagination">
+    <li
+      class="page-item"
+      [ngClass]="{ active: pageNumber === currentPage }"
+      *ngFor="let pageNumber of totalPages"
+    >
+      <button class="page-link" (click)="setPageTo(pageNumber)">
+        {{ pageNumber }}
+      </button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,59 @@
+<div class="user-page" *ngIf="user">
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <img [src]="user.profilePicture" class="user-img" />
+          <h4>{{ user.username }}</h4>
+          <p>{{ user.bio }}</p>
+          <app-follow-button
+            *ngIf="!isUser"
+            [user]="user"
+            (toggle)="onToggleFollowing($event)"
+          >
+          </app-follow-button>
+          <a
+            [routerLink]="['/settings']"
+            *ngIf="isUser"
+            class="btn btn-sm btn-outline-secondary action-btn"
+          >
+            <i class="ion-gear-a"></i> Edit Profile Settings
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <div class="blog-posts-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/user', user.username]"
+              >
+                My Posts
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/user', user.username, 'favorites']"
+              >
+                Favorited Posts
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

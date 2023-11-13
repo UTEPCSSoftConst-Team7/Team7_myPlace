@@ -1,0 +1,13 @@
+.blogs {
+  top: 100px; /* Position the bio at the top of its parent container */
+  left: 180px;
+  text-align: center;
+  margin: 0 auto; /* This centers the container horizontally */
+  max-width: 600px; /* Adjust the max-width as needed */
+  background-color: transparent;
+  padding: 20px;
+  border: 5px solid lightblue;
+  border-radius: 10px;
+  justify-content: center; /* Horizontally center-align the content */
+  align-items: flex-start;
+}

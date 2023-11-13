@@ -67,4 +67,6 @@ node_modules/
 my-place-web-app/angular.json
 package.json
 package-lock.json
+.venv
 my-place-web-app/angular.json
+
