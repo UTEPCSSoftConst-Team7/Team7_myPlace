@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-// import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { User } from '../User';
 import { UserService } from '../user.service';
 import { MyServiceService } from '../my-service.service';

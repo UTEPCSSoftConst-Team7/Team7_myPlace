@@ -16,6 +16,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FriendComponent } from './friend/friend.component';
 
 
 
@@ -33,6 +34,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     SignInComponent,
     UserComponent,
     SearchBarComponent,
+    FriendComponent,
   ],
   imports: [
     BrowserModule,

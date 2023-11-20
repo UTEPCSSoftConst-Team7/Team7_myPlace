@@ -134,9 +134,9 @@
     <div class="userspecs">
         
         <div class="userprofile">
-            <!-- TODO: Change for the actual value for username in the JSON -->
+           
             <ng-template #defaultImage>
-                <img src="assets/pizzabella.png" alt="Default Profile Picture">
+                <img src="assets/joji.png" alt="Default Profile Picture">
               </ng-template>
             <div class="profilepic">
                 <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
@@ -154,15 +154,17 @@
 
         <br>
     </div>
-    
-    <app-search-bar></app-search-bar>
+    <br>
+    <br>
+    <button mat-raised-button color="primary" class="medium-button" (click)="sendBack()">Add me</button>
+
     
     <br>
     <br>
     <br>
 
     
-    <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
+    <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2>  -->
 
     <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
     <ul>
@@ -172,9 +174,6 @@
                 <p style="color: black;">
                     {{ post }}
                 </p>
-                <br>
-                <!-- need an if lese statment to ma ke the heart red -->
-                    <button><i  style="text-align:right;" class="fa fa-heart"></i></button>
                 </div>
             </li>
         </div>

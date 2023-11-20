@@ -59,6 +59,8 @@ export class SearchBarComponent implements OnInit {
     if (user) {
       // console.log(user)
       console.log(this.autoFilterTop)
+      localStorage.setItem('friend',user.username)
+      this.router.navigateByUrl("/user/friend")
       // this.router.navigate(['/user', user.username]);
     } else {
       alert('User not found');

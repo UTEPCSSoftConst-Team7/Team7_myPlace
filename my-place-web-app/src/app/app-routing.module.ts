@@ -6,6 +6,7 @@ import { MessagingComponent } from './messaging/messaging.component';
 import { CreateAccountComponent } from './create-account/create-account.component'; 
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
+import { FriendComponent } from './friend/friend.component';
 
 const routes: Routes = [
   { 
@@ -32,6 +33,10 @@ const routes: Routes = [
     path: 'user', 
     component: UserComponent
   },
+  {
+    path: 'user/friend',
+    component: FriendComponent
+  }
 
 
 ];
