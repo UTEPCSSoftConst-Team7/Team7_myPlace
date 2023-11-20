@@ -33,24 +33,24 @@ export class UserComponent implements OnInit {
 
   ngOnInit() :void{
     
-    const storedUser = localStorage.getItem('ProfileUser');
+    // const storedUser = localStorage.getItem('ProfileUser');
     
-    if (storedUser != null){
-      this.ProfileUser=JSON.parse(storedUser)
-      // this.user = JSON.parse(storedUser);
-      var username=this.user.username
-      this.router.paramMap.subscribe(params => {
-        const username = params.get(this.user.username); // Access the route parameter 'id'
-      });
+    // if (storedUser != null){
+    //   this.ProfileUser=JSON.parse(storedUser)
+    //   // this.user = JSON.parse(storedUser);
+    //   var username=this.user.username
+    //   this.router.paramMap.subscribe(params => {
+    //     const username = params.get(this.user.username); // Access the route parameter 'id'
+    //   });
     
-    }
+    // }
 
     
   }
 
   grabUser(){
   //  this.ProfileUser= localStorage.getItem('profileUser')
-   this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
+  //  this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
   }
 
 
