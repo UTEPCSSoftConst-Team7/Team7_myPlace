@@ -63,10 +63,10 @@
         <h2>Sign-in</h2>
         <form action="registration_process.php" method="POST">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" [(ngModel)]="username" id="username" name="username" required>
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" [(ngModel)]="password" id="password" name="password" required>
 
             <button (click)="CheckUser()">Sign-in</button>
 

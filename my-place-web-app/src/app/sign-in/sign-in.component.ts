@@ -10,6 +10,8 @@ import { User } from '../User';
 })
 export class SignInComponent implements OnInit  {
   users: User[] = [] ;
+  username:string = "";
+  password:string = "";
 
 constructor(private userService: UserService, private router: Router ){ }
 
@@ -23,20 +25,17 @@ ngOnInit() {
 
 
 CheckUser(){
-  var username="nicoJ115"
-  var password="nico1234"
-  const user = this.users.find(u => u.username === username);
+  const user = this.users.find(u => u.username === this.username);
   console.log('user',user)
-  console.log('u',username)
-  console.log('p',password)
+  console.log('u',this.username)
+  console.log('p',this.password)
   if (user){
-    alert('why')
-    if(user.password==password){
-      alert('how')
-      localStorage.setItem('ProfileUser', JSON.stringify(user));
+    if(user.password==this.password){
+      // localStorage.setItem('ProfileUser', JSON.stringify(user));
       console.log('log user',localStorage.getItem('ProfileUser'))
       new Promise(resolve => setTimeout(resolve, 1));
       this.navigateToDetailPage(user.username)
+      this.router.navigateByUrl("/user")
     }
     else{
     alert("wrong username or password")

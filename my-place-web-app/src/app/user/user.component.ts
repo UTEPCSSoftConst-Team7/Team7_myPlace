@@ -60,6 +60,10 @@ export class UserComponent implements OnInit {
     // Perform actions or API calls here
     console.log('Submitted:', this.textAreaContent);
     // Reset the text area and hide it
+    console.log('blogPost',this.ProfileUser)
+    if(this.ProfileUser.blogPosts!=undefined){
+      this.ProfileUser.blogPosts.push(this.textAreaContent)
+    }
     this.textAreaContent = '';
     this.showTextArea = false;
   }
