@@ -174,10 +174,24 @@
                 </p>
                 <br>
                 <!-- need an if lese statment to ma ke the heart red -->
-                    <button><i  style="text-align:right;" class="fa fa-heart"></i></button>
+                    <button><i  style="text-align: center;" class="fa fa-heart"></i></button>
+                </div>
+            </li>
+            <li>
+                <div class="container">
+                    <div class="NewBlog"> 
+                        <button mat-raised-button color="primary" *ngIf="!showTextArea" class="medium-button" (click)="toggleTextArea()">Add Blog Post</button> 
+                    </div>
+                    <div *ngIf="showTextArea" class="text-area-container">
+                        <textarea class="text-area" placeholder="Enter your text here" [(ngModel)]="textAreaContent"></textarea>
+                        <button class="submit-button" (click)="submitText()">Submit</button>
+                    </div>
                 </div>
             </li>
         </div>
+
+
+
     </ul>
     <br>
 

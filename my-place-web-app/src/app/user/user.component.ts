@@ -26,12 +26,15 @@ export class UserComponent implements OnInit {
     friends: [this.Friend],
   };
   user: any;
+  showTextArea: boolean = false;
+  textAreaContent: string = '';
 
 
   constructor(private router: ActivatedRoute,private userService: UserService){ }
 
   ngOnInit() :void{
-    
+   
+  
     // const storedUser = localStorage.getItem('ProfileUser');
     
     // if (storedUser != null){
@@ -45,6 +48,20 @@ export class UserComponent implements OnInit {
     // }
 
     
+  }
+  toggleTextArea() {
+    this.showTextArea = !this.showTextArea;
+  }
+
+  submitText() {
+    // Add functionality for submitting the text
+    // For example, you can access the text from the textarea
+    // this.textAreaContent
+    // Perform actions or API calls here
+    console.log('Submitted:', this.textAreaContent);
+    // Reset the text area and hide it
+    this.textAreaContent = '';
+    this.showTextArea = false;
   }
 
   grabUser(){
