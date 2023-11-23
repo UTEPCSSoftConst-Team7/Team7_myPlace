@@ -8,13 +8,31 @@ export interface User {
     friends?: User[];
 }
 
+export interface User{
+    username: string;
+    password: string;
+    email: string;
+    bio?: string;
+    profilePicture?: string;
+    friends?: User[];
+}
 
 
 export interface Message {
-    sender: string;
+    Recipients: User[];
+    Sender: User;
     content: string;
-    type: 'text' | 'image';
-    imageUrl?: string; 
     timestamp: string; 
 }
+
+export interface BlogPost {
+    User:User
+    content: string
+    likes: number 
+}
+
+export interface UserBlogPost extends BlogPost{
+    UserLike:boolean
+}
+
   

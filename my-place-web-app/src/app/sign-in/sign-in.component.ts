@@ -31,10 +31,10 @@ CheckUser(){
   console.log('p',this.password)
   if (user){
     if(user.password==this.password){
-      // localStorage.setItem('ProfileUser', JSON.stringify(user));
-      console.log('log user',localStorage.getItem('ProfileUser'))
+      localStorage.setItem('profileUser', JSON.stringify(user));
+      console.log('log user',localStorage.getItem('profileUser'))
       new Promise(resolve => setTimeout(resolve, 1));
-      this.navigateToDetailPage(user.username)
+      // this.navigateToDetailPage(user.username)
       this.router.navigateByUrl("/user")
     }
     else{

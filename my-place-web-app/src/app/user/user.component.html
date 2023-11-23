@@ -127,7 +127,7 @@
         </div>
         <div class="right-content">
           <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
-          <button [routerLink] = "['/signin']"><i class="fa fa-home"></i>SignOut</button>
+          <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
       </div>
 
@@ -136,7 +136,7 @@
         <div class="userprofile">
             <!-- TODO: Change for the actual value for username in the JSON -->
             <ng-template #defaultImage>
-                <img src="assets/pizzabella.png" alt="Default Profile Picture">
+                <img src="assets/sandy.png" alt="Default Profile Picture">
               </ng-template>
             <div class="profilepic">
                 <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
