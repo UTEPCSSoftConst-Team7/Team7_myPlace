@@ -21,6 +21,7 @@ export class CreateAccountComponent implements OnInit{
     email: '',
     bio:'',
   }
+  randomNumber: number | undefined;
   constructor(private router: Router){ }
 
   ngOnInit() :void{
@@ -40,13 +41,15 @@ export class CreateAccountComponent implements OnInit{
           username: this.username,
           password: this.password,
           email: this.email,
-          bio: this.bio
+          bio: this.bio,
+          profilePicture: this.profilePic(),
+          friends:['Team_MyPlace']
         };
 
 
         console.log(newUser)
 
-        var storedUsers = localStorage.getItem('users');
+        var storedUsers = localStorage.getItem('Users');
         let users: any[] = [];
 
         if (storedUsers != null){
@@ -55,7 +58,7 @@ export class CreateAccountComponent implements OnInit{
           users.push(newUser)
 
           console.log('New Users added to list :', users);
-          localStorage.setItem('users', JSON.stringify(users));
+          localStorage.setItem('Users', JSON.stringify(users));
           localStorage.setItem('profileUser', JSON.stringify(newUser));
           //add a time sleep 
           setTimeout(() => {
@@ -70,6 +73,40 @@ export class CreateAccountComponent implements OnInit{
     }
     else{
       alert("please fill out everything before moving forward")
+    }
+  }
+
+  profilePic(){
+    this.randomNumber = Math.floor(Math.random() * 10) + 1;
+    if(this.randomNumber==1){
+      return "assets/among.png"
+    }
+    else if(this.randomNumber==2){
+      return "assets/cat.png"
+    }
+    else if(this.randomNumber==3){
+      return "assets/catFist.png"
+    }
+    else if(this.randomNumber==4){
+      return "assets/dice.png"
+    }
+    else if(this.randomNumber==5){
+      return "assets/joji.png"
+    }
+    else if(this.randomNumber==6){
+      return "assets/mfDoom.png"
+    }
+    else if(this.randomNumber==7){
+      return "assests/pizzabella.png"
+    }
+    else if(this.randomNumber==8){
+      return "assets/spiderman.png"
+    }
+    else if(this.randomNumber==9){
+      return "assets/sandy.png"
+    }
+    else{
+      return "assets/peopleiconmp.png"
     }
   }
 }

@@ -5,10 +5,10 @@ export interface User {
     bio?: string;
     profilePicture?: string;
     blogPosts?: (string | { type: 'text' | 'image'; content: string })[];
-    friends?: User[];
+    friends?: String[];
 }
 
-export interface User{
+export interface Users{
     username: string;
     password: string;
     email: string;
@@ -26,7 +26,7 @@ export interface Message {
 }
 
 export interface BlogPost {
-    User:User
+    user:string
     content: string
     likes: number 
 }

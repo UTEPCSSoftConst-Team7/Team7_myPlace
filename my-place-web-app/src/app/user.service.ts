@@ -9,7 +9,9 @@ import { User } from './User';
 })
 export class UserService {
   private usersUrl = 'assets/UserFile.json';
-  private messageUrl = 'assets/messageFile.json'
+  private messageUrl = 'assets/messageFile.json';
+  private UserUrl = 'assets/User.Json';
+  private blogUrl = 'assets/BlogPost.JSON';
 
   constructor(private http: HttpClient) { }
 
@@ -21,9 +23,30 @@ export class UserService {
     return this.http.get<any[]>(this.messageUrl);
   }
 
+  getUSERS(): Observable<any[]> {
+    return this.http.get<any[]>(this.UserUrl);
+  }
+
+  getBlog(): Observable<any[]> {
+    return this.http.get<any[]>(this.blogUrl);
+  }
+  
+
   storeUsersInLocalStorage() {
     this.getUsers().subscribe(data => {
       localStorage.setItem('users', JSON.stringify(data));
+    });
+  }
+
+  storeUSERSInLocalStorage() {
+    this.getUSERS().subscribe(data => {
+      localStorage.setItem('Users', JSON.stringify(data));
+    });
+  }
+
+  storeBlogInLocalStorage() {
+    this.getBlog().subscribe(data => {
+      localStorage.setItem('Blog', JSON.stringify(data));
     });
   }
 

@@ -16,7 +16,7 @@ export class SignInComponent implements OnInit  {
 constructor(private userService: UserService, private router: Router ){ }
 
 ngOnInit() {
-  const storedUsers = localStorage.getItem('users');
+  const storedUsers = localStorage.getItem('Users');
   if (storedUsers != null){
     this.users = JSON.parse(storedUsers);
     console.log('Users retrieved from local storage:', this.users);

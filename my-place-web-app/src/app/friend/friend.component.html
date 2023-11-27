@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head > <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>User Registration</title>
@@ -38,7 +40,8 @@
         }
 
         .left-content img {
-            margin-right: 5px; /* Add spacing between the logo and header */
+            margin-right: 5px;
+            /* Add spacing between the logo and header */
         }
 
         .userspecs {
@@ -56,7 +59,8 @@
         }
 
         .bio {
-            position: relative; /* Change to relative to banner*/
+            position: relative;
+            /* Change to relative to banner*/
             margin-left: 100px;
             /* gap: 20px; */
             text-align: center;
@@ -80,7 +84,7 @@
 
         }
 
-        h3{
+        h3 {
             color: white;
             background-color: darkblue;
             text-align: left;
@@ -116,71 +120,77 @@
         } */
     </style>
 
-       
+
 </head>
 
 <body class="ultra-mode" style="background-color: white;">
     <div class="banner">
         <div class="left-content">
-          <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
-          <h1>myplace</h1>
+            <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
+            <h1>myplace           </h1>
+            <button mat-raised-button color="primary" class="small-button" (click)="sendBack()">Send Me Back</button>
         </div>
         <div class="right-content">
-          <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
-          <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
+            <button [routerLink]="['/messaging']"><i class="fa fa-folder"></i> Messages </button>
+            <button [routerLink]="['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
-      </div>
+    </div>
 
     <div class="userspecs">
-        
+
         <div class="userprofile">
-           
+
             <ng-template #defaultImage>
-                <img src="assets/joji.png" alt="Default Profile Picture">
-              </ng-template>
+                <img src="ProfileUser.profilePicture" alt="Default Profile Picture">
+            </ng-template>
             <div class="profilepic">
-                <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
+                <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture"
+                    alt="Profile Picture">
             </div>
-            <h2>{{ ProfileUser.username }}</h2> 
+            <h2>{{ ProfileUser.username }}</h2>
             <div *ngIf="ProfileUser.friends">
-                <label>Friends:  {{ProfileUser.friends.length}}</label>
+                <label>Friends: {{ProfileUser.friends.length}}</label>
             </div>
         </div>
         <br>
         <div class="bio">
             <h3>My Bio</h3>
             <p style="color: black ">{{ProfileUser.bio}}</p>
-        </div>    
+        </div>
 
         <br>
     </div>
     <br>
     <br>
-    <button mat-raised-button color="primary" class="medium-button" (click)="sendBack()">Add me</button>
+    <button mat-raised-button color="primary" class="medium-button" (click)="friend()">Add me</button>
 
-    
+
     <br>
     <br>
     <br>
 
-    
+
     <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2>  -->
 
     <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
     <ul>
         <div class="blogs">
-            <li *ngFor="let post of ProfileUser.blogPosts" >
-                <div class="blogs">
-                <p style="color: black;">
-                    {{ post }}
-                </p>
+            <li *ngFor="let post of ProfileBlogPost">
+                <div class="blogs" style="color: black;">
+                    <p style="color: black;">
+                        {{ post.content }}
+                    </p>
+                    <button (click)="like(post)">
+                        <i style="text-align: center;" class="fa fa-heart"></i>
+                    </button>
+                    {{post.likes}}
                 </div>
             </li>
         </div>
     </ul>
     <br>
 
-    
+
 </body>
 
 </html>

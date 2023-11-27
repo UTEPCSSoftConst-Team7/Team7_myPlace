@@ -25,7 +25,7 @@ export class SearchBarComponent implements OnInit {
   constructor(private userService: UserService, private router: Router ){ }
 
   ngOnInit() {
-    const storedUsers = localStorage.getItem('users');
+    const storedUsers = localStorage.getItem('Users');
     if (storedUsers != null){
       this.users = JSON.parse(storedUsers);
       console.log('Users retrieved from local storage:', this.users);
@@ -40,6 +40,7 @@ export class SearchBarComponent implements OnInit {
     this.isInputValid = this.inputText.trim() !== '';
     console.log('here is the input text',this.inputText);
   }
+  
   // console.log(this.inputText);
   onInputChange(event:any,ngModel: NgModel){
     this.serchUser = ngModel.value
@@ -59,7 +60,8 @@ export class SearchBarComponent implements OnInit {
     if (user) {
       // console.log(user)
       console.log(this.autoFilterTop)
-      localStorage.setItem('friend',user.username)
+      
+      localStorage.setItem('friend',JSON.stringify(user))
       this.router.navigateByUrl("/user/friend")
       // this.router.navigate(['/user', user.username]);
     } else {
