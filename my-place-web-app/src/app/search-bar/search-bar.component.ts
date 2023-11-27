@@ -40,7 +40,7 @@ export class SearchBarComponent implements OnInit {
     this.isInputValid = this.inputText.trim() !== '';
     console.log('here is the input text',this.inputText);
   }
-  
+
   // console.log(this.inputText);
   onInputChange(event:any,ngModel: NgModel){
     this.serchUser = ngModel.value
@@ -67,6 +67,22 @@ export class SearchBarComponent implements OnInit {
     } else {
       alert('User not found');
     }
+  }
+
+  Search(user:string){
+    const User = this.users.find(u=> u.username == user);
+    console.log(User)
+    if (User) {
+      // console.log(user)
+      // console.log(this.autoFilterTop)
+      
+      localStorage.setItem('friend',JSON.stringify(User))
+      this.router.navigateByUrl("/user/friend")
+      // this.router.navigate(['/user', user.username]);
+    } else {
+      alert('User not found');
+    }
+
   }
 
 }

@@ -12,7 +12,7 @@
         <div class="blogs">
             <li *ngFor="let post of filteredOptions" >
                 <p style="color: black;">
-                    <button  (click)="search()" class="borderless-button">{{post}}</button>
+                    <button  (click)="Search(post)" class="borderless-button">{{post}}</button>
                 </p>
             </li>
         </div>

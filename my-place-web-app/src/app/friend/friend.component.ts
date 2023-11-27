@@ -117,7 +117,7 @@ export class FriendComponent  implements OnInit {
           this.sendBack()
         }
         else{
-          alert('these two users are not friends')
+          alert('these two users are now friends')
           this.Friend.friends.push(this.ProfileUser.username)
           this.ProfileUser.friends?.push(this.Friend.username)
           var storedUsers = localStorage.getItem('Users');
