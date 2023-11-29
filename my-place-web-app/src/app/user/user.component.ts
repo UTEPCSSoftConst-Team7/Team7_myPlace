@@ -158,6 +158,22 @@ export class UserComponent implements OnInit {
 
   }
 
+  delete(post:UserBlogPost){
+    const Blog = localStorage.getItem('Blog')
+    console.log(post)
+    if (Blog != undefined) {
+      // console.log('B',Blog)
+      var profileBlog = JSON.parse(Blog)
+      profileBlog = profileBlog.filter((item: UserBlogPost) => item.content != post.content);
+      console.log('bl0gs',profileBlog)
+      localStorage.setItem('Blog', JSON.stringify(profileBlog));
+
+
+      location.reload()
+    }
+
+  }
+
 
 
 }
