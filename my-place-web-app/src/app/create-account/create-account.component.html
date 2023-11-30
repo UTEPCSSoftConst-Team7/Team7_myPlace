@@ -37,7 +37,8 @@
 
         input[type="text"],
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="input"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -62,19 +63,23 @@
     <div class="container">
         <h2>User Registration</h2>
         <form action="registration_process.php" method="POST">
+
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username"  [(ngModel)]="username" required>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email"  [(ngModel)]="email" required>
+
+            <label for="bio">Bio</label>    
+            <input type="input" id="bio" name="bio"  [(ngModel)]="bio" required>
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password"   [(ngModel)]="password"required>
 
             <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+            <input type="password" id="confirm-password" name="confirm-password"  [(ngModel)]="confirmpassword" required>
 
-            <button [routerLink]="['/user']">Create Account</button>
+            <button (click)="createNewUser()">Create Account</button>
 
         </form>
     </div>

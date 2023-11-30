@@ -1,0 +1,17 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .borderless-button {
+    border: none;
+    outline: none; /* Removes the default focus outline */
+    background-color: transparent; /* Optionally, set the background color as needed */
+    /* Add any additional styling you want for your button */
+    /* For example: padding, font-size, text-color, etc. */
+  }

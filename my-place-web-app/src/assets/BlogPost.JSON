@@ -1,0 +1,122 @@
+[
+  {
+    "user": "john_doe",
+    "content": "Just finished coding a new project! #excited",
+    "likes": 25
+  },
+  {
+    "user": "john_doe",
+    "content": "Explored some new algorithms today. Learning never stops!",
+    "likes": 30
+  },
+  {
+    "user": "john_doe",
+    "content": "Shared my coding journey in a tech meetup. Great experience!",
+    "likes": 20
+  },
+  {
+    "user": "jane_doe",
+    "content": "Learned some cool Angular tricks today!",
+    "likes": 30
+  },
+  {
+    "user": "jane_doe",
+    "content": "Published a blog post on JavaScript best practices.",
+    "likes": 35
+  },
+  {
+    "user": "jane_doe",
+    "content": "Attended a tech conference and gained insights into AI development.",
+    "likes": 28
+  },
+  {
+    "user": "sam_smith",
+    "content": "Reached the summit on my latest hike! The view was breathtaking. 🏞️",
+    "likes": 40
+  },
+  {
+    "user": "sam_smith",
+    "content": "Discovered a new trail for nature lovers. Can't wait to explore more!",
+    "likes": 45
+  },
+  {
+    "user": "sam_smith",
+    "content": "Documented my wildlife photography adventure. Nature is stunning!",
+    "likes": 38
+  },
+  {
+    "user": "nicoJ115",
+    "content": "Just published my game. Check it out!",
+    "likes": 15
+  },
+  {
+    "user": "nicoJ115",
+    "content": "Coding late into the night on my new game project.",
+    "likes": 18
+  },
+  {
+    "user": "nicoJ115",
+    "content": "Attended a gaming tournament. Feeling inspired by the competition!",
+    "likes": 22
+  },
+  {
+    "user": "isaba3lla",
+    "content": "Making progress on my latest painting. Feeling inspired! 🎨",
+    "likes": 20
+  },
+  {
+    "user": "isaba3lla",
+    "content": "Exploring new art techniques. Creativity knows no bounds!",
+    "likes": 25
+  },
+  {
+    "user": "isaba3lla",
+    "content": "Reflecting on the role of art in society. A captivating discussion!",
+    "likes": 30
+  },
+  {
+    "user": "litcowboykiller",
+    "content": "Reviewed another classic Western movie. Oldies are goldies! 🤠🎬",
+    "likes": 18
+  },
+  {
+    "user": "litcowboykiller",
+    "content": "Exploring the history of the Wild West through literature.",
+    "likes": 20
+  },
+  {
+    "user": "litcowboykiller",
+    "content": "Attended a Western-themed event. Yeehaw! 🌵",
+    "likes": 16
+  },
+  {
+    "user": "empty_user",
+    "content": "Hello world!",
+    "likes": 5
+  },
+  {
+    "user": "empty_user",
+    "content": "An empty canvas awaits. Time to create something amazing!",
+    "likes": 8
+  },
+  {
+    "user": "empty_user",
+    "content": "Contemplating the next big idea.",
+    "likes": 10
+  },
+  {
+    "user": "isaba3lla",
+    "content": "Ban for Ban who work at MasterCard.",
+    "likes": 50
+  },
+  {
+    "user": "Team_MyPlace",
+    "content": "Celebrating team milestones. Here's to more successes ahead!",
+    "likes": 55
+  },
+  {
+    "user": "Team_MyPlace",
+    "content": "Reflecting on teamwork dynamics. A journey worth experiencing!",
+    "likes": 60
+  }
+]

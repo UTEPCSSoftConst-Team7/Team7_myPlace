@@ -1,0 +1,22 @@
+
+<div>
+    <input
+        required
+        [(ngModel)]="inputText" name="inputField"
+        (ngModelChange)="onInputChange($event, inputModel)"
+        #inputModel="ngModel"
+    /> 
+    <button (click)="search()">Search User</button>
+    <br>
+    <ul>
+        <div class="blogs">
+            <li *ngFor="let post of filteredOptions" >
+                <p style="color: black;">
+                    <button  (click)="Search(post)" class="borderless-button">{{post}}</button>
+                </p>
+            </li>
+        </div>
+    </ul>
+  </div>
+
+
