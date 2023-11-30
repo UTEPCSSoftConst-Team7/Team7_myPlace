@@ -7,6 +7,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { FriendComponent } from './friend/friend.component';
+import { IconComponent } from './icon/icon.component';
 
 const routes: Routes = [
   { 
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'user/friend',
     component: FriendComponent
+  },
+  {
+    path: 'user/icon',
+    component: IconComponent
   }
 
 

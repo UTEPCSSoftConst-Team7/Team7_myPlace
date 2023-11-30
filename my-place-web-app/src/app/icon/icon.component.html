@@ -1,0 +1,28 @@
+<body class="ultra-mode" style="background-color: white;">
+    <div class="banner">
+        <div class="left-content">
+            <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
+            <h1>myplace</h1>
+
+        </div>
+        <button mat-raised-button color="primary" class="small-button" (click)="sendBack()" style="margin-left:0px">Send
+            Me Back</button>
+        <div class="right-content">
+            <button [routerLink]="['/messaging']"><i class="fa fa-folder"></i> Messages </button>
+            <button [routerLink]="['/homepage']"><i class="fa fa-home"></i>SignOut</button>
+
+        </div>
+    </div>
+
+    <h1 style="color: black;text-align: center;"><b> Select Your New Icon</b></h1>
+
+    <div class="image-container">
+        <div *ngFor="let icon of icons" class="image-wrapper">
+          <button class="image-button" (click)="changeIcon(icon)" type="button">
+            <img [src]="icon" alt="Profile Picture">
+          </button>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
