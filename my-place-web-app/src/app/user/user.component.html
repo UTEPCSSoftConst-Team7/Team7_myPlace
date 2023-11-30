@@ -142,6 +142,9 @@
                 <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
             </div>
             <h2>{{ ProfileUser.username }}</h2> 
+            <button [routerLink] = "['/user/icon']" >Change Icon</button>
+            <br>
+            <br>
             <div *ngIf="ProfileUser.friends">
                 <label>Friends:  {{ProfileUser.friends.length}}</label>
             </div>
