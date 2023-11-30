@@ -140,7 +140,7 @@ export class FriendComponent  implements OnInit {
           localStorage.setItem('profileUser', JSON.stringify(this.Friend));
           localStorage.setItem('friend', JSON.stringify(this.ProfileUser));
           localStorage.setItem('Users', JSON.stringify(users));
-          location.reload()
+          // location.reload()
           this.sendBack()
         }
       }
