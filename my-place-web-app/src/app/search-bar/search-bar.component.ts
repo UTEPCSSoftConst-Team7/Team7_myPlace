@@ -28,17 +28,17 @@ export class SearchBarComponent implements OnInit {
     const storedUsers = localStorage.getItem('Users');
     if (storedUsers != null){
       this.users = JSON.parse(storedUsers);
-      console.log('Users retrieved from local storage:', this.users);
+      // console.log('Users retrieved from local storage:', this.users);
     }
     for (let i=0;i<this.users.length;i++){
       this.options.push(this.users[i].username)
     }
-    console.log("options",this.options)
+    // console.log("options",this.options)
   }
 
   checkInput() {
     this.isInputValid = this.inputText.trim() !== '';
-    console.log('here is the input text',this.inputText);
+    // console.log('here is the input text',this.inputText);
   }
 
   // console.log(this.inputText);
@@ -59,7 +59,7 @@ export class SearchBarComponent implements OnInit {
     const user = this.users.find(u => u.username === this.autoFilterTop);
     if (user) {
       // console.log(user)
-      console.log(this.autoFilterTop)
+      // console.log(this.autoFilterTop)
       
       localStorage.setItem('friend',JSON.stringify(user))
       this.router.navigateByUrl("/user/friend")
@@ -71,7 +71,7 @@ export class SearchBarComponent implements OnInit {
 
   Search(user:string){
     const User = this.users.find(u=> u.username == user);
-    console.log(User)
+    // console.log(User)
     if (User) {
       // console.log(user)
       // console.log(this.autoFilterTop)

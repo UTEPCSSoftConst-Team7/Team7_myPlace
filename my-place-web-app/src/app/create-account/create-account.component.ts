@@ -19,7 +19,9 @@ export class CreateAccountComponent implements OnInit{
     username: '',
     password: '',
     email: '',
-    bio:'',
+    bio: '',
+    closeFriend: [],
+    Blocked: []
   }
   randomNumber: number | undefined;
   constructor(private router: Router){ }
