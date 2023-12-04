@@ -19,3 +19,22 @@ describe('SignInComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+describe('test my_place_web_app', function() {
+  it('test my-place-web-app.SignInComponent.CheckUser', function(done) {
+      this.timeout(10000);
+    var user = {
+      username: 'admin',
+      password: 'admin'
+    };
+    my_place_web_app.SignInComponent.CheckUser(user)
+    .then(function(result) {
+        assert.equal(result, true);
+        done();
+    })
+    .catch(function(error) {
+        done(error);
+    });
+  })
+})

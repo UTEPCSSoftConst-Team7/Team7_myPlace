@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../User';
 import { Router } from '@angular/router';
 
@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })
-export class CreateAccountComponent implements OnInit{
+export class CreateAccountComponent implements OnInit {
   username: string = '';
   password: string = '';
   confirmpassword: string = '';
-  bio:string = "";
+  bio: string = "";
   email: string = "";
-  users: User[] = [] ;
+  users: User[] = [];
 
   newUser: User = {
     username: '',
@@ -24,11 +24,11 @@ export class CreateAccountComponent implements OnInit{
     Blocked: []
   }
   randomNumber: number | undefined;
-  constructor(private router: Router){ }
+  constructor(private router: Router) { }
 
-  ngOnInit() :void{
+  ngOnInit(): void {
     var storedUsers = localStorage.getItem('users');
-    if (storedUsers != null){
+    if (storedUsers != null) {
       var users = JSON.parse(storedUsers);
       console.log(users)
     }
@@ -36,16 +36,16 @@ export class CreateAccountComponent implements OnInit{
   }
 
 
-  createNewUser(){
-    if (this.username.length!=0 && this.password.length!=0 && this.email.length!=0 && this.bio.length!=0){
-      if (this.password==this.confirmpassword){
+  createNewUser() {
+    if (this.username.length != 0 && this.password.length != 0 && this.email.length != 0 && this.bio.length != 0) {
+      if (this.password == this.confirmpassword) {
         const newUser = {
           username: this.username,
           password: this.password,
           email: this.email,
           bio: this.bio,
           profilePicture: this.profilePic(),
-          friends:['Team_MyPlace']
+          friends: ['Team_MyPlace']
         };
 
 
@@ -54,7 +54,7 @@ export class CreateAccountComponent implements OnInit{
         var storedUsers = localStorage.getItem('Users');
         let users: any[] = [];
 
-        if (storedUsers != null){
+        if (storedUsers != null) {
           users = JSON.parse(storedUsers);
           console.log('Users retrieved from local storage:', this.users);
           users.push(newUser)
@@ -62,52 +62,52 @@ export class CreateAccountComponent implements OnInit{
           console.log('New Users added to list :', users);
           localStorage.setItem('Users', JSON.stringify(users));
           localStorage.setItem('profileUser', JSON.stringify(newUser));
-          //add a time sleep 
+          //add a time sleep
           setTimeout(() => {
             this.router.navigateByUrl("/user");
           }, 500);
         }
         // console.log(storedUsers)
       }
-      else{
+      else {
         alert("please make sure that the password match")
       }
     }
-    else{
+    else {
       alert("please fill out everything before moving forward")
     }
   }
 
-  profilePic(){
+  profilePic() {
     this.randomNumber = Math.floor(Math.random() * 10) + 1;
-    if(this.randomNumber==1){
+    if (this.randomNumber == 1) {
       return "assets/among.png"
     }
-    else if(this.randomNumber==2){
+    else if (this.randomNumber == 2) {
       return "assets/cat.png"
     }
-    else if(this.randomNumber==3){
+    else if (this.randomNumber == 3) {
       return "assets/catFist.png"
     }
-    else if(this.randomNumber==4){
+    else if (this.randomNumber == 4) {
       return "assets/dice.png"
     }
-    else if(this.randomNumber==5){
+    else if (this.randomNumber == 5) {
       return "assets/joji.png"
     }
-    else if(this.randomNumber==6){
+    else if (this.randomNumber == 6) {
       return "assets/mfDoom.png"
     }
-    else if(this.randomNumber==7){
+    else if (this.randomNumber == 7) {
       return "assests/pizzabella.png"
     }
-    else if(this.randomNumber==8){
+    else if (this.randomNumber == 8) {
       return "assets/spiderman.png"
     }
-    else if(this.randomNumber==9){
+    else if (this.randomNumber == 9) {
       return "assets/sandy.png"
     }
-    else{
+    else {
       return "assets/peopleiconmp.png"
     }
   }

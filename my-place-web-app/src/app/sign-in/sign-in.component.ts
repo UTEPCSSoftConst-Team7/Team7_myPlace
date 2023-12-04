@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit  {
 
 constructor(private userService: UserService, private router: Router ){ }
 
+
 ngOnInit() {
   const storedUsers = localStorage.getItem('Users');
   if (storedUsers != null){
