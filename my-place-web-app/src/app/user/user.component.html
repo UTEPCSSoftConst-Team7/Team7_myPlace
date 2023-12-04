@@ -190,11 +190,10 @@
         <div class="left-content">
           <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
           <h1>myplace</h1>
-          <button mat-raised-button color="primary" class="small-button" (click)="sendMessageLog()"
-            style="margin-left:40px">Messaging Friends</button>
         </div>
         <div class="right-content">
-          <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
+          <button [routerLink] = "['/user/friendList']" class="medium-button">Friends Page</button>
+          <button (click)="sendMessageLog()" ><i class="fa fa-folder"></i> Messages </button>
           <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
       </div>
