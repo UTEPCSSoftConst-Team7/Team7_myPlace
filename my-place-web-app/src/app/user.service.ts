@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from './User';
+import { User,BlogPost } from './User';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +35,8 @@ export class UserService {
   getBlog(): Observable<any[]> {
     return this.http.get<any[]>(this.blogUrl);
   }
+
+
 
   storeUsersInLocalStorage() {
     this.getUsers().subscribe((data) => {

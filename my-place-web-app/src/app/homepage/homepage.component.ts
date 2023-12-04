@@ -19,10 +19,10 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
   // Call the method to store users in local storage
-  this.userService.storeUsersInLocalStorage();
-  this.userService.storeMessagesInLocalStorage();
-  this.userService.storeBlogInLocalStorage();
-  this.userService.storeUSERSInLocalStorage();
+  // this.userService.storeUsersInLocalStorage();
+  // this.userService.storeMessagesInLocalStorage();
+  // this.userService.storeBlogInLocalStorage();
+  // this.userService.storeUSERSInLocalStorage();
 
   // Check if the data is in local storage
   const storedUsers = localStorage.getItem('users');
