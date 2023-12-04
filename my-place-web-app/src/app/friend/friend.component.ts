@@ -60,10 +60,10 @@ export class FriendComponent implements OnInit {
       var UserPost = this.ProfileBlogPost.filter(u => u.user == username);
 
       const profile = localStorage.getItem('profileUser')
+      var ClosefriendList = false
       if (profile != null || profile != undefined) {
         console.log('p', profile)
         var FriendUser:User = JSON.parse(profile)
-        var ClosefriendList = false
         if (this.ProfileUser.closeFriend != undefined) {
           for (let i = 0; i < this.ProfileUser.closeFriend?.length; i++) {
             if(this.ProfileUser.closeFriend[i]==FriendUser.username){
@@ -72,17 +72,17 @@ export class FriendComponent implements OnInit {
           }
 
         }
-
-        if(ClosefriendList==true){
-          UserPost = this.ProfileBlogPost.filter(u => u.user == username);
-        }
-        else{
-          UserPost = this.ProfileBlogPost.filter(u => u.user == username);
-          UserPost = this.ProfileBlogPost.filter(u => u.CloseFriend == false);
-        }
-        this.ProfileBlogPost = UserPost
-        console.log('u', UserPost)
       }
+      console.log(ClosefriendList)
+      if(ClosefriendList==true){
+        UserPost = this.ProfileBlogPost.filter(u => u.user == username);
+      }
+      else{
+        UserPost = this.ProfileBlogPost.filter(u => u.user == username);
+        UserPost = UserPost.filter(u => u.CloseFriend == false);
+      }
+      this.ProfileBlogPost = UserPost
+      console.log('u', this.ProfileBlogPost)
     }
   }
 

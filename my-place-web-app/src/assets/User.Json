@@ -29,7 +29,8 @@
     "email": "nicoJ115@example.com",
     "bio": "I am a God",
     "profilePicture": "assets/joji.png",
-    "friends": ["isaba3lla", "litcowboykiller", "Team_MyPlace"]
+    "friends": ["isaba3lla", "litcowboykiller", "Team_MyPlace"],
+    "closeFriend":["isaba3lla"]
   },
   {
     "username": "isaba3lla",

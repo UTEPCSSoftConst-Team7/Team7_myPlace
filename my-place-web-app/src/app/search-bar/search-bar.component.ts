@@ -25,19 +25,38 @@ export class SearchBarComponent implements OnInit {
   users: User[] = [];
   inputText: string = '';
   isInputValid: boolean = false;
+  ProfileUser: User = {
+    username: '',
+    password: '',
+    email: '',
+    closeFriend: [],
+    Blocked: []
+  }
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    this.grabUser()
+
     const storedUsers = localStorage.getItem('Users');
     if (storedUsers != null) {
       this.users = JSON.parse(storedUsers);
     }
     for (let i = 0; i < this.users.length; i++) {
-      this.options.push(this.users[i].username);
+      if (this.users[i].username != this.ProfileUser.username) {
+        this.options.push(this.users[i].username);
+      }
+
     }
   }
 
+  grabUser() {
+    const profile = localStorage.getItem('profileUser');
+    if (profile) {
+      var profileUser = JSON.parse(profile);
+      this.ProfileUser = profileUser;
+    }
+  }
   checkInput() {
     this.isInputValid = this.inputText.trim() !== '';
   }
