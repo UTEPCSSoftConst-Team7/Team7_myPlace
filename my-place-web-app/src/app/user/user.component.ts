@@ -2,213 +2,187 @@ import { Component, OnInit } from '@angular/core';
 import { User, BlogPost, UserBlogPost } from '../User';
 import { UserService } from '../user.service';
 import { MyServiceService } from '../my-service.service';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-
   ProfileUser: User = {
     username: 'isaba3lla',
     password: 'isaba3llaPass',
     email: 'isaba3lla@example.com',
     bio: 'Art and design lover',
     profilePicture: '',
-    blogPosts: ["Painting progress", "Coding my project", "Going to Camp Flogna", "Ban for Ban who work at MaterCard."],
+    blogPosts: [
+      'Painting progress',
+      'Coding my project',
+      'Going to Camp Flogna',
+      'Ban for Ban who work at MaterCard.',
+    ],
     friends: [],
     closeFriend: [],
-    Blocked: []
+    Blocked: [],
   };
+
   ProfileBlogPost: UserBlogPost[] = [];
   user: any;
   showTextArea: boolean = false;
-  showFrindPost: boolean= false;
+  showFrindPost: boolean = false;
   textAreaContent: string = '';
   textAreaCloseContent: string = '';
-  showBioArea:boolean = false;
+  showBioArea: boolean = false;
   NewBio: string = '';
 
-
-  constructor(private router: ActivatedRoute, private userService: UserService) { }
+  constructor(
+    private router: ActivatedRoute,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-
-    this.grabUser()
+    this.grabUser();
     this.grabBlogPost();
-
-
-
   }
+
   toggleTextArea() {
     this.showTextArea = !this.showTextArea;
   }
+
   toggleBioArea() {
     this.showBioArea = !this.showBioArea;
   }
 
-  toggleFriendTextBox(){
-    this.showFrindPost= !this.showFrindPost;
+  toggleFriendTextBox() {
+    this.showFrindPost = !this.showFrindPost;
   }
 
+  /**
+   * Perform actions or API calls here
+   */
   submitText() {
-    // Add functionality for submitting the text
-    // For example, you can access the text from the textarea
-    // this.textAreaContent
-    // Perform actions or API calls here
-
-
     var Post: BlogPost = {
       user: this.ProfileUser.username,
       content: this.textAreaContent,
       likes: 0,
-      CloseFriend: false
-    }
-    console.log('Submitted:', Post);
-    // Reset the text area and hide it
-    console.log('blogPost', this.ProfileUser)
-    const Blog = localStorage.getItem('Blog')
+      CloseFriend: false,
+    };
+
+    const Blog = localStorage.getItem('Blog');
     if (Blog != undefined) {
-      // console.log('B',Blog)
-      var profileBlog = JSON.parse(Blog)
-      profileBlog.push(Post)
-      console.log(profileBlog)
+      var profileBlog = JSON.parse(Blog);
+      profileBlog.push(Post);
+      console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
-      location.reload()
+      location.reload();
     }
-
-
-    // console.log('blog', this.ProfileUser.blogPosts)
     this.textAreaContent = '';
     this.showTextArea = false;
   }
 
   submitCloseFriendText() {
-
-
     var Post: BlogPost = {
       user: this.ProfileUser.username,
       content: this.textAreaCloseContent,
       likes: 0,
-      CloseFriend: true
-    }
-    console.log('Submitted:', Post);
-    // Reset the text area and hide it
-    console.log('blogPost', this.ProfileUser)
-    const Blog = localStorage.getItem('Blog')
+      CloseFriend: true,
+    };
+
+    const Blog = localStorage.getItem('Blog');
     if (Blog != undefined) {
-      // console.log('B',Blog)
-      var profileBlog = JSON.parse(Blog)
-      profileBlog.push(Post)
-      console.log(profileBlog)
+      var profileBlog = JSON.parse(Blog);
+      profileBlog.push(Post);
+      console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
-      location.reload()
+      location.reload();
     }
 
-
-    // console.log('blog', this.ProfileUser.blogPosts)
     this.textAreaCloseContent = '';
     this.showFrindPost = false;
   }
-  
 
-  ChangeBio(){
-    this.ProfileUser.bio=this.NewBio
+  ChangeBio() {
+    this.ProfileUser.bio = this.NewBio;
     var storedUsers = localStorage.getItem('Users');
     let users: any[] = [];
 
-    if (storedUsers != null){
+    if (storedUsers != null) {
       users = JSON.parse(storedUsers);
-      for(let i =0;i<users.length;i++){
-        if(users[i].username==this.ProfileUser.username){
-          users[i].bio=this.NewBio;
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].username == this.ProfileUser.username) {
+          users[i].bio = this.NewBio;
           break;
         }
       }
       localStorage.setItem('profileUser', JSON.stringify(this.ProfileUser));
       localStorage.setItem('Users', JSON.stringify(users));
-      location.reload()
+      location.reload();
     }
   }
 
   grabUser() {
-    const profile = localStorage.getItem('profileUser')
-    if (profile != null || profile != undefined) {
-      console.log('p', profile)
-      var profileUser = JSON.parse(profile)
-      console.log('profile', profileUser)
-      this.ProfileUser = profileUser
+    const profile = localStorage.getItem('profileUser');
+    if (profile) {
+      var profileUser = JSON.parse(profile);
+      this.ProfileUser = profileUser;
     }
-    //  this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
   }
 
   grabBlogPost() {
-    const Blog = localStorage.getItem('Blog')
+    const Blog = localStorage.getItem('Blog');
     if (Blog != undefined) {
-      // console.log('B',Blog)
-      var profileBlog = JSON.parse(Blog)
-      console.log('Blog', profileBlog)
+      var profileBlog = JSON.parse(Blog);
+      console.log('Blog', profileBlog);
       this.ProfileBlogPost = profileBlog;
-      var username = this.ProfileUser.username
-      const UserPost = this.ProfileBlogPost.filter(u => u.user == username);
-      this.ProfileBlogPost = UserPost
-      console.log('u', UserPost)
+      var username = this.ProfileUser.username;
+      const UserPost = this.ProfileBlogPost.filter((u) => u.user == username);
+      this.ProfileBlogPost = UserPost;
+      console.log('u', UserPost);
     }
   }
 
   like(post: UserBlogPost) {
     const Blog = localStorage.getItem('Blog')
     var Blogs:BlogPost[]=[];
-    
+
     if (!post.UserLike) {
-      post.likes = post.likes + 1
-      post.UserLike = true
+      post.likes = post.likes + 1;
+      post.UserLike = true;
       if (Blog != undefined) {
-        Blogs = JSON.parse(Blog)
+        Blogs = JSON.parse(Blog);
         for (let i = 0; i < Blogs.length; i++) {
           if (Blogs[i].content === post.content) {
-            Blogs[i].likes= Blogs[i].likes + 1;
+            Blogs[i].likes = Blogs[i].likes + 1;
           }
         }
       }
-    }
-
-    else {
-      post.likes = post.likes - 1
-      post.UserLike = false
+    } else {
+      post.likes = post.likes - 1;
+      post.UserLike = false;
       if (Blog != undefined) {
-        Blogs = JSON.parse(Blog)
+        Blogs = JSON.parse(Blog);
         for (let i = 0; i < Blogs.length; i++) {
           if (Blogs[i].content == post.content) {
-            Blogs[i].likes= Blogs[i].likes- 1;
+            Blogs[i].likes = Blogs[i].likes - 1;
           }
         }
       }
     }
-    localStorage.setItem('Blog',JSON.stringify(Blogs))
-
-
+    localStorage.setItem('Blog', JSON.stringify(Blogs));
   }
 
-  delete(post:UserBlogPost){
-    const Blog = localStorage.getItem('Blog')
-    console.log(post)
+  delete(post: UserBlogPost) {
+    const Blog = localStorage.getItem('Blog');
+    console.log(post);
     if (Blog != undefined) {
-      // console.log('B',Blog)
-      var profileBlog = JSON.parse(Blog)
-      profileBlog = profileBlog.filter((item: UserBlogPost) => item.content != post.content);
-      console.log('bl0gs',profileBlog)
+      var profileBlog = JSON.parse(Blog);
+      profileBlog = profileBlog.filter(
+        (item: UserBlogPost) => item.content != post.content
+      );
+      console.log('blogs', profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
-
-
-      location.reload()
+      location.reload();
     }
-
   }
-
-
-
 }

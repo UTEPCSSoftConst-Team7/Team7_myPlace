@@ -1,90 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head > <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>User Registration</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Inter";
-            font-weight: 400;
-            font-style: normal;
-            font-stretch: normal;
-            font-size: 1.5vw;
-            letter-spacing: 0.02em;
-            line-height: 0.9em;
-            box-sizing: border-box;
-            height: 100vh;
-        }
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .container {
-            margin: 100px;
-            margin-left: 550px;
-            max-width: 400px;
-            padding: 20px;
-            border: 5px solid #ccc;
-            border-radius: 10px;
-        }
+  <title>User Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter";
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      font-size: 1.5vw;
+      letter-spacing: 0.02em;
+      line-height: 0.9em;
+      box-sizing: border-box;
+      height: 100vh;
+    }
 
-        h2 {
-            text-align: center;
-        }
+    .container {
+      margin: 100px;
+      margin-left: 550px;
+      max-width: 400px;
+      padding: 20px;
+      border: 5px solid #ccc;
+      border-radius: 10px;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
+    h2 {
+      text-align: center;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="input"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
 
-        button {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="input"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
 
-       
+    button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+    }
+  </style>
+
+
 </head>
 
 <body style="background-color: darkblue;">
-    <div class="container">
-        <h2 style="color: #fff;">User Registration</h2>
-        <form action="registration_process.php" method="POST">
+  <div class="container">
+    <h2 style="color: #fff;">User Registration</h2>
+    <form action="registration_process.php" method="POST">
 
-            <label style="color: #fff;" for="username">Username</label>
-            <input type="text" id="username" name="username"  [(ngModel)]="username" required>
+      <label style="color: #fff;" for="username">Username</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
 
-            <label style="color: #fff;" for="email">Email</label>
-            <input type="email" id="email" name="email"  [(ngModel)]="email" required>
+      <label style="color: #fff;" for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required>
 
-            <label style="color: #fff;" for="bio">Bio</label>    
-            <input type="input" id="bio" name="bio"  [(ngModel)]="bio" required>
+      <label style="color: #fff;" for="bio">Bio</label>
+      <input type="input" id="bio" name="bio" [(ngModel)]="bio" required>
 
-            <label style="color: #fff;" for="password">Password</label>
-            <input type="password" id="password" name="password"   [(ngModel)]="password"required>
+      <label style="color: #fff;" for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
 
-            <label style="color: #fff;" for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password"  [(ngModel)]="confirmpassword" required>
+      <label style="color: #fff;" for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" [(ngModel)]="confirmpassword" required>
 
-            <button (click)="createNewUser()">Create Account</button>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <button (click)="createNewUser()">Create Account</button>
+      </div>
+    </form>
+  </div>
 
-        </form>
-    </div>
-    
 </body>
 
 </html>
-
