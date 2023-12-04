@@ -4,7 +4,8 @@ import {Observable} from 'rxjs';
 
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { User } from '../User';
+import { User, Messages, Conversation} from '../User';
+
 
 @Component({
   selector: 'app-messaging',

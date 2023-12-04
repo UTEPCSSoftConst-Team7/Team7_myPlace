@@ -23,14 +23,14 @@ export interface Users {
 
 
 export interface Conversation  {
-    participants: String[];
-    messages: Messages[]
+  participants: String[];
+  messages: Messages[]
 }
 
 export interface Messages{
-    sender: String;
-    content: string;
-    timestamp: string;
+  sender: String;
+  content: string;
+  timestamp: string;
 }
 
 export interface BlogPost {
