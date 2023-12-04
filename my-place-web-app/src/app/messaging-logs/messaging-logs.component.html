@@ -18,7 +18,6 @@
             line-height: 0.9em;
             box-sizing: border-box;
             height: 100vh;
-            /* background-color: black; */
         }
 
         .banner {
@@ -124,48 +123,43 @@
 
 </head>
 
-<body class="ultra-mode" style="background-color: black;">
+<body class="ultra-mode" style="background-color: white;">
     <div class="banner">
         <div class="left-content">
             <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
             <h1>myplace</h1>
             <button mat-raised-button color="primary" class="small-button" (click)="sendBack()"
-                style="margin-left:40px">Send Me Back</button>
+            style="margin-left:40px">Send Me Back</button>
         </div>
         <div class="right-content">
             <button [routerLink]="['/messaging']"><i class="fa fa-folder"></i> Messages </button>
             <button [routerLink]="['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
     </div>
+<br>
+<br>
+        <h2 style="text-align: center;">Which of your friends would you like to message.</h2>
 
-    <button class="small-button-orange" (click)="sendMessageLog()">Send Back to User Log</button>
+    <ul>
+        <div class="blogs">
+            <li *ngFor="let friends of ProfileUser.friends">
 
-    <br>
-    <br>
+                <div class="blogs" style="color: black;">
+                    <button class="users" (click)="messageUser(friends)">
+                        <p style="color: black;">
+                            {{ friends }}
+                        </p>
+                        <br>
+                    </button>
+                </div>
+            </li>
 
-    <div *ngFor="let message of this.Specific.messages" class="message-container">
-        <div *ngIf="message.sender === this.ProfileUser.username; else otherUserMessage" class="message message-right">
-            <div class="message-content">{{ message.content }}</div>
-            <div class="message-timestamp">{{ message.timestamp }}</div>
-            <div class="message-timestamp">{{message.sender}}</div>
+
         </div>
-        <ng-template #otherUserMessage>
-            <div class="message message-left">
-                <div class="message-content">{{ message.content }}</div>
-                <div class="message-timestamp">{{ message.timestamp }}</div>
-                <div class="message-timestamp">{{message.sender}}</div>
-
-            </div>
-        </ng-template>
-    </div>
 
 
-    <div class="text-area-button-container">
-        <div class="text-area-container">
-            <textarea class="text-area" placeholder="Type a message..." [(ngModel)]="sentMessage"></textarea>
-            <button class="submit-button" (click)="sendMessage()">Send</button>
-        </div>
-    </div>
 
+
+    </ul>
 
 </body>

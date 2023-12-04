@@ -36,10 +36,8 @@ export class UserComponent implements OnInit {
   showBioArea: boolean = false;
   NewBio: string = '';
 
-  constructor(
-    private router: ActivatedRoute,
-    private userService: UserService
-  ) {}
+
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     this.grabUser();
@@ -127,6 +125,10 @@ export class UserComponent implements OnInit {
       var profileUser = JSON.parse(profile);
       this.ProfileUser = profileUser;
     }
+  }
+
+  sendMessageLog(){
+    this.router.navigateByUrl("/user/messagingLog")
   }
 
   grabBlogPost() {

@@ -1,33 +1,101 @@
-.blogs {
-  top: 100px; /* Position the bio at the top of its parent container */
-  left: 180px;
-  text-align: center;
-  margin: 0 auto; /* This centers the container horizontally */
-  max-width: 600px; /* Adjust the max-width as needed */
-  background-color: transparent;
-  padding: 20px;
-  border: 5px solid lightblue;
-  border-radius: 10px;
-  justify-content: center; /* Horizontally center-align the content */
-  align-items: flex-start;
-}
-
-.users{
-  border: none;
-  outline: none; /* Removes the default focus outline */
-  background-color: transparent;
-}
-
 .small-button {
-  font-size: 8px; /* Adjust font size as needed */
-  padding: 15px 25px; /* Adjust padding as needed */
-  background-color: green; /* Change to your preferred shade of green */
-  margin-left: 100px;
-  color: white; /* Text color */
-  border-radius: 8px; /* Rounded corners */
-  font-size: 24px; /* Adjust font size */
-  letter-spacing: 2px; /* Increase spacing between letters */
-  text-shadow: 1px 1px 2px green, -1px -1px 2px lime; /* Apply multiple shadows for depth */
-  float: right;
-
+    font-size: 8px; /* Adjust font size as needed */
+    padding: 15px 25px; /* Adjust padding as needed */
+    background-color: green; /* Change to your preferred shade of green */
+    margin-left: 100px;
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 24px; /* Adjust font size */
+    letter-spacing: 2px; /* Increase spacing between letters */
+    text-shadow: 1px 1px 2px green, -1px -1px 2px lime; /* Apply multiple shadows for depth */
+    float: right;
+  
 }
+
+.small-button-orange {
+    font-size: 8px; /* Adjust font size as needed */
+    padding: 15px 25px; /* Adjust padding as needed */
+    background-color: orange; /* Change to your preferred shade of green */
+    margin-left: 0px;
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 24px; /* Adjust font size */
+    letter-spacing: 2px; /* Increase spacing between letters */
+    text-shadow: 1px 1px 2px green, -1px -1px 2px lime; /* Apply multiple shadows for depth */
+  
+}
+
+/* CSS for message container */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    color: black;
+  }
+  
+  /* CSS for messages sent by the current user (message-right) */
+  .message.message-right {
+    align-self: flex-end;
+    background-color: lightsalmon; /* Change this color as needed */
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    max-width: 70%; /* Adjust as needed */
+  }
+  
+  /* CSS for messages sent by other users (message-left) */
+  .message.message-left {
+    align-self: flex-start;
+    background-color: whitesmoke; /* Change this color as needed */
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    max-width: 70%; /* Adjust as needed */
+  }
+  
+  /* CSS for message content */
+  .message-content {
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+  
+  /* CSS for message timestamp */
+  .message-timestamp {
+    font-size: 12px;
+    color: #777;
+  }
+
+  .text-area-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5; /* Optional background color */
+    border-top: 1px solid #ccc;
+  }
+
+  .text-area-container {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  
+  .text-area {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .submit-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff; /* Adjust as needed */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+

@@ -14,9 +14,9 @@ export class UserService {
     throw new Error('Method not implemented.');
   }
   private usersUrl = 'assets/UserFile.json';
-  private messageUrl = 'assets/messageFile.json';
   private UserUrl = 'assets/User.Json';
   private blogUrl = 'assets/BlogPost.JSON';
+  private messageUrls ='assets/message.json';
 
   constructor(private http: HttpClient) { }
 
@@ -24,8 +24,10 @@ export class UserService {
     return this.http.get<any[]>(this.usersUrl);
   }
 
+
+
   getMessages(): Observable<any[]> {
-    return this.http.get<any[]>(this.messageUrl);
+    return this.http.get<any[]>(this.messageUrls);
   }
 
   getUSERS(): Observable<any[]> {
@@ -53,6 +55,8 @@ export class UserService {
       localStorage.setItem('Blog', JSON.stringify(data));
     });
   }
+
+
 
   storeMessagesInLocalStorage() {
     this.getMessages().subscribe((data) => {

@@ -196,21 +196,6 @@ export class FriendComponent implements OnInit {
   }
 
   friend() {
-    const profilE = localStorage.getItem('profileUser')
-    var friendList = false
-    console.log(profilE)
-    if (profilE != null || profilE != undefined) {
-      var profileUsers:User = JSON.parse(profilE)
-      console.log('pr',profileUsers)
-      if(profileUsers.Blocked!= undefined){
-        for(let i=0;i<profileUsers.Blocked.length;i++){
-          if(this.ProfileUser.username==profileUsers.Blocked[i]){
-            alert('You can not add anyone you have blocked!')
-            return
-          }
-        }
-      }
-    }
     const profile = localStorage.getItem('profileUser')
     var friendList = false
     if (profile != null || profile != undefined) {
@@ -218,6 +203,11 @@ export class FriendComponent implements OnInit {
       var profileUser = JSON.parse(profile)
       console.log('profile', profileUser)
       this.Friend = profileUser
+      console.log(this.Friend.username)
+      if(this.ProfileUser.username=='Blocked'){
+        alert('Stop trying to add them back as punishment you will have a blocked in your friendlist!')
+      }
+
       if (this.Friend.friends != undefined) {
         for (let i = 0; i < this.Friend.friends?.length; i++) {
           if (this.Friend.friends[i] == this.ProfileUser.username) {

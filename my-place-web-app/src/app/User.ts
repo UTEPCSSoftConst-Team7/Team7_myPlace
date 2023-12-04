@@ -21,11 +21,16 @@ export interface Users {
   Blocked: string[];
 }
 
-export interface Message {
-  Recipients: String[];
-  Sender: String;
-  content: string;
-  timestamp: string;
+
+export interface Conversation  {
+    participants: String[];
+    messages: Messages[]
+}
+
+export interface Messages{
+    sender: String;
+    content: string;
+    timestamp: string;
 }
 
 export interface BlogPost {

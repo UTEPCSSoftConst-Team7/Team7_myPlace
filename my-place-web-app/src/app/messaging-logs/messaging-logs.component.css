@@ -1,0 +1,33 @@
+.blogs {
+    top: 100px; /* Position the bio at the top of its parent container */
+    left: 180px;
+    text-align: center;
+    margin: 0 auto; /* This centers the container horizontally */
+    max-width: 600px; /* Adjust the max-width as needed */
+    background-color: transparent;
+    padding: 20px;
+    border: 5px solid lightblue;
+    border-radius: 10px;
+    justify-content: center; /* Horizontally center-align the content */
+    align-items: flex-start; 
+  }
+
+.users{
+    border: none;
+    outline: none; /* Removes the default focus outline */
+    background-color: transparent;
+}
+
+.small-button {
+    font-size: 8px; /* Adjust font size as needed */
+    padding: 15px 25px; /* Adjust padding as needed */
+    background-color: green; /* Change to your preferred shade of green */
+    margin-left: 100px;
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 24px; /* Adjust font size */
+    letter-spacing: 2px; /* Increase spacing between letters */
+    text-shadow: 1px 1px 2px green, -1px -1px 2px lime; /* Apply multiple shadows for depth */
+    float: right;
+  
+  }
