@@ -18,7 +18,7 @@ class SignInCommand implements Command {
   }
 
   execute(): void {
-    this.receiver.signIn();
+    this.receiver.CheckUser();
   }
 }
 
@@ -60,8 +60,5 @@ class CreatePostCommand implements Command {
 }
 
 
-/** Invoker
- * This is the class that will be used to execute the commands
- * It will be used to execute the commands
- * */
+
 

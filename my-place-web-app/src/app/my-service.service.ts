@@ -10,7 +10,4 @@ export class MyServiceService {
 
   constructor(private http:HttpClient) { }
 
-
-
-
 }

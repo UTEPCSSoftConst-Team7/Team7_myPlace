@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User, BlogPost, UserBlogPost } from '../User';
 import { UserService } from '../user.service';
 import { MyServiceService } from '../my-service.service';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -40,7 +39,7 @@ export class UserComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private userService: UserService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.grabUser();
@@ -60,8 +59,8 @@ export class UserComponent implements OnInit {
   }
 
   /**
-  * Perform actions or API calls here
-  */
+   * Perform actions or API calls here
+   */
   submitText() {
     var Post: BlogPost = {
       user: this.ProfileUser.username,
@@ -71,7 +70,6 @@ export class UserComponent implements OnInit {
     };
 
     const Blog = localStorage.getItem('Blog');
-
     if (Blog != undefined) {
       var profileBlog = JSON.parse(Blog);
       profileBlog.push(Post);
@@ -83,7 +81,6 @@ export class UserComponent implements OnInit {
     this.showTextArea = false;
   }
 
-
   submitCloseFriendText() {
     var Post: BlogPost = {
       user: this.ProfileUser.username,
@@ -93,7 +90,6 @@ export class UserComponent implements OnInit {
     };
 
     const Blog = localStorage.getItem('Blog');
-
     if (Blog != undefined) {
       var profileBlog = JSON.parse(Blog);
       profileBlog.push(Post);
@@ -101,6 +97,7 @@ export class UserComponent implements OnInit {
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
       location.reload();
     }
+
     this.textAreaCloseContent = '';
     this.showFrindPost = false;
   }
@@ -126,19 +123,15 @@ export class UserComponent implements OnInit {
 
   grabUser() {
     const profile = localStorage.getItem('profileUser');
-    if (profile != null || profile != undefined) {
-      console.log('p', profile);
+    if (profile) {
       var profileUser = JSON.parse(profile);
-      console.log('profile', profileUser);
       this.ProfileUser = profileUser;
     }
-    //  this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
   }
 
   grabBlogPost() {
     const Blog = localStorage.getItem('Blog');
     if (Blog != undefined) {
-      // console.log('B',Blog)
       var profileBlog = JSON.parse(Blog);
       console.log('Blog', profileBlog);
       this.ProfileBlogPost = profileBlog;
