@@ -143,8 +143,9 @@ export class UserComponent implements OnInit {
   }
 
   like(post: UserBlogPost) {
-    const Blog = localStorage.getItem('Blog');
-    var Blogs: BlogPost[] = [];
+    const Blog = localStorage.getItem('Blog')
+    var Blogs:BlogPost[]=[];
+
     if (!post.UserLike) {
       post.likes = post.likes + 1;
       post.UserLike = true;

@@ -3,143 +3,168 @@
     "user": "john_doe",
     "content": "Just finished coding a new project! #excited",
     "likes": 25,
+    "id": 1,
     "CloseFriend": false
   },
   {
     "user": "john_doe",
     "content": "Explored some new algorithms today. Learning never stops!",
     "likes": 30,
+    "id": 2,
     "CloseFriend": false
   },
   {
     "user": "john_doe",
     "content": "Shared my coding journey in a tech meetup. Great experience!",
     "likes": 20,
+    "id": 3,
     "CloseFriend": false
   },
   {
     "user": "jane_doe",
     "content": "Learned some cool Angular tricks today!",
     "likes": 30,
+    "id": 34,
     "CloseFriend": false
   },
   {
     "user": "jane_doe",
     "content": "Published a blog post on JavaScript best practices.",
     "likes": 35,
+    "id": 35,
     "CloseFriend": false
   },
   {
     "user": "jane_doe",
     "content": "Attended a tech conference and gained insights into AI development.",
     "likes": 28,
+    "id": 36,
     "CloseFriend": false
   },
   {
     "user": "sam_smith",
     "content": "Reached the summit on my latest hike! The view was breathtaking. 🏞️",
     "likes": 40,
+    "id": 37,
     "CloseFriend": false
   },
   {
     "user": "sam_smith",
     "content": "Discovered a new trail for nature lovers. Can't wait to explore more!",
     "likes": 45,
+    "id": 38,
     "CloseFriend": false
   },
   {
     "user": "sam_smith",
     "content": "Documented my wildlife photography adventure. Nature is stunning!",
     "likes": 38,
+    "id": 9,
     "CloseFriend": false
   },
   {
     "user": "nicoJ115",
     "content": "Just published my game. Check it out!",
     "likes": 15,
+    "id": 23,
     "CloseFriend": false
   },
   {
     "user": "nicoJ115",
     "content": "Coding late into the night on my new game project.",
-    "likes": 18
+    "likes": 18,
+    "id": 44
+
   },
   {
     "user": "nicoJ115",
     "content": "Attended a gaming tournament. Feeling inspired by the competition!",
     "likes": 22,
+    "id": 367,
     "CloseFriend": false
   },
   {
     "user": "isaba3lla",
     "content": "Making progress on my latest painting. Feeling inspired! 🎨",
     "likes": 20,
+    "id": 22,
     "CloseFriend": false
   },
   {
     "user": "isaba3lla",
     "content": "Exploring new art techniques. Creativity knows no bounds!",
     "likes": 25,
+    "id": 11,
     "CloseFriend": false
   },
   {
     "user": "isaba3lla",
     "content": "Reflecting on the role of art in society. A captivating discussion!",
     "likes": 30,
+    "id": 44,
     "CloseFriend": false
   },
   {
     "user": "litcowboykiller",
     "content": "Reviewed another classic Western movie. Oldies are goldies! 🤠🎬",
     "likes": 18,
+    "id": 77,
     "CloseFriend": false
   },
   {
     "user": "litcowboykiller",
     "content": "Exploring the history of the Wild West through literature.",
     "likes": 20,
+    "id": 399,
     "CloseFriend": false
   },
   {
     "user": "litcowboykiller",
     "content": "Attended a Western-themed event. Yeehaw! 🌵",
     "likes": 16,
+    "id": 234,
     "CloseFriend": false
   },
   {
     "user": "empty_user",
     "content": "Hello world!",
     "likes": 5,
+    "id": 345,
     "CloseFriend": false
   },
   {
     "user": "empty_user",
     "content": "An empty canvas awaits. Time to create something amazing!",
     "likes": 8,
+    "id": 3123,
     "CloseFriend": false
   },
   {
     "user": "empty_user",
     "content": "Contemplating the next big idea.",
     "likes": 10,
+    "id": 3807,
     "CloseFriend": false
   },
   {
     "user": "isaba3lla",
     "content": "Ban for Ban who work at MasterCard.",
     "likes": 50,
+    "id": 3453,
     "CloseFriend": false
   },
   {
     "user": "Team_MyPlace",
     "content": "Celebrating team milestones. Here's to more successes ahead!",
     "likes": 55,
+    "id": 111,
     "CloseFriend": false
   },
   {
     "user": "Team_MyPlace",
     "content": "Reflecting on teamwork dynamics. A journey worth experiencing!",
     "likes": 60,
+    "id": 222,
     "CloseFriend": false
   }
 ]
