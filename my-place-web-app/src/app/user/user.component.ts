@@ -11,11 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  Friend: User = {
-    username: 'NicoJ115',
-    password: 'adsfa',
-    email: 'sdafa'
-  }
+
   ProfileUser: User = {
     username: 'isaba3lla',
     password: 'isaba3llaPass',
@@ -24,11 +20,15 @@ export class UserComponent implements OnInit {
     profilePicture: '',
     blogPosts: ["Painting progress", "Coding my project", "Going to Camp Flogna", "Ban for Ban who work at MaterCard."],
     friends: [],
+    closeFriend: [],
+    Blocked: []
   };
   ProfileBlogPost: UserBlogPost[] = [];
   user: any;
   showTextArea: boolean = false;
+  showFrindPost: boolean= false;
   textAreaContent: string = '';
+  textAreaCloseContent: string = '';
   showBioArea:boolean = false;
   NewBio: string = '';
 
@@ -50,6 +50,10 @@ export class UserComponent implements OnInit {
     this.showBioArea = !this.showBioArea;
   }
 
+  toggleFriendTextBox(){
+    this.showFrindPost= !this.showFrindPost;
+  }
+
   submitText() {
     // Add functionality for submitting the text
     // For example, you can access the text from the textarea
@@ -60,7 +64,8 @@ export class UserComponent implements OnInit {
     var Post: BlogPost = {
       user: this.ProfileUser.username,
       content: this.textAreaContent,
-      likes: 0
+      likes: 0,
+      CloseFriend: false
     }
     console.log('Submitted:', Post);
     // Reset the text area and hide it
@@ -80,6 +85,35 @@ export class UserComponent implements OnInit {
     this.textAreaContent = '';
     this.showTextArea = false;
   }
+
+  submitCloseFriendText() {
+
+
+    var Post: BlogPost = {
+      user: this.ProfileUser.username,
+      content: this.textAreaCloseContent,
+      likes: 0,
+      CloseFriend: true
+    }
+    console.log('Submitted:', Post);
+    // Reset the text area and hide it
+    console.log('blogPost', this.ProfileUser)
+    const Blog = localStorage.getItem('Blog')
+    if (Blog != undefined) {
+      // console.log('B',Blog)
+      var profileBlog = JSON.parse(Blog)
+      profileBlog.push(Post)
+      console.log(profileBlog)
+      localStorage.setItem('Blog', JSON.stringify(profileBlog));
+      location.reload()
+    }
+
+
+    // console.log('blog', this.ProfileUser.blogPosts)
+    this.textAreaCloseContent = '';
+    this.showFrindPost = false;
+  }
+  
 
   ChangeBio(){
     this.ProfileUser.bio=this.NewBio

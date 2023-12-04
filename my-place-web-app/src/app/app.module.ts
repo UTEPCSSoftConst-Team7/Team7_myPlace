@@ -17,6 +17,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { UserComponent } from './user/user.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FriendComponent } from './friend/friend.component';
+import { IconComponent } from './icon/icon.component';
+import { FriendListComponent } from './friend-list/friend-list.component';
 
 
 
@@ -35,6 +37,8 @@ import { FriendComponent } from './friend/friend.component';
     UserComponent,
     SearchBarComponent,
     FriendComponent,
+    IconComponent,
+    FriendListComponent,
   ],
   imports: [
     BrowserModule,

@@ -142,6 +142,9 @@
                 <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
             </div>
             <h2>{{ ProfileUser.username }}</h2> 
+            <button [routerLink] = "['/user/icon']" >Change Icon</button>
+            <br>
+            <br>
             <div *ngIf="ProfileUser.friends">
                 <label>Friends:  {{ProfileUser.friends.length}}</label>
             </div>
@@ -165,6 +168,12 @@
     </div>
     
     <app-search-bar></app-search-bar>
+    <br>
+    <br>
+
+
+
+    <button [routerLink] = "['/user/friendList']" class="medium-button">Friends Page</button>
     
     <br>
     <br>
@@ -196,11 +205,27 @@
             <li>
                 <div class="container">
                     <div class="NewBlog"> 
-                        <button mat-raised-button color="primary" *ngIf="!showTextArea" class="medium-button" (click)="toggleTextArea()">Add Blog Post</button> 
+
+                        <button mat-raised-button color="primary" *ngIf="!showTextArea" class="medium-button" (click)="toggleTextArea()">
+                            Add Blog Post
+                        </button> 
+                        <br>
+                        <br>
+
+                        <button mat-raised-button color="primary" *ngIf="!showFrindPost" class="medium-button" (click)="toggleFriendTextBox()">
+                            Add Close Friend Blog Post
+                        </button>
+
                     </div>
+
                     <div *ngIf="showTextArea" class="text-area-container">
                         <textarea class="text-area" placeholder="Enter your text here" [(ngModel)]="textAreaContent"></textarea>
                         <button class="submit-button" (click)="submitText()">Submit</button>
+                    </div>
+
+                    <div *ngIf="showFrindPost" class="text-area-container">
+                        <textarea class="text-area" placeholder="Enter your text here" [(ngModel)]="textAreaCloseContent"></textarea>
+                        <button class="submit-button" (click)="submitCloseFriendText()">Submit</button>
                     </div>
                 </div>
             </li>

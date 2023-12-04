@@ -6,6 +6,8 @@ export interface User {
     profilePicture?: string;
     blogPosts?: (string | { type: 'text' | 'image'; content: string })[];
     friends?: String[];
+    closeFriend: String[],
+    Blocked : String[],
 }
 
 export interface Users{
@@ -15,12 +17,14 @@ export interface Users{
     bio?: string;
     profilePicture?: string;
     friends?: User[];
+    closeFriend: string[],
+    Blocked : string[],
 }
 
 
 export interface Message {
-    Recipients: User[];
-    Sender: User;
+    Recipients: String[];
+    Sender: String;
     content: string;
     timestamp: string; 
 }
@@ -29,10 +33,13 @@ export interface BlogPost {
     user:string
     content: string
     likes: number 
+    CloseFriend: boolean
 }
 
 export interface UserBlogPost extends BlogPost{
-    UserLike:boolean
+    UserLike:boolean,
+    CloseFriend: boolean
+
 }
 
   

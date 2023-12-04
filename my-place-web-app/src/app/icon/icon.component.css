@@ -1,0 +1,162 @@
+.body {
+    margin: 0;
+    font-family: "Inter";
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 1.5vw;
+    letter-spacing: 0.02em;
+    line-height: 0.9em;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.banner {
+    background-color: navy;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust spacing between images */
+}
+  
+.image-wrapper {
+    flex: 1 0 calc(50% - 5px); /* Ensure each button takes 50% width with some gap */
+    max-width: calc(50% - 5px);
+    text-align: center; /* Center the button horizontally */
+}
+  
+.image-button {
+    border: none; /* Remove default button styles */
+    padding: 0; /* Remove default button padding */
+    background: none; /* Remove default button background */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: block; /* Display the button as a block element */
+    width: 100%; /* Ensure button takes the full width of its container */
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #000;
+}
+  
+.image-button img {
+    width: 100%; /* Ensure all images inside buttons take the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+}
+  
+
+  
+
+.icon{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.small-button {
+    font-size: 8px; /* Adjust font size as needed */
+    padding: 15px 25px; /* Adjust padding as needed */
+    background-color: green; /* Change to your preferred shade of green */
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 24px; /* Adjust font size */
+    letter-spacing: 2px; /* Increase spacing between letters */
+    text-shadow: 1px 1px 2px green, -1px -1px 2px lime; /* Apply multiple shadows for depth */
+  
+  }
+  
+  .medium-button:hover {
+    background-color: darkgreen; /* Change to a darker shade on hover if desired */
+  }
+
+.left-content {
+    display: flex;
+    align-items: center;
+}
+
+.right-content {
+    display: flex;
+    gap: 10px;
+}
+
+.left-content img {
+    margin-right: 5px;
+    /* Add spacing between the logo and header */
+}
+
+
+.userspecs {
+    display: flex;
+    align-items: center;
+}
+
+.profilepic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 150px;
+    /* margin-bottom: 20px; */
+}
+
+.bio {
+    position: relative;
+    /* Change to relative to banner*/
+    margin-left: 100px;
+    /* gap: 20px; */
+    text-align: center;
+    background-color: transparent;
+    padding: 20px;
+    border: 5px solid darkblue;
+    border-radius: 10px;
+    flex: 1;
+}
+
+h2 {
+    text-align: left;
+    color: darkblue;
+}
+
+h1 {
+    color: white;
+    margin-top: 30px;
+    font-size: 60px;
+    font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+h3 {
+    color: white;
+    background-color: darkblue;
+    text-align: left;
+    margin-top: 0;
+    height: 10;
+    padding: 20px;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    text-align: left;
+    bottom: 100px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

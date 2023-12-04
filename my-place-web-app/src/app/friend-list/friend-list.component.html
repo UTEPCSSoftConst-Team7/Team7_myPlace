@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>User Registration</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter";
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            font-size: 1.5vw;
+            letter-spacing: 0.02em;
+            line-height: 0.9em;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+
+        .banner {
+            background-color: navy;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px;
+        }
+
+        .left-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .right-content {
+            display: flex;
+            gap: 10px;
+        }
+
+        .left-content img {
+            margin-right: 5px;
+            /* Add spacing between the logo and header */
+        }
+
+    </style>
+
+
+</head>
+
+<body class="ultra-mode" style="background-color: white;">
+    <div class="banner">
+        <div class="left-content">
+          <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
+          <h1>myplace</h1>
+        </div>
+        <button mat-raised-button color="primary" class="small-button" (click)="sendBack()" style="margin-left:20px">Send Me Back</button>
+        <div class="right-content">
+          <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
+          <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
+        </div>
+      </div>
+
+      <br>
+      <h1 style="color: black;">{{ProfileUser.username}}</h1>
+      <button mat-raised-button color="primary" class="small-button" (click)="deleteUsers()">Delete Account</button>
+    <br>
+    <br>  
+    <div class="Friends">
+        <h3 style="color: black; text-align: center;">Friends List:</h3>
+        <div *ngFor="let friend of this.ProfileUser.friends" class="friend">
+            <div class="AddCloseFriend" style="margin-left: 50%;">
+                <button style="color: green;" (click)="this.closeFrined(friend)"><i class="fa fa-plus"></i></button>
+                <button style="color: red; margin-left:10px" (click)="this.RemoveFrined(friend)"><i class="fa fa-trash-o">remove</i></button>
+                <button style="color: red; margin-left:10px" (click)="this.blocked(friend)"><i class="fa fa-close" style="color:red">block</i></button>
+                <br>
+                <br>
+            </div>
+            {{friend}}
+            
+        </div>
+        
+    </div>
+
+    <br>
+    <br> 
+
+    <div class="Friends">
+        <h3 style="color: black; text-align: center;"> Close Friends List:</h3>
+        <div *ngFor="let friends of this.ProfileUser.closeFriend" class="closeFriend">
+            <div class="RemoveCloseFriend" style="margin-left: 80%;">
+                <button style="color: red; margin-left:10px" (click)="RemovecloseFrined(friends)">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+            </div>
+            {{friends}}
+        </div>
+    </div>
+
+    <br>
+    <br> 
+
+    <div class="Friends">
+        <h3 style="color: black; text-align: center;">Blocked List:</h3>
+        <div *ngFor="let friend of this.ProfileUser.Blocked" class="blocked">
+            <div class="AddCloseFriend" style="margin-left: 80%;">
+                <button style="color: green; margin-left:10px" (click)="unblock(friend)">
+                    <i class="fa fa-check"></i>
+                </button>
+            </div>
+            {{friend}}
+        </div>
+    </div>
+</body>
