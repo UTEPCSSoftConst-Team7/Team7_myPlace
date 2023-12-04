@@ -3,11 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './User';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  createUser(user: User) {
+    throw new Error('Method not implemented.');
+  }
+  storeUserInLocalStorage(user: User) {
+    throw new Error('Method not implemented.');
+  }
   private usersUrl = 'assets/UserFile.json';
   private UserUrl = 'assets/User.Json';
   private blogUrl = 'assets/BlogPost.JSON';
@@ -30,30 +35,28 @@ export class UserService {
   getBlog(): Observable<any[]> {
     return this.http.get<any[]>(this.blogUrl);
   }
-  
 
   storeUsersInLocalStorage() {
-    this.getUsers().subscribe(data => {
+    this.getUsers().subscribe((data) => {
       localStorage.setItem('users', JSON.stringify(data));
     });
   }
 
   storeUSERSInLocalStorage() {
-    this.getUSERS().subscribe(data => {
+    this.getUSERS().subscribe((data) => {
       localStorage.setItem('Users', JSON.stringify(data));
     });
   }
 
   storeBlogInLocalStorage() {
-    this.getBlog().subscribe(data => {
+    this.getBlog().subscribe((data) => {
       localStorage.setItem('Blog', JSON.stringify(data));
     });
   }
 
   storeMessagesInLocalStorage() {
-    this.getMessages().subscribe(data => {
+    this.getMessages().subscribe((data) => {
       localStorage.setItem('messages', JSON.stringify(data));
     });
   }
-  
 }

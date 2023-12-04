@@ -1,244 +1,340 @@
+<!-- Displays user profile components such as username, bio, profile pic, and  blog posts -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head > <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <title>User Registration</title>
     <style>
-        body {
-            margin: 0;
-            font-family: "Inter";
-            font-weight: 400;
-            font-style: normal;
-            font-stretch: normal;
-            font-size: 1.5vw;
-            letter-spacing: 0.02em;
-            line-height: 0.9em;
-            box-sizing: border-box;
-            height: 100vh;
-        }
+      body {
+        margin: 0;
+        font-family: "Inter";
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-size: 1.5vw;
+        letter-spacing: 0.02em;
+        line-height: 0.9em;
+        box-sizing: border-box;
+        height: 100vh;
+      }
 
-        .banner {
-            background-color: navy;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 7px;
-        }
+      .banner {
+        background-color: navy;
+        margin-bottom: -30px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 7px;
+      }
 
-        .left-content {
-            display: flex;
-            align-items: center;
-        }
+      .left-content {
+        display: flex;
+        align-items: center;
+      }
 
-        .right-content {
-            display: flex;
-            gap: 10px;
-        }
+      .right-content {
+        display: flex;
+        gap: 10px;
+        margin-right: 15px;
+      }
 
-        .left-content img {
-            margin-right: 5px; /* Add spacing between the logo and header */
-        }
+      .left-content img {
+        margin-right: 5px; /* Add spacing between the logo and header */
+      }
 
-        .userspecs {
-            display: flex;
-            align-items: center;
-        }
+      .userspecs {
+        display: flex;
+        align-items: center;
+        margin-bottom: -20px;
+      }
 
-        .profilepic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            line-height: 150px;
-            /* margin-bottom: 20px; */
-        }
+      .profilepic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        line-height: 150px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+      }
 
-        .bio {
-            position: relative; /* Change to relative to banner*/
-            margin-left: 100px;
-            /* gap: 20px; */
-            text-align: center;
-            background-color: transparent;
-            padding: 20px;
-            border: 5px solid darkblue;
-            border-radius: 10px;
-            flex: 1;
-        }
+      .bio {
+        /* position: relative; Change to relative to banner */
+        margin-left: 100px;
+        /* position: relative; */
+        margin-top: 0px;
+        margin-right: 50px;
+        /* gap: 20px; */
+        text-align: center;
+        background-color: transparent;
+        padding: 20px;
+        border: 5px solid darkblue;
+        border-radius: 10px;
+        flex: 1;
+      }
 
-        h2 {
-            text-align: left;
-            color: darkblue;
-        }
+      .blogs {
+        margin-top: 20px; /* Add margin to the top of each blog post */
+        margin-bottom: 20px; /* Add margin to the bottom of each blog post */
+        margin-right: 50px;
+        margin-left: 50px;
+      }
 
-        h1 {
-            color: white;
-            margin-top: 30px;
-            font-size: 60px;
-            font-family: 'Trebuchet MS', sans-serif;
+      .blogs button {
+        margin-left: 10px; /* Adjust the left margin of the buttons inside the blog post */
+      }
 
-        }
+      h2 {
+        text-align: left;
+        color: darkblue;
+      }
 
-        h3{
-            color: white;
-            background-color: darkblue;
-            text-align: left;
-            margin-top: 0;
-            height: 10;
-            padding: 20px;
+      h1 {
+        color: white;
+        margin-top: 30px;
+        font-size: 60px;
+        font-family: "Trebuchet MS", sans-serif;
+      }
 
-        }
+      h3 {
+        color: white;
+        background-color: darkblue;
+        text-align: left;
+        margin-top: 0;
+        height: 10;
+        padding: 20px;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: black;
-            text-align: left;
-            bottom: 100px;
-        }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: black;
+        text-align: left;
+        bottom: 100px;
+      }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
 
-        /* button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        } */
+      button {
+        /* padding: 10px 15px; */
+        border-radius: 2px;
+        height: 40px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .medium-button {
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Center the text horizontally */
+        align-items: center; /* Center the text vertically */
+      }
+
+      .small-button {
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Center the text horizontally */
+        align-items: center; /* Center the text vertically */
+      }
+
+      .friend-search-label {
+        display: flex;
+        margin-top: 0px;
+        margin-left: 960px;
+      }
+
+      .friend-search {
+        display: flex;
+        margin-top: 0px;
+        margin-left: 960px;
+      }
+
+      .text-area-container {
+        display: flex;
+        align-items: center; /* Align items vertically in the container */
+      }
+
+      .text-area {
+        width: 70%;
+        height: 50px;
+        box-sizing: border-box;
+        margin-right: 10px; /* Add right margin to create space between textarea and button */
+      }
+
+      .submit-button {
+        height: 50px; /* Match the height of the text area */
+        cursor: pointer;
+      }
     </style>
+  </head>
 
-       
-</head>
-
-<body class="ultra-mode" style="background-color: white;">
+  <!-- MyPlace header -->
+  <body class="ultra-mode" style="background-color: white">
     <div class="banner">
         <div class="left-content">
           <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
           <h1>myplace</h1>
-          <button mat-raised-button color="primary" class="small-button" (click)="sendMessageLog()"
-            style="margin-left:40px">Messaging Friends</button>
         </div>
         <div class="right-content">
-          <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
+          <button [routerLink] = "['/user/friendList']" class="medium-button">Friends Page</button>
+          <button (click)="sendMessageLog()" ><i class="fa fa-folder"></i> Messages </button>
           <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
       </div>
 
     <div class="userspecs">
-        
-        <div class="userprofile">
-            <!-- TODO: Change for the actual value for username in the JSON -->
-            <ng-template #defaultImage>
-                <img src="assets/catFist.png" alt="Default Profile Picture">
-              </ng-template>
-            <div class="profilepic">
-                <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
-            </div>
-            <h2>{{ ProfileUser.username }}</h2> 
-            <button [routerLink] = "['/user/icon']" >Change Icon</button>
-            <br>
-            <br>
-            <div *ngIf="ProfileUser.friends">
-                <label>Friends:  {{ProfileUser.friends.length}}</label>
-            </div>
+      <div class="userprofile" style="margin-top: 10px">
+        <!-- TODO: Change for the actual value for username in the JSON -->
+        <ng-template #defaultImage>
+          <img src="assets/catFist.png" alt="Default Profile Picture" />
+        </ng-template>
+        <div class="profilepic">
+          <img
+            *ngIf="ProfileUser.profilePicture; else defaultImage"
+            [src]="ProfileUser.profilePicture"
+            alt="Profile Picture"
+          />
         </div>
-        <br>
-        <div class="bio">
-            <h3>My Bio</h3>
-            <p style="color: black ">{{ProfileUser.bio}}</p>
-    
-            <button mat-raised-button color="primary" class="small-button" style="text-align: right;" (click)="toggleBioArea()"*ngIf="!showBioArea">
-                Change Bio
-            </button> 
-            <div *ngIf="showBioArea" class="text-area-container">
-                <textarea class="text-area" placeholder="Enter your text here" [(ngModel)]="NewBio"></textarea>
-                <button class="submit-button" (click)="ChangeBio()">Submit</button>
-            </div>
-        </div> 
-        <br>  
+        <h2 style="margin-left: 55px; margin-bottom: -1px">
+          {{ ProfileUser.username }}
+        </h2>
+        <button
+          [routerLink]="['/user/icon']"
+          style="margin-top: 10px; margin-left: 50px; height: 30px"
+        >
+          Change Icon
+        </button>
+        <br />
+        <br />
+      </div>
 
-        <br>
+      <div class="bio">
+        <h3>My Bio</h3>
+        <p style="color: black">{{ ProfileUser.bio }}</p>
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="small-button"
+          style="text-align: right"
+          (click)="toggleBioArea()"
+          *ngIf="!showBioArea"
+        >
+          Change Bio
+        </button>
+        <div *ngIf="showBioArea" class="text-area-container">
+          <textarea
+            class="text-area"
+            placeholder="Enter your text here"
+            [(ngModel)]="NewBio"
+          ></textarea>
+          <button class="submit-button" (click)="ChangeBio()">Submit</button>
+        </div>
+      </div>
     </div>
-    
-    <app-search-bar></app-search-bar>
-    <br>
-    <br>
 
+    <div class="friend-search-label">
+      <div *ngIf="ProfileUser.friends">
+        <label>Friends: {{ ProfileUser.friends.length }}</label>
+      </div>
+    </div>
+    <div class="friend-search">
+      <app-search-bar></app-search-bar>
+    </div>
 
-
-    <button [routerLink] = "['/user/friendList']" class="medium-button">Friends Page</button>
-    
-    <br>
-    <br>
-    <br>
-
-    
     <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
 
-    <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
+    <h2 style="text-align: left; margin-left: 50px">
+      {{ ProfileUser.username }}'s Blog Posts
+    </h2>
     <ul>
-        <div class="blogs">
-            <li *ngFor="let post of ProfileBlogPost" >
-                <div class="blogs" style="color: black;">
-                <p style="color: black;">
-                    {{ post.content }}
-                </p>
-                <br>
-                <!-- need an if lese statment to ma ke the heart red -->
-                    <button (click)="like(post)">
-                        <i  style="text-align: center;" class="fa fa-heart"></i>
-                    </button>
-                    {{post.likes}}
-                    <button style="margin-left: 300px;" (click)="delete(post)">
-                        <i  class="fa fa-trash"></i>
-                    </button>
-                    
-                </div>
-            </li>
-            <li>
-                <div class="container">
-                    <div class="NewBlog"> 
+      <div class="blogs">
+        <li *ngFor="let post of ProfileBlogPost">
+          <div
+            class="blogs"
+            style="color: black; margin-right: 0px; margin-left: 0px"
+          >
+            <p style="color: black">
+              {{ post.content }}
+            </p>
+            <br />
+            <!-- need an if lese statment to ma ke the heart red -->
+            <button (click)="like(post)">
+              <i style="text-align: center" class="fa fa-heart"></i>
+            </button>
+            {{ post.likes }}
+            <button style="margin-left: 300px" (click)="delete(post)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="container">
+            <div class="NewBlog">
+              <button
+                mat-raised-button
+                color="primary"
+                *ngIf="!showTextArea"
+                class="medium-button"
+                (click)="toggleTextArea()"
+              >
+                Add Blog Post
+              </button>
+              <br />
+              <br />
 
-                        <button mat-raised-button color="primary" *ngIf="!showTextArea" class="medium-button" (click)="toggleTextArea()">
-                            Add Blog Post
-                        </button> 
-                        <br>
-                        <br>
+              <button
+                mat-raised-button
+                color="primary"
+                *ngIf="!showFrindPost"
+                class="medium-button"
+                (click)="toggleFriendTextBox()"
+              >
+                Add Close Friend Blog Post
+              </button>
+            </div>
 
-                        <button mat-raised-button color="primary" *ngIf="!showFrindPost" class="medium-button" (click)="toggleFriendTextBox()">
-                            Add Close Friend Blog Post
-                        </button>
+            <div *ngIf="showTextArea" class="text-area-container">
+              <textarea
+                class="text-area"
+                placeholder="Enter your text here"
+                [(ngModel)]="textAreaContent"
+              ></textarea>
+              <button class="submit-button" (click)="submitText()">
+                Submit
+              </button>
+            </div>
 
-                    </div>
-
-                    <div *ngIf="showTextArea" class="text-area-container">
-                        <textarea class="text-area" placeholder="Enter your text here" [(ngModel)]="textAreaContent"></textarea>
-                        <button class="submit-button" (click)="submitText()">Submit</button>
-                    </div>
-
-                    <div *ngIf="showFrindPost" class="text-area-container">
-                        <textarea class="text-area" placeholder="Enter your text here" [(ngModel)]="textAreaCloseContent"></textarea>
-                        <button class="submit-button" (click)="submitCloseFriendText()">Submit</button>
-                    </div>
-                </div>
-            </li>
-        </div>
-
-
-
+            <div *ngIf="showFrindPost" class="text-area-container">
+              <textarea
+                class="text-area"
+                placeholder="Enter your text here"
+                [(ngModel)]="textAreaCloseContent"
+              ></textarea>
+              <button class="submit-button" (click)="submitCloseFriendText()">
+                Submit
+              </button>
+            </div>
+          </div>
+        </li>
+      </div>
     </ul>
-    <br>
-
-    
-</body>
-
+    <br />
+  </body>
 </html>

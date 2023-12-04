@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
+import {Observable} from 'rxjs';
+
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { User, Conversation, Messages } from '../User';
+import { User, Messages, Conversation} from '../User';
+
 
 @Component({
   selector: 'app-messaging',
   templateUrl: './messaging.component.html',
-  styleUrls: ['./messaging.component.css']
+  styleUrls: ['./messaging.component.css'],
 })
 export class MessagingComponent implements OnInit {
   Converstion: Conversation[] = []

@@ -1,90 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>MyPlace</title>
-  </head>
 
-  <!-- Bottom Left Project Info title: MyPlace -->
+<head>
+  <title>MyPlace</title>
+</head>
 
-  <body class="home-page ultra-mode home-page-js">
-    <header class="ui">
-      <a
-        class="logo"
-      >
-        <span class="slideUp">
-          <span>MyPlace</span>
-        </span>
-        <span class="slideUp">
-          <span> Team 7 </span>
-        </span>
-      </a>
+<!-- Bottom Left Project Info title: MyPlace -->
 
-      <!-- Mobile Nav Button -->
-      <button class="mobile-nav" type="button" role="button" aria-label="Menu">
-        <span class="mobile-nav-box">
-          <span class="mobile-nav-inner"></span
-        ></span>
-      </button>
+<body style="background-color: darkblue;" class="home-page home-page-js">
+  <header class="ui">
+    <a class="logo">
+      <span class="slideUp">
+        <span>MyPlace</span>
+      </span>
+      <span class="slideUp">
+        <span> Team 7 </span>
+      </span>
+    </a>
 
-      <div class="info">
-        <div class="left">
-          <!-- Team Name Listing -->
-          <div class="contact">
-            <ul>
-              <li>Alan Ochoa</li>
-              <li>Didi Guillen</li>
-            </ul>
-            <ul>
-              <li>Nicholas Jara</li>
-              <li>Michelle Diaz</li>
-            </ul>
-            <ul>
-              <li>Isabella Gaytan</li>
-              <li>Thomas Sosa</li>
-            </ul>
-            <ul>
-              <li>Esai Flores</li>
-              <li>Dr. Bhanukiran Gurijala</li>
-            </ul>
-          </div>
+    <!-- Mobile Nav Button -->
+    <button class="mobile-nav" type="button" role="button" aria-label="Menu">
+      <span class="mobile-nav-box">
+        <span class="mobile-nav-inner"></span></span>
+    </button>
 
-          <nav class="links">
-            <!-- Two links in column beside team listings -->
-            <ul>
-              <li class="about-li">
-                <button class="link" aria-label="About">
-                  <span>01</span>
-                  <strong>About&mdash;us</strong>
-                </button>
-              </li>
-            </ul>
-          </nav>
+    <div class="info">
+      <div class="left">
+        <!-- Team Name Listing -->
+        <div class="contact">
+          <ul>
+            <li>Alan Ochoa</li>
+            <li>Didi Guillen</li>
+          </ul>
+          <ul>
+            <li>Nicholas Jara</li>
+            <li>Michelle Diaz</li>
+          </ul>
+          <ul>
+            <li>Isabella Gaytan</li>
+            <li>Thomas Sosa</li>
+          </ul>
+          <ul>
+            <li>Esai Flores</li>
+            <li>Dr. Bhanukiran Gurijala</li>
+          </ul>
         </div>
 
-        <!-- Bottom right section of index page -->
-        <div class="right">
-        
+        <nav class="links">
+          <!-- Two links in column beside team listings -->
+          <ul>
+            <li class="about-li">
+              <button class="link" aria-label="About">
 
-          <!--  Page Color Circle Selector bottom Right Corner
-                @TODO: Add the script for the color selector to appear
-          -->
-          <!--  Page Color Circle Selector bottom Right Corner -->
-          <div class="color-mode">
-            <div class="dot"></div>
-            <button class="night-mode" aria-label="Night Color Mode"></button>
-            <button class="light-mode" aria-label="Light Color Mode"></button>
-            <button class="ultra-mode" aria-label="Ultra Color Mode"></button>
-            <div class="circle"></div>
-          </div>
-        </div>
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-    </header>
+      <!-- Bottom right section of index page -->
+      <div class="right">
 
-    <!-- Curtain -->
-    <div
-      class="curtain"
-      style="
+
+        <!--  Page Color Circle Selector bottom Right Corner
+                @TODO: Add the script for the color selector to appear
+          -->
+        <!--  Page Color Circle Selector bottom Right Corner -->
+        <div class="color-mode">
+          <div class="dot"></div>
+          <button class="night-mode" aria-label="Night Color Mode"></button>
+          <button class="light-mode" aria-label="Light Color Mode"></button>
+          <button class="ultra-mode" aria-label="Ultra Color Mode"></button>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Curtain -->
+  <div class="curtain" style="
         position: fixed;
         top: 0;
         left: 0;
@@ -92,80 +87,69 @@
         height: 100vh;
         z-index: 1;
         background-color: #f2f2f2;
-      "
-    ></div>
+      "></div>
 
-    <!--
+  <!--
       Home Page's content
       @TODO: Implement and create home screen components with animation logic
     --->
-    <div id="barba-wrapper">
-      <div class="barba-container" data-namespace="home-page">
-        <div class="barba-transition-container">
-          <div
-            class="stagePerspective parallaxPerspective perspective-origin-tt-bb"
-          >
-            <div class="stageContainer" style="opacity: 0">
-              <main class="stage">
-                <ul class="projects">
-                  <li class="projectsLi" data-barba="HomeTransition">
-                    <div class="projectContainer">
-                      <a [routerLink]="'/signin'" data-info="Dash" data-barba="HomeTransition">
-                        Sign-in
-                      </a>
-                    </div>
-                  </li>
+  <div id="barba-wrapper">
+    <div class="barba-container" data-namespace="home-page">
+      <div class="barba-transition-container">
+        <div class="stagePerspective parallaxPerspective perspective-origin-tt-bb">
+          <div class="stageContainer" style="opacity: 0">
+            <main class="stage">
+              <ul class="projects">
+                <li class="projectsLi" data-barba="HomeTransition">
+                  <div class="projectContainer">
+                    <a [routerLink]="'/signin'" data-info="Dash" data-barba="HomeTransition">
+                      Sign-in
+                    </a>
+                  </div>
+                </li>
 
-                  <li class="projectsLi" data-barba="HomeTransition">
-                    <div class="projectContainer">
-                      <a [routerLink]="'/createaccount'" data-info="Dash" data-barba="HomeTransition">
-                        Create Account
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </main>
-            </div>
+                <li class="projectsLi" data-barba="HomeTransition">
+                  <div class="projectContainer">
+                    <a [routerLink]="'/createaccount'" data-info="Dash" data-barba="HomeTransition">
+                      Create Account
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </main>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- About us section's content
-    @TODO: Implement new component for the about us page
-    @TODO Team and project summary and description
-    @TODO list technologies used on project
-    --->
-    <!-- About us page component implemented -->
-    <app-about-us-page></app-about-us-page>
+  <app-about-us-page></app-about-us-page>
 
-    <noscript id="deferred-styles">
-      <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    </noscript>
+  <noscript id="deferred-styles">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  </noscript>
 
-    <script src="./src/assets/js/barba.min.js"></script>
-    <script src="./src/assets/js/appMenu.js"></script>
-    <script>
-      var loadDeferredStyles = function () {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement);
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf =
-        window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame;
-      if (raf)
-        raf(function () {
-          window.setTimeout(loadDeferredStyles, 0);
-        });
-      else window.addEventListener("load", loadDeferredStyles);
-    </script>
-  </body>
+  <script src="./src/assets/js/barba.min.js"></script>
+  <script src="./src/assets/js/appMenu.js"></script>
+  <script>
+    var loadDeferredStyles = function () {
+      var addStylesNode = document.getElementById("deferred-styles");
+      var replacement = document.createElement("div");
+      replacement.innerHTML = addStylesNode.textContent;
+      document.body.appendChild(replacement);
+      addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf =
+      window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.msRequestAnimationFrame;
+    if (raf)
+      raf(function () {
+        window.setTimeout(loadDeferredStyles, 0);
+      });
+    else window.addEventListener("load", loadDeferredStyles);
+  </script>
+</body>
+
 </html>
-
-
-  

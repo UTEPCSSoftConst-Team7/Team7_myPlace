@@ -923,6 +923,7 @@ button.link {
 }
 
 @media screen and (max-width: 767px) {
+
   .btn-back,
   .btn-page-back {
     top: 5vw;
@@ -936,6 +937,7 @@ button.link {
 }
 
 @media screen and (min-width: 768px) {
+
   .btn-back,
   .btn-page-back {
     display: block;
@@ -954,10 +956,8 @@ button.link {
   -webkit-transform: translateX(0) scale(1);
   transform: translateX(0) scale(1);
   opacity: 1;
-  -webkit-animation: slideLeftOutRightIn 2s
-    cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.25s infinite forwards;
-  animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.25s
-    infinite forwards;
+  -webkit-animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.25s infinite forwards;
+  animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.25s infinite forwards;
 }
 
 @-webkit-keyframes slideLeftOutRightIn {
@@ -1044,10 +1044,8 @@ button.link {
   -webkit-transform: translateY(0) scale(1);
   transform: translateY(0) scale(1);
   opacity: 1;
-  -webkit-animation: scaleSlideDownscaleSlideUp 2s
-    cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s infinite forwards;
-  animation: scaleSlideDownscaleSlideUp 2s
-    cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s infinite forwards;
+  -webkit-animation: scaleSlideDownscaleSlideUp 2s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s infinite forwards;
+  animation: scaleSlideDownscaleSlideUp 2s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.25s infinite forwards;
 }
 
 @-webkit-keyframes scaleSlideDownscaleSlideUp {
@@ -1256,6 +1254,7 @@ body.ultra-mode .ui .copyright {
 }
 
 @media screen and (min-width: 250px) {
+
   body.night-mode.uiHover:not(.aboutShow) body.night-mode .copyright,
   body.ultra-mode.uiHover:not(.aboutShow) body.night-mode .copyright,
   body.night-mode.uiHover:not(.aboutShow) body.ultra-mode .copyright,
@@ -1355,6 +1354,7 @@ body.ultra-mode .about .right {
 }
 
 @media screen and (min-width: 768px) {
+
   body.night-mode .about:before,
   body.ultra-mode .about:before {
     display: none;
@@ -1362,6 +1362,7 @@ body.ultra-mode .about .right {
 }
 
 @media screen and (max-width: 767px) {
+
   body.night-mode .ui .info,
   body.ultra-mode .ui .info {
     background-color: rgba(0, 0, 0, 0.85);
@@ -1369,6 +1370,7 @@ body.ultra-mode .about .right {
 }
 
 @supports (-webkit-text-stroke: 2px #f2f2f2) or (text-stroke: 2px #f2f2f2) {
+
   body.night-mode.home-page:not(.ultra-mode) .projects a,
   body.ultra-mode.home-page:not(.ultra-mode) .projects a {
     color: transparent;
@@ -1377,53 +1379,25 @@ body.ultra-mode .about .right {
 }
 
 @supports (-webkit-text-stroke: 0px #f2f2f2) or (text-stroke: 0px #f2f2f2) {
-  body.night-mode.home-page:not(.ultra-mode):not(.intro):not(.outro)
-    .projects.isHovering
-    li:hover
-    a,
-  body.night-mode.home-page:not(.ultra-mode):not(.outro)
-    .projects
-    li.isSelected
-    a,
-  body.night-mode.home-page:not(.ultra-mode):not(.outro)
-    .projects
-    li.isSelected:hover
-    a,
-  body.ultra-mode.home-page:not(.ultra-mode):not(.intro):not(.outro)
-    .projects.isHovering
-    li:hover
-    a,
-  body.ultra-mode.home-page:not(.ultra-mode):not(.outro)
-    .projects
-    li.isSelected
-    a,
-  body.ultra-mode.home-page:not(.ultra-mode):not(.outro)
-    .projects
-    li.isSelected:hover
-    a {
+
+  body.night-mode.home-page:not(.ultra-mode):not(.intro):not(.outro) .projects.isHovering li:hover a,
+  body.night-mode.home-page:not(.ultra-mode):not(.outro) .projects li.isSelected a,
+  body.night-mode.home-page:not(.ultra-mode):not(.outro) .projects li.isSelected:hover a,
+  body.ultra-mode.home-page:not(.ultra-mode):not(.intro):not(.outro) .projects.isHovering li:hover a,
+  body.ultra-mode.home-page:not(.ultra-mode):not(.outro) .projects li.isSelected a,
+  body.ultra-mode.home-page:not(.ultra-mode):not(.outro) .projects li.isSelected:hover a {
     color: #f2f2f2;
   }
 }
 
 @supports (-webkit-text-stroke: 2px #f2f2f2) or (text-stroke: 2px #f2f2f2) {
-  body.night-mode.home-page:not(.ultra-mode).outro
-    .projects.isHovering
-    li:hover
-    a,
+
+  body.night-mode.home-page:not(.ultra-mode).outro .projects.isHovering li:hover a,
   body.night-mode.home-page:not(.ultra-mode).outro .projects li.isSelected a,
-  body.night-mode.home-page:not(.ultra-mode).outro
-    .projects
-    li.isSelected:hover
-    a,
-  body.ultra-mode.home-page:not(.ultra-mode).outro
-    .projects.isHovering
-    li:hover
-    a,
+  body.night-mode.home-page:not(.ultra-mode).outro .projects li.isSelected:hover a,
+  body.ultra-mode.home-page:not(.ultra-mode).outro .projects.isHovering li:hover a,
   body.ultra-mode.home-page:not(.ultra-mode).outro .projects li.isSelected a,
-  body.ultra-mode.home-page:not(.ultra-mode).outro
-    .projects
-    li.isSelected:hover
-    a {
+  body.ultra-mode.home-page:not(.ultra-mode).outro .projects li.isSelected:hover a {
     color: transparent;
     -webkit-transition: color 0.5s 0.5s, opacity 1s;
     transition: color 0.5s 0.5s, opacity 1s;
@@ -1443,6 +1417,7 @@ body.ultra-mode.home-page:not(.ultra-mode) .projects a:after {
 
 @media screen and (max-width: 767px) {
   @supports (-webkit-text-stroke: 1px #f2f2f2) or (text-stroke: 1px #f2f2f2) {
+
     body.night-mode.home-page:not(.ultra-mode) .projects a,
     body.ultra-mode.home-page:not(.ultra-mode) .projects a {
       -webkit-text-stroke: 1px #f2f2f2;
@@ -1451,6 +1426,7 @@ body.ultra-mode.home-page:not(.ultra-mode) .projects a:after {
 }
 
 @supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
+
   body.night-mode.admin-page .case-study .hero .title,
   body.ultra-mode.admin-page .case-study .hero .title {
     -webkit-text-stroke: 1px #fff;
@@ -1491,6 +1467,7 @@ body.ultra-mode .module-project a:hover .project-name {
 
 @media screen and (min-width: 768px) {
   @supports (-webkit-text-stroke: 2px #f2f2f2) or (text-stroke: 2px #f2f2f2) {
+
     body.night-mode .module-project .project-name,
     body.ultra-mode .module-project .project-name {
       color: transparent;
@@ -1571,13 +1548,11 @@ body.night-mode .flickity-page-dots .dot {
 
 @media screen and (max-width: 767px) {
   body.night-mode .module-copy-image .image:after {
-    background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(black),
-      to(rgba(0, 0, 0, 0))
-    );
+    background: -webkit-gradient(linear,
+        left bottom,
+        left top,
+        from(black),
+        to(rgba(0, 0, 0, 0)));
     background: linear-gradient(to top, black 0%, rgba(0, 0, 0, 0) 100%);
   }
 
@@ -1598,6 +1573,7 @@ body.light-mode .color-mode .dot {
 }
 
 @supports (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515) {
+
   body.light-mode.home-page .projectsLi.isSelected .projectContainer a,
   body.light-mode.home-page .projectsLi.isSelected:hover .projectContainer a {
     color: transparent;
@@ -1607,6 +1583,7 @@ body.light-mode .color-mode .dot {
 
 @media screen and (max-width: 767px) {
   @supports (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515) {
+
     body.light-mode.home-page .projectsLi.isSelected .projectContainer a,
     body.light-mode.home-page .projectsLi.isSelected:hover .projectContainer a {
       -webkit-text-stroke: 1px #151515;
@@ -1701,10 +1678,8 @@ body.ultra-mode .logo {
 }
 
 @supports (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515) {
-  body.ultra-mode.home-page:not(.intro):not(.outro)
-    .projects.isHovering
-    li:hover
-    a,
+
+  body.ultra-mode.home-page:not(.intro):not(.outro) .projects.isHovering li:hover a,
   body.ultra-mode.home-page:not(.outro) .projects li.isSelected a,
   body.ultra-mode.home-page:not(.outro) .projects li.isSelected:hover a {
     color: transparent;
@@ -1713,11 +1688,9 @@ body.ultra-mode .logo {
 }
 
 @supports (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515) {
+
   body.ultra-mode.home-page.outro .projectsLi.isSelected .projectContainer a,
-  body.ultra-mode.home-page.outro
-    .projectsLi.isSelected:hover
-    .projectContainer
-    a {
+  body.ultra-mode.home-page.outro .projectsLi.isSelected:hover .projectContainer a {
     color: transparent;
     -webkit-text-stroke: 3px #151515;
   }
@@ -1732,19 +1705,14 @@ body.ultra-mode .logo {
   }
 
   @supports (-webkit-text-stroke: 2px #151515) or (text-stroke: 2px #151515) {
-    body.ultra-mode.home-page:not(.intro):not(.outro)
-      .projects.isHovering
-      li:hover
-      a,
+
+    body.ultra-mode.home-page:not(.intro):not(.outro) .projects.isHovering li:hover a,
     body.ultra-mode.home-page:not(.outro) .projects li.isSelected a,
     body.ultra-mode.home-page:not(.outro) .projects li.isSelected:hover a,
     body.ultra-mode.home-page .projectsLi.isSelected .projectContainer a,
     body.ultra-mode.home-page .projectsLi.isSelected:hover .projectContainer a,
     body.ultra-mode.home-page.outro .projectsLi.isSelected .projectContainer a,
-    body.ultra-mode.home-page.outro
-      .projectsLi.isSelected:hover
-      .projectContainer
-      a {
+    body.ultra-mode.home-page.outro .projectsLi.isSelected:hover .projectContainer a {
       color: transparent;
       -webkit-text-stroke: 2px #151515;
     }
@@ -1760,19 +1728,14 @@ body.ultra-mode .logo {
   }
 
   @supports (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515) {
-    body.ultra-mode.home-page:not(.intro):not(.outro)
-      .projects.isHovering
-      li:hover
-      a,
+
+    body.ultra-mode.home-page:not(.intro):not(.outro) .projects.isHovering li:hover a,
     body.ultra-mode.home-page:not(.outro) .projects li.isSelected a,
     body.ultra-mode.home-page:not(.outro) .projects li.isSelected:hover a,
     body.ultra-mode.home-page .projectsLi.isSelected .projectContainer a,
     body.ultra-mode.home-page .projectsLi.isSelected:hover .projectContainer a,
     body.ultra-mode.home-page.outro .projectsLi.isSelected .projectContainer a,
-    body.ultra-mode.home-page.outro
-      .projectsLi.isSelected:hover
-      .projectContainer
-      a {
+    body.ultra-mode.home-page.outro .projectsLi.isSelected:hover .projectContainer a {
       color: transparent;
       -webkit-text-stroke: 1px #151515;
     }
@@ -1789,13 +1752,11 @@ body.ultra-mode .flickity-page-dots .dot {
 
 @media screen and (max-width: 767px) {
   body.ultra-mode .module-copy-image .image:after {
-    background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#e17014),
-      to(rgba(72, 1, 255, 0))
-    );
+    background: -webkit-gradient(linear,
+        left bottom,
+        left top,
+        from(#e17014),
+        to(rgba(72, 1, 255, 0)));
     background: linear-gradient(to top, #e17014 0%, rgba(72, 1, 255, 0) 100%);
   }
 
@@ -1861,8 +1822,7 @@ body.safari .basicScroll .content {
 .parallax-vertical-mm-bt {
   -webkit-transform: translateY(var(--transform-y));
   transform: translateY(var(--transform-y));
-  -webkit-transition: -webkit-transform 1.5s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: -webkit-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -1872,8 +1832,7 @@ body.safari .basicScroll .content {
 .parallax-vertical-tb-bt {
   -webkit-transform: translateY(var(--transform-y));
   transform: translateY(var(--transform-y));
-  -webkit-transition: -webkit-transform 1.5s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: -webkit-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: -webkit-transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -1953,10 +1912,8 @@ body.loading .module-copy-image .image.reveal-show img {
 
 @media screen and (max-width: 767px) {
   body.loading .module-copy-image .image.reveal-show img {
-    -webkit-animation: imageSlideUpMobile 1s cubic-bezier(0.215, 0.61, 0.355, 1)
-      forwards;
-    animation: imageSlideUpMobile 1s cubic-bezier(0.215, 0.61, 0.355, 1)
-      forwards;
+    -webkit-animation: imageSlideUpMobile 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation: imageSlideUpMobile 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
   @-webkit-keyframes imageSlideUpMobile {
@@ -2016,8 +1973,7 @@ body.loading .module-copy-image .image.reveal-show img {
 }
 
 .module-copy-image .image.reveal-show img {
-  -webkit-animation: imageScaleUp 1.5s cubic-bezier(0.215, 0.61, 0.355, 1)
-    forwards;
+  -webkit-animation: imageScaleUp 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   animation: imageScaleUp 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
@@ -2098,8 +2054,8 @@ body.loading .module-copy-image .image.reveal-show img {
 }
 
 .module-copy-image .copy .post-info,
-.module-copy-image .copy > p,
-.module-copy-image .copy > h2 {
+.module-copy-image .copy>p,
+.module-copy-image .copy>h2 {
   width: 100%;
   max-width: 33.33%;
   padding-left: 30px;
@@ -2197,8 +2153,8 @@ body.loading .module-copy-image .copy .heading {
   }
 
   .module-copy-image .copy .post-info,
-  .module-copy-image .copy > p,
-  .module-copy-image .copy > h2 {
+  .module-copy-image .copy>p,
+  .module-copy-image .copy>h2 {
     max-width: 50%;
   }
 
@@ -2242,10 +2198,8 @@ body.loading .module-copy-image .copy .heading {
   }
 
   .module-copy-image .image.reveal-show img {
-    -webkit-animation: imageSlideDownMobile 1.5s
-      cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-    animation: imageSlideDownMobile 1.5s cubic-bezier(0.215, 0.61, 0.355, 1)
-      forwards;
+    -webkit-animation: imageSlideDownMobile 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation: imageSlideDownMobile 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
   @-webkit-keyframes imageSlideDownMobile {
@@ -2284,18 +2238,14 @@ body.loading .module-copy-image .copy .heading {
     z-index: 1;
     width: 100%;
     height: calc(150px + 5vh);
-    background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(#f2f2f2),
-      to(rgba(242, 242, 242, 0))
-    );
-    background: linear-gradient(
-      to top,
-      #f2f2f2 0%,
-      rgba(242, 242, 242, 0) 100%
-    );
+    background: -webkit-gradient(linear,
+        left bottom,
+        left top,
+        from(#f2f2f2),
+        to(rgba(242, 242, 242, 0)));
+    background: linear-gradient(to top,
+        #f2f2f2 0%,
+        rgba(242, 242, 242, 0) 100%);
     pointer-events: none;
   }
 
@@ -2309,8 +2259,8 @@ body.loading .module-copy-image .copy .heading {
   }
 
   .module-copy-image .copy .post-info,
-  .module-copy-image .copy > p,
-  .module-copy-image .copy > h2 {
+  .module-copy-image .copy>p,
+  .module-copy-image .copy>h2 {
     max-width: 100%;
     padding-right: 30px;
   }
@@ -3048,8 +2998,8 @@ body.loading .module-copy-image .copy .heading {
   margin-right: auto;
 }
 
-.flex-2 > *,
-.flex-3 > * {
+.flex-2>*,
+.flex-3>* {
   width: 33.33%;
   max-width: 100%;
   padding: 0 0 0 30px;
@@ -3132,6 +3082,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 767px) and (min-width: 551px) {
+
   .flex-2 p.chat,
   .flex-3 p.chat {
     margin-bottom: 40px;
@@ -3225,6 +3176,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 1024px) {
+
   .flex-2 .module-copy,
   .flex-3 .module-copy {
     width: calc(50% - 15px);
@@ -3250,6 +3202,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 767px) {
+
   .flex-2 .module-copy,
   .flex-3 .module-copy {
     width: 100%;
@@ -3259,6 +3212,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 1440px) {
+
   .flex-2,
   .flex-3 {
     padding-top: 10vw;
@@ -3266,8 +3220,9 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 1024px) {
-  .flex-2 > *,
-  .flex-3 > * {
+
+  .flex-2>*,
+  .flex-3>* {
     width: 50%;
   }
 
@@ -3278,6 +3233,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 767px) {
+
   .flex-2,
   .flex-3 {
     padding-top: 10vw;
@@ -3290,20 +3246,20 @@ body.loading .module-copy-image .copy .heading {
     padding-top: 10vw;
   }
 
-  .flex-2 > *,
-  .flex-3 > * {
+  .flex-2>*,
+  .flex-3>* {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .flex-2 .module-image + .module-copy,
-  .flex-3 .module-image + .module-copy {
+  .flex-2 .module-image+.module-copy,
+  .flex-3 .module-image+.module-copy {
     margin-top: 10vw;
   }
 
-  .flex-2 .module-copy + .module-image,
-  .flex-3 .module-copy + .module-image {
+  .flex-2 .module-copy+.module-image,
+  .flex-3 .module-copy+.module-image {
     margin-top: 10vw;
   }
 
@@ -3320,18 +3276,19 @@ body.loading .module-copy-image .copy .heading {
     width: 100%;
   }
 
-  .flex-2 .module-copy + .module-gallery,
-  .flex-3 .module-copy + .module-gallery {
+  .flex-2 .module-copy+.module-gallery,
+  .flex-3 .module-copy+.module-gallery {
     margin-top: calc(10vw + 10px);
   }
 
-  .flex-2 .module-gallery + .module-copy,
-  .flex-3 .module-gallery + .module-copy {
+  .flex-2 .module-gallery+.module-copy,
+  .flex-3 .module-gallery+.module-copy {
     margin-top: 10vw;
   }
 }
 
 @media screen and (max-width: 550px) {
+
   .flex-2,
   .flex-3 {
     -ms-flex-wrap: wrap;
@@ -3345,8 +3302,8 @@ body.loading .module-copy-image .copy .heading {
     margin-top: 10vw;
   }
 
-  .flex-2 > *,
-  .flex-3 > * {
+  .flex-2>*,
+  .flex-3>* {
     width: 100%;
   }
 
@@ -3413,6 +3370,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 1024px) {
+
   .flex-2 .col-1,
   .flex-2 .col-2 {
     width: 100%;
@@ -3424,6 +3382,7 @@ body.loading .module-copy-image .copy .heading {
 }
 
 @media screen and (max-width: 767px) {
+
   .flex-2 .col-1,
   .flex-2 .col-2 {
     width: 100%;
@@ -3460,8 +3419,7 @@ p.end-post a span {
   display: inline-block;
   -webkit-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: -webkit-transform 0.15s
-    cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -webkit-transition: -webkit-transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: -webkit-transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: transform 0.15s cubic-bezier(0.455, 0.03, 0.515, 0.955),
@@ -3922,8 +3880,7 @@ body.home-page .ui .copyright {
 }
 
 .ui .links ul {
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.86, 0, 0.07, 1)
-    0.25s;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s;
   transition: -webkit-transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s;
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s;
   transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.25s,
@@ -3947,8 +3904,7 @@ body.home-page .ui .copyright {
   transform-origin: left center;
   -webkit-transform: scaleX(0) translateZ(0);
   transform: scaleX(0) translateZ(0);
-  -webkit-transition: -webkit-transform 0.25s
-    cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s;
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s;
   transition: -webkit-transform 0.25s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s;
   transition: transform 0.25s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s;
   transition: transform 0.25s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s,
@@ -4428,6 +4384,7 @@ body.mobileNavOpen .ui .color-mode {
 }
 
 @media screen and (max-width: 420px) {
+
   /* Mobile Nav */
   .ui .info {
     padding: 15vh 30px 10vh;
@@ -4667,16 +4624,12 @@ body.home-page .slideUp:nth-child(3) span {
   animation-delay: 3.2s;
 }
 
-body:not(.home-page):not(.readMe-page):not(.aboutShow).loading
-  .basicScroll
-  .btn-page-back {
+body:not(.home-page):not(.readMe-page):not(.aboutShow).loading .basicScroll .btn-page-back {
   -webkit-transform: translateX(calc(5vw + 60px));
   transform: translateX(calc(5vw + 60px));
 }
 
-body:not(.home-page):not(.readMe-page):not(.aboutShow)
-  .basicScroll
-  .btn-page-back {
+body:not(.home-page):not(.readMe-page):not(.aboutShow) .basicScroll .btn-page-back {
   z-index: 9999;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -4769,97 +4722,57 @@ body.aboutShow .mobile-nav-inner:after {
 
 .about {
   position: fixed;
-
   top: 0;
-
   left: 0;
-
   z-index: 1;
-
   width: 100%;
-
   height: 100%;
-
   opacity: 0;
-
   -webkit-transition: opacity 0.5s 0s;
-
   transition: opacity 0.5s 0s;
 }
 
 .about:before {
   content: "";
-
   position: fixed;
-
   top: 0;
-
   left: 0;
-
   z-index: -1;
-
   width: 100%;
-
   height: 100%;
-
   background-color: rgba(242, 242, 242, 0.95);
 }
 
 .about .container {
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
-
   -webkit-box-pack: justify;
-
   -ms-flex-pack: justify;
-
   justify-content: space-between;
-
   width: 100%;
-
   max-width: calc(1440px + 10vw);
-
   height: calc(100vh - (106px + 15vh));
-
   overflow-x: hidden;
-
   overflow-y: auto;
-
   -webkit-overflow-scrolling: touch;
-
   margin: calc(106px + 15vh) auto calc(107px + 5vh);
-
   padding-left: 5vw;
-
   padding-right: 5vw;
-
   -webkit-transform: translate3d(0, 0, 0);
-
   transform: translate3d(0, 0, 0);
-
-  -webkit-transition: -webkit-transform 0.5s
-    cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s;
-
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s;
   transition: -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s;
-
   transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s;
-
   transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s,
     -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s;
 }
 
 .about .left {
   width: 55%;
-
   padding-right: 10%;
-
   font-size: 30px;
-
   line-height: 1.2em;
-
   color: #000;
 }
 
@@ -4873,48 +4786,29 @@ body.aboutShow .mobile-nav-inner:after {
 
 .about .right {
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
-
   -webkit-box-pack: justify;
-
   -ms-flex-pack: justify;
-
   justify-content: space-between;
-
   width: 45%;
-
   padding-top: 8px;
-
   color: #000;
 }
 
 .about .col-1,
 .about .col-2 {
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
-
   -ms-flex-wrap: wrap;
-
   flex-wrap: wrap;
-
   -ms-flex-line-pack: start;
-
   align-content: flex-start;
-
   -webkit-box-pack: justify;
-
   -ms-flex-pack: justify;
-
   justify-content: space-between;
-
   width: 50%;
-
   margin-bottom: 30px;
 }
 
@@ -4924,7 +4818,6 @@ body.aboutShow .mobile-nav-inner:after {
 
 .about .right .heading {
   width: 100%;
-
   margin-bottom: 20px;
 }
 
@@ -4934,45 +4827,35 @@ body.aboutShow .mobile-nav-inner:after {
 
 .about a {
   display: inline-block;
-
   margin-bottom: 5px;
-
   color: #fff;
-
   text-decoration: none;
 }
 
 .about p {
   width: 100%;
-
   margin-bottom: 5px;
 }
 
 .about .info {
   width: 100%;
-
   padding-bottom: 30px;
 }
 
 .about .info ul {
   width: 100%;
-
   padding-left: 0;
 }
 
 .about ul {
   margin-top: 0;
-
   margin-bottom: 0;
-
   padding-left: 0;
-
   list-style: none;
 }
 
 .about .title {
   margin-top: 0;
-
   margin-bottom: 5px;
 }
 
@@ -5019,11 +4902,8 @@ body.aboutShow .mobile-nav-inner:after {
 
   .about .left {
     width: 100%;
-
     max-width: 414px;
-
     padding-top: calc(71px + 10vw);
-
     padding-right: 0;
   }
 
@@ -5033,17 +4913,13 @@ body.aboutShow .mobile-nav-inner:after {
 
   .about .left p {
     font-size: 20px;
-
     line-height: 1.4em;
   }
 
   .about .right {
     -ms-flex-wrap: wrap;
-
     flex-wrap: wrap;
-
     width: 100%;
-
     padding: 0;
   }
 

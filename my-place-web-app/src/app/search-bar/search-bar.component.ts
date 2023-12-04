@@ -1,6 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
-import {Observable} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormsModule,
+  NgModel,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { Observable } from 'rxjs';
 
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
@@ -11,78 +16,57 @@ import { User } from '../User';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css'],
 })
-
 export class SearchBarComponent implements OnInit {
   options: string[] = [];
   filteredOptions: any | undefined;
-  serchUser:any;
+  searchUser: any;
   searchTerm: string = '';
-  autoFilterTop:string ='';
-  users: User[] = [] ;
+  autoFilterTop: string = '';
+  users: User[] = [];
   inputText: string = '';
   isInputValid: boolean = false;
 
-  constructor(private userService: UserService, private router: Router ){ }
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     const storedUsers = localStorage.getItem('Users');
-    if (storedUsers != null){
+    if (storedUsers != null) {
       this.users = JSON.parse(storedUsers);
-      // console.log('Users retrieved from local storage:', this.users);
     }
-    for (let i=0;i<this.users.length;i++){
-      this.options.push(this.users[i].username)
+    for (let i = 0; i < this.users.length; i++) {
+      this.options.push(this.users[i].username);
     }
-    // console.log("options",this.options)
   }
 
   checkInput() {
     this.isInputValid = this.inputText.trim() !== '';
-    // console.log('here is the input text',this.inputText);
   }
 
-  // console.log(this.inputText);
-  onInputChange(event:any,ngModel: NgModel){
-    this.serchUser = ngModel.value
-    // console.log(this.serchUser)
-
-    this.filteredOptions = this.options.filter(user =>
-      user.toLowerCase().includes(this.serchUser.toLowerCase())
+  onInputChange(event: any, ngModel: NgModel) {
+    this.searchUser = ngModel.value;
+    this.filteredOptions = this.options.filter((user) =>
+      user.toLowerCase().includes(this.searchUser.toLowerCase())
     );
-
-    // console.log(this.filteredOptions)
-    this.autoFilterTop=this.filteredOptions[0]
-    // console.log(this.autoFilterTop)
+    this.autoFilterTop = this.filteredOptions[0];
   }
 
   search() {
-    const user = this.users.find(u => u.username === this.autoFilterTop);
+    const user = this.users.find((u) => u.username === this.autoFilterTop);
     if (user) {
-      // console.log(user)
-      // console.log(this.autoFilterTop)
-      
-      localStorage.setItem('friend',JSON.stringify(user))
-      this.router.navigateByUrl("/user/friend")
-      // this.router.navigate(['/user', user.username]);
+      localStorage.setItem('friend', JSON.stringify(user));
+      this.router.navigateByUrl('/user/friend');
     } else {
       alert('User not found');
     }
   }
 
-  Search(user:string){
-    const User = this.users.find(u=> u.username == user);
-    // console.log(User)
+  Search(user: string) {
+    const User = this.users.find((u) => u.username == user);
     if (User) {
-      // console.log(user)
-      // console.log(this.autoFilterTop)
-      
-      localStorage.setItem('friend',JSON.stringify(User))
-      this.router.navigateByUrl("/user/friend")
-      // this.router.navigate(['/user', user.username]);
+      localStorage.setItem('friend', JSON.stringify(User));
+      this.router.navigateByUrl('/user/friend');
     } else {
       alert('User not found');
     }
-
   }
-
 }

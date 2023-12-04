@@ -8,44 +8,59 @@ import { User } from '../User';
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
-export class SignInComponent implements OnInit  {
-  users: User[] = [] ;
-  username:string = "";
-  password:string = "";
 
-constructor(private userService: UserService, private router: Router ){ }
+export class SignInComponent implements OnInit {
+  users: User[] = [];
+  username: string = "";
+  password: string = "";
 
-ngOnInit() {
-  const storedUsers = localStorage.getItem('Users');
-  if (storedUsers != null){
-    this.users = JSON.parse(storedUsers);
-    console.log('Users retrieved from local storage:', this.users);
-  }
-}
+  constructor(private userService: UserService, private router: Router) { }
 
-
-CheckUser(){
-  const user = this.users.find(u => u.username === this.username);
-  console.log('user',user)
-  console.log('u',this.username)
-  console.log('p',this.password)
-  if (user){
-    if(user.password==this.password){
-      localStorage.setItem('profileUser', JSON.stringify(user));
-      console.log('log user',localStorage.getItem('profileUser'))
-      new Promise(resolve => setTimeout(resolve, 1));
-      // this.navigateToDetailPage(user.username)
-      this.router.navigateByUrl("/user")
+  /**
+   * Get the list of users from local storage
+   */
+  ngOnInit() {
+    const storedUsers = localStorage.getItem('Users');
+    if (storedUsers != null) {
+      this.users = JSON.parse(storedUsers);
+      console.log('User retrieved from local storage:', this.users);
     }
-    else{
-    alert("wrong username or password")
+    else {
+      this.userService.getUsers().subscribe(users => {
+        this.users = users;
+        localStorage.setItem('Users', JSON.stringify(users));
+        console.log('Users retrieved from JSON file:', this.users);
+      });
     }
   }
-  else{
-    alert("wrong username or password")
+
+  /**
+   *  Check if the user exists in the database from json response
+   *  and navigate to the user page
+   */
+  CheckUser() {
+    const user = this.users.find(u => u.username === this.username);
+    if (user) {
+      if (user.password == this.password) {
+        localStorage.setItem('profileUser', JSON.stringify(user));
+        console.log('log user', localStorage.getItem('profileUser'))
+        new Promise(resolve => setTimeout(resolve, 1));
+        this.router.navigateByUrl("/user")
+      }
+      else {
+        alert("wrong username or password")
+      }
+    }
+    else {
+      alert("wrong username or password")
+    }
   }
-}
-navigateToDetailPage(id: string) {
-  this.router.navigate(['/user', id]);
-}
+
+  /**
+   * Navigate to the detail page for the signed-in user
+   * @param id
+   */
+  navigateToDetailPage(id: string) {
+    this.router.navigate(['/user', id]);
+  }
 }
