@@ -58,14 +58,14 @@
        
 </head>
 
-<body class="ultra-mode">
+<body style="background-color: darkblue;">
     <div class="container">
-        <h2>Sign-in</h2>
+        <h2 style="color: #fff;">Sign-in</h2>
         <form action="registration_process.php" method="POST">
-            <label for="username">Username</label>
+            <label style="color: #fff;" for="username">Username</label>
             <input type="text" [(ngModel)]="username" id="username" name="username" required>
 
-            <label for="password">Password</label>
+            <label style="color: #fff;" for="password">Password</label>
             <input type="password" [(ngModel)]="password" id="password" name="password" required>
 
             <button (click)="CheckUser()">Sign-in</button>

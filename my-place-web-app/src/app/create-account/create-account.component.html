@@ -59,24 +59,24 @@
        
 </head>
 
-<body class="ultra-mode">
+<body style="background-color: darkblue;">
     <div class="container">
-        <h2>User Registration</h2>
+        <h2 style="color: #fff;">User Registration</h2>
         <form action="registration_process.php" method="POST">
 
-            <label for="username">Username</label>
+            <label style="color: #fff;" for="username">Username</label>
             <input type="text" id="username" name="username"  [(ngModel)]="username" required>
 
-            <label for="email">Email</label>
+            <label style="color: #fff;" for="email">Email</label>
             <input type="email" id="email" name="email"  [(ngModel)]="email" required>
 
-            <label for="bio">Bio</label>    
+            <label style="color: #fff;" for="bio">Bio</label>    
             <input type="input" id="bio" name="bio"  [(ngModel)]="bio" required>
 
-            <label for="password">Password</label>
+            <label style="color: #fff;" for="password">Password</label>
             <input type="password" id="password" name="password"   [(ngModel)]="password"required>
 
-            <label for="confirm-password">Confirm Password</label>
+            <label style="color: #fff;" for="confirm-password">Confirm Password</label>
             <input type="password" id="confirm-password" name="confirm-password"  [(ngModel)]="confirmpassword" required>
 
             <button (click)="createNewUser()">Create Account</button>

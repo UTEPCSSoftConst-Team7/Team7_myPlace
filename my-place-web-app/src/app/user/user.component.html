@@ -1,3 +1,5 @@
+<!-- Displays user profile components such as username, bio, profile pic, and  blog posts -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head > <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +22,7 @@
 
         .banner {
             background-color: navy;
+            margin-bottom: -30px;
             color: white;
             display: flex;
             align-items: center;
@@ -30,11 +33,13 @@
         .left-content {
             display: flex;
             align-items: center;
+            
         }
 
         .right-content {
             display: flex;
             gap: 10px;
+            margin-right: 15px;
         }
 
         .left-content img {
@@ -44,6 +49,7 @@
         .userspecs {
             display: flex;
             align-items: center;
+            margin-bottom: -20px;
         }
 
         .profilepic {
@@ -52,12 +58,17 @@
             border-radius: 50%;
             overflow: hidden;
             line-height: 150px;
-            /* margin-bottom: 20px; */
+            margin-top: 50px;
+            margin-bottom: 10px;
+            margin-left: 50px;
         }
 
         .bio {
-            position: relative; /* Change to relative to banner*/
+            /* position: relative; Change to relative to banner */
             margin-left: 100px;
+            /* position: relative; */
+            margin-top: 0px;
+            margin-right: 50px;
             /* gap: 20px; */
             text-align: center;
             background-color: transparent;
@@ -65,6 +76,17 @@
             border: 5px solid darkblue;
             border-radius: 10px;
             flex: 1;
+        }
+        
+        .blogs {
+            margin-top: 20px; /* Add margin to the top of each blog post */
+            margin-bottom: 20px; /* Add margin to the bottom of each blog post */
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+
+        .blogs button {
+            margin-left: 10px; /* Adjust the left margin of the buttons inside the blog post */
         }
 
         h2 {
@@ -108,24 +130,73 @@
             border-radius: 3px;
         }
 
-        /* button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
+        button {
+            /* padding: 10px 15px; */
+            border-radius: 2px;
+            height: 40px;
+            text-align: center;
             cursor: pointer;
-        } */
+        }
+
+        .medium-button {
+            text-align: center;
+            display: flex;
+            justify-content: center; /* Center the text horizontally */
+            align-items: center; /* Center the text vertically */
+        }
+
+        .small-button {
+            text-align: center;
+            display: flex;
+            justify-content: center; /* Center the text horizontally */
+            align-items: center; /* Center the text vertically */
+        }
+
+        .friend-search-label {
+            display: flex;
+            margin-top: 0px;
+            margin-left: 960px;
+        }
+
+        .friend-search {
+            display: flex;
+            margin-top: 0px;
+            margin-left: 960px;
+        }
+
+        .text-area-container {
+            display: flex;
+            align-items: center; /* Align items vertically in the container */
+        }
+
+        .text-area {
+            width: 70%;
+            height: 50px;
+            box-sizing: border-box;
+            margin-right: 10px; /* Add right margin to create space between textarea and button */
+        }
+
+        .submit-button {
+            height: 50px; /* Match the height of the text area */
+            cursor: pointer;
+        }
+
+
+
     </style>
 
        
 </head>
 
+<!-- MyPlace header -->
 <body class="ultra-mode" style="background-color: white;">
     <div class="banner">
         <div class="left-content">
-          <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
-          <h1>myplace</h1>
+          <img style="margin-left: 10px;"src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
+          <h1 style="margin-left: 5px;">myplace</h1>
         </div>
         <div class="right-content">
+          <button [routerLink] = "['/user/friendList']" class="small-button">Friends Page</button>
           <button [routerLink] = "['/messaging']" ><i class="fa fa-folder"></i> Messages </button>
           <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
@@ -133,7 +204,7 @@
 
     <div class="userspecs">
         
-        <div class="userprofile">
+        <div class="userprofile" style="margin-top: 10px;">
             <!-- TODO: Change for the actual value for username in the JSON -->
             <ng-template #defaultImage>
                 <img src="assets/catFist.png" alt="Default Profile Picture">
@@ -141,15 +212,12 @@
             <div class="profilepic">
                 <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture" alt="Profile Picture">
             </div>
-            <h2>{{ ProfileUser.username }}</h2> 
-            <button [routerLink] = "['/user/icon']" >Change Icon</button>
+            <h2 style="margin-left: 55px; margin-bottom: -1px;">{{ ProfileUser.username }}</h2> 
+            <button [routerLink] = "['/user/icon']" style="margin-top:10px; margin-left:50px; height: 30px;">Change Icon</button>
             <br>
             <br>
-            <div *ngIf="ProfileUser.friends">
-                <label>Friends:  {{ProfileUser.friends.length}}</label>
-            </div>
         </div>
-        <br>
+        
         <div class="bio">
             <h3>My Bio</h3>
             <p style="color: black ">{{ProfileUser.bio}}</p>
@@ -162,31 +230,28 @@
                 <button class="submit-button" (click)="ChangeBio()">Submit</button>
             </div>
         </div> 
-        <br>  
-
-        <br>
     </div>
     
-    <app-search-bar></app-search-bar>
-    <br>
-    <br>
+    <div class="friend-search-label">
+        <div *ngIf="ProfileUser.friends">
+            <label>Friends:  {{ProfileUser.friends.length}}</label>
+        </div>
+    </div>
+    <div class="friend-search">
+        <app-search-bar></app-search-bar>
+    </div>
 
-
-
-    <button [routerLink] = "['/user/friendList']" class="medium-button">Friends Page</button>
     
-    <br>
-    <br>
-    <br>
+
 
     
     <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
 
-    <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
+    <h2 style="text-align: left; margin-left: 50px;">{{ ProfileUser.username }}'s Blog Posts</h2>
     <ul>
         <div class="blogs">
             <li *ngFor="let post of ProfileBlogPost" >
-                <div class="blogs" style="color: black;">
+                <div class="blogs" style="color: black; margin-right: 0px; margin-left:  0px;">
                 <p style="color: black;">
                     {{ post.content }}
                 </p>
