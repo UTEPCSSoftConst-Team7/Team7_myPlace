@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { FriendComponent } from './friend/friend.component';
 import { FriendListComponent } from './friend-list/friend-list.component';
 import { IconComponent } from './icon/icon.component';
+import { MessagingLogsComponent } from './messaging-logs/messaging-logs.component';
 
 const routes: Routes = [
   { 
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'user/icon',
     component: IconComponent
+  },
+  {
+    path: 'user/messagingLog',
+    component: MessagingLogsComponent
   }
 
 

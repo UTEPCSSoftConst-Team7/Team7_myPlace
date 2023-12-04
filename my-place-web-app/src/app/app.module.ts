@@ -19,6 +19,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FriendComponent } from './friend/friend.component';
 import { IconComponent } from './icon/icon.component';
 import { FriendListComponent } from './friend-list/friend-list.component';
+import { MessagingLogsComponent } from './messaging-logs/messaging-logs.component';
 
 
 
@@ -39,6 +40,7 @@ import { FriendListComponent } from './friend-list/friend-list.component';
     FriendComponent,
     IconComponent,
     FriendListComponent,
+    MessagingLogsComponent,
   ],
   imports: [
     BrowserModule,
