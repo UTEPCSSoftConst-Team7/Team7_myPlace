@@ -40,15 +40,17 @@ export class UserComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private userService: UserService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.grabUser();
     this.grabBlogPost();
   }
+
   toggleTextArea() {
     this.showTextArea = !this.showTextArea;
   }
+
   toggleBioArea() {
     this.showBioArea = !this.showBioArea;
   }
@@ -57,36 +59,30 @@ export class UserComponent implements OnInit {
     this.showFrindPost = !this.showFrindPost;
   }
 
+  /**
+  * Perform actions or API calls here
+  */
   submitText() {
-    // Add functionality for submitting the text
-    // For example, you can access the text from the textarea
-    // this.textAreaContent
-    // Perform actions or API calls here
-
     var Post: BlogPost = {
       user: this.ProfileUser.username,
       content: this.textAreaContent,
       likes: 0,
       CloseFriend: false,
     };
-    console.log('Submitted:', Post);
-    // Reset the text area and hide it
-    console.log('blogPost', this.ProfileUser);
 
     const Blog = localStorage.getItem('Blog');
 
     if (Blog != undefined) {
-      // console.log('B',Blog)
       var profileBlog = JSON.parse(Blog);
       profileBlog.push(Post);
       console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
       location.reload();
     }
-    // console.log('blog', this.ProfileUser.blogPosts)
     this.textAreaContent = '';
     this.showTextArea = false;
   }
+
 
   submitCloseFriendText() {
     var Post: BlogPost = {
@@ -95,20 +91,16 @@ export class UserComponent implements OnInit {
       likes: 0,
       CloseFriend: true,
     };
-    console.log('Submitted:', Post);
-    // Reset the text area and hide it
-    console.log('blogPost', this.ProfileUser);
+
     const Blog = localStorage.getItem('Blog');
+
     if (Blog != undefined) {
-      // console.log('B',Blog)
       var profileBlog = JSON.parse(Blog);
       profileBlog.push(Post);
       console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
       location.reload();
     }
-
-    // console.log('blog', this.ProfileUser.blogPosts)
     this.textAreaCloseContent = '';
     this.showFrindPost = false;
   }
@@ -190,7 +182,6 @@ export class UserComponent implements OnInit {
     const Blog = localStorage.getItem('Blog');
     console.log(post);
     if (Blog != undefined) {
-      // console.log('B',Blog)
       var profileBlog = JSON.parse(Blog);
       profileBlog = profileBlog.filter(
         (item: UserBlogPost) => item.content != post.content
