@@ -1,0 +1,65 @@
+[
+    {
+      "participants": ["john_doe", "jane_doe"],
+      "messages": [
+        {
+          "sender": "john_doe",
+          "timestamp": "2023-12-03T10:00:00",
+          "content": "Hey Jane! How are you?"
+        },
+        {
+          "sender": "jane_doe",
+          "timestamp": "2023-12-03T10:05:00",
+          "content": "Hi John! I'm doing great, thanks! How about you?"
+        },
+        {
+          "sender": "john_doe",
+          "timestamp": "2023-12-03T10:07:00",
+          "content": "I'm good too, just working on some coding projects."
+        }
+      ]
+    },
+    {
+      "participants": ["sam_smith", "john_doe"],
+      "messages": [
+        {
+          "sender": "sam_smith",
+          "timestamp": "2023-12-02T15:30:00",
+          "content": "Hey John! Have you been hiking lately?"
+        },
+        {
+          "sender": "john_doe",
+          "timestamp": "2023-12-02T15:35:00",
+          "content": "Hi Sam! Not recently, but I'm planning a hike this weekend."
+        },
+        {
+          "sender": "sam_smith",
+          "timestamp": "2023-12-02T15:40:00",
+          "content": "That sounds awesome! Let me know how it goes."
+        }
+      ]
+    },
+    {
+      "participants": ["nicoJ115", "isaba3lla"],
+      "messages": [
+        {
+          "sender": "isaba3lla",
+          "timestamp": "2023-12-01T18:20:00",
+          "content": "Hey Nico! Have you seen the new art exhibition?"
+        },
+        {
+          "sender": "nicoJ115",
+          "timestamp": "2023-12-01T18:25:00",
+          "content": "Hi Isabella! Not yet, but I'm planning to visit this weekend."
+        },
+        {
+          "sender": "isaba3lla",
+          "timestamp": "2023-12-01T18:30:00",
+          "content": "Great! Let me know your thoughts when you do."
+        }
+      ]
+    }
+  
+  ]
+    
+    

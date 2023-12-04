@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
   NewBio: string = '';
 
 
-  constructor(private router: ActivatedRoute, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
 
@@ -142,7 +142,10 @@ export class UserComponent implements OnInit {
       console.log('profile', profileUser)
       this.ProfileUser = profileUser
     }
-    //  this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
+  }
+
+  sendMessageLog(){
+    this.router.navigateByUrl("/user/messagingLog")
   }
 
   grabBlogPost() {

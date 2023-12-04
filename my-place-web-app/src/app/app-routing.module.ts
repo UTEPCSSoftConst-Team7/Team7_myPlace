@@ -21,7 +21,7 @@ const routes: Routes = [
     component: HomepageComponent
   },
   { 
-    path: 'messaging', 
+    path: 'user/messaging', 
     component: MessagingComponent
   },
   { 

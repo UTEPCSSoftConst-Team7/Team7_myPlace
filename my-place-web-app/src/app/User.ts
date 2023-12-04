@@ -22,11 +22,15 @@ export interface Users{
 }
 
 
-export interface Message {
-    Recipients: String[];
-    Sender: String;
+export interface Conversation  {
+    participants: String[];
+    messages: Messages[]
+}
+
+export interface Messages{
+    sender: String;
     content: string;
-    timestamp: string; 
+    timestamp: string;
 }
 
 export interface BlogPost {

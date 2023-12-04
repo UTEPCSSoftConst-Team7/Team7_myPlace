@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormsModule, NgModel, ReactiveFormsModule} from '@angular/forms';
-import {Observable} from 'rxjs';
 
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
@@ -31,6 +29,7 @@ export class MessagingLogsComponent implements OnInit {
 
   ngOnInit()  {
     this.grabUser();
+    
   }
 
   
@@ -41,8 +40,9 @@ export class MessagingLogsComponent implements OnInit {
   messageUser(friend:String){
     const participants = [friend,this.ProfileUser.username]
 
-    alert(participants)
-    // localStorage.setItem()
+    // alert(participants)
+    localStorage.setItem('participants',JSON.stringify(participants))
+    this.router.navigateByUrl('user/messaging')
   }
 
   grabUser() {

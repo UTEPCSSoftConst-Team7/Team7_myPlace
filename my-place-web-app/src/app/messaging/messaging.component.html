@@ -1,1 +1,171 @@
-<p>messaging works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>User Registration</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter";
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            font-size: 1.5vw;
+            letter-spacing: 0.02em;
+            line-height: 0.9em;
+            box-sizing: border-box;
+            height: 100vh;
+            /* background-color: black; */
+        }
+
+        .banner {
+            background-color: navy;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px;
+        }
+
+        .left-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .right-content {
+            display: flex;
+            gap: 10px;
+        }
+
+        .left-content img {
+            margin-right: 5px;
+            /* Add spacing between the logo and header */
+        }
+
+        .userspecs {
+            display: flex;
+            align-items: center;
+        }
+
+        .profilepic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            line-height: 150px;
+            /* margin-bottom: 20px; */
+        }
+
+        .bio {
+            position: relative;
+            /* Change to relative to banner*/
+            margin-left: 100px;
+            /* gap: 20px; */
+            text-align: center;
+            background-color: transparent;
+            padding: 20px;
+            border: 5px solid darkblue;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        h2 {
+            text-align: left;
+            color: darkblue;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 30px;
+            font-size: 60px;
+            font-family: 'Trebuchet MS', sans-serif;
+
+        }
+
+        h3 {
+            color: white;
+            background-color: darkblue;
+            text-align: left;
+            margin-top: 0;
+            height: 10;
+            padding: 20px;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: black;
+            text-align: left;
+            bottom: 100px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        } */
+    </style>
+
+
+</head>
+
+<body class="ultra-mode" style="background-color: black;">
+    <div class="banner">
+        <div class="left-content">
+            <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
+            <h1>myplace</h1>
+            <button mat-raised-button color="primary" class="small-button" (click)="sendBack()"
+                style="margin-left:40px">Send Me Back</button>
+        </div>
+        <div class="right-content">
+            <button [routerLink]="['/messaging']"><i class="fa fa-folder"></i> Messages </button>
+            <button [routerLink]="['/homepage']"><i class="fa fa-home"></i>SignOut</button>
+        </div>
+    </div>
+
+    <button class="small-button-orange" (click)="sendMessageLog()">Send Back to User Log</button>
+
+    <br>
+    <br>
+
+    <div *ngFor="let message of this.Specific.messages" class="message-container">
+        <div *ngIf="message.sender === this.ProfileUser.username; else otherUserMessage" class="message message-right">
+            <div class="message-content">{{ message.content }}</div>
+            <div class="message-timestamp">{{ message.timestamp }}</div>
+            <div class="message-timestamp">{{message.sender}}</div>
+        </div>
+        <ng-template #otherUserMessage>
+            <div class="message message-left">
+                <div class="message-content">{{ message.content }}</div>
+                <div class="message-timestamp">{{ message.timestamp }}</div>
+                <div class="message-timestamp">{{message.sender}}</div>
+
+            </div>
+        </ng-template>
+    </div>
+
+
+    <div class="text-area-button-container">
+        <div class="text-area-container">
+            <textarea class="text-area" placeholder="Type a message..." [(ngModel)]="sentMessage"></textarea>
+            <button class="submit-button" (click)="sendMessage()">Send</button>
+        </div>
+    </div>
+
+
+</body>
