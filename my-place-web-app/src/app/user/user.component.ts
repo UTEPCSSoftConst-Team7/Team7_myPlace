@@ -73,8 +73,9 @@ export class UserComponent implements OnInit {
       profileBlog.push(Post);
       console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
-      location.reload();
+      this.ProfileBlogPost=profileBlog
     }
+    
     this.textAreaContent = '';
     this.showTextArea = false;
   }
@@ -93,7 +94,7 @@ export class UserComponent implements OnInit {
       profileBlog.push(Post);
       console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
-      location.reload();
+      this.ProfileBlogPost=profileBlog
     }
 
     this.textAreaCloseContent = '';
