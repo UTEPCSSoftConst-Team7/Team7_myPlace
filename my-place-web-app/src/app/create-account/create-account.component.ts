@@ -15,7 +15,7 @@ export class CreateAccountComponent implements OnInit {
   email: string = '';
   randomNumber: number | undefined;
 
-  private readonly profilePictures = [
+  private readonly profilePictures = [ // Sample set of profile pictures
     "assets/among.png",
     "assets/cat.png",
     "assets/catFist.png",
@@ -49,7 +49,7 @@ export class CreateAccountComponent implements OnInit {
   createNewUser(): void {
     if (this.areInputsValid()) {
       if (this.password === this.confirmpassword) {
-        this.addUser();
+        this.addNewUserInfo();
       } else {
         alert("Please make sure that the passwords match.");
       }
@@ -58,11 +58,12 @@ export class CreateAccountComponent implements OnInit {
     }
   }
 
+
   private areInputsValid(): boolean {
     return this.username !== '' && this.password !== '' && this.email !== '' && this.bio !== '';
   }
 
-  private addUser(): void {
+  private addNewUserInfo(): void {
     const newUser: User = {
       username: this.username,
       password: this.password,
@@ -87,7 +88,11 @@ export class CreateAccountComponent implements OnInit {
   }
 
   private getProfilePic(): string {
-    this.randomNumber = Math.floor(Math.random() * 9);
-    return this.profilePictures[this.randomNumber] || this.profilePictures[9];
+    if (this.profilePictures && this.profilePictures.length) {
+      this.randomNumber = Math.floor(Math.random() * 9);
+      return this.profilePictures[this.randomNumber] || this.profilePictures[9];
+    } else {
+      return this.profilePictures[9];
+    }
   }
 }

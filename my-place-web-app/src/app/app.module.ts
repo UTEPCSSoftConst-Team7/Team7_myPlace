@@ -19,6 +19,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FriendComponent } from './friend/friend.component';
 import { IconComponent } from './icon/icon.component';
 import { FriendListComponent } from './friend-list/friend-list.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
 
 
 
@@ -39,7 +40,8 @@ import { FriendListComponent } from './friend-list/friend-list.component';
     FriendComponent,
     IconComponent,
     FriendListComponent,
-  ],
+      SignOutComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -7,6 +7,12 @@ import { User } from './User';
   providedIn: 'root',
 })
 export class UserService {
+  createUser(user: User) {
+    throw new Error('Method not implemented.');
+  }
+  storeUserInLocalStorage(user: User) {
+    throw new Error('Method not implemented.');
+  }
   private usersUrl = 'assets/UserFile.json';
   private messageUrl = 'assets/messageFile.json';
   private UserUrl = 'assets/User.Json';
