@@ -19,8 +19,6 @@ export class UserService {
     return this.http.get<any[]>(this.usersUrl);
   }
 
-
-
   getMessages(): Observable<any[]> {
     return this.http.get<any[]>(this.messageUrls);
   }
@@ -51,8 +49,6 @@ export class UserService {
       localStorage.setItem('Blog', JSON.stringify(data));
     });
   }
-
-
 
   storeMessagesInLocalStorage() {
     this.getMessages().subscribe(data => {

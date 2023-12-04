@@ -32,9 +32,6 @@ export class MessagingComponent implements OnInit {
     this.grabUser()
     this.changeTimeStamp()
     this.getDate()
-    //2023-12-01T15:30:00.000Z
-
-    // this.changeTimeStamp('2023-12-01 T18:25:00')
   }
 
   constructor(private userService: UserService, private router: Router) {
@@ -222,8 +219,6 @@ export class MessagingComponent implements OnInit {
     return (TimeStamp)
 
   }
-
-
 
   sendBack() {
     this.router.navigateByUrl("/user")
