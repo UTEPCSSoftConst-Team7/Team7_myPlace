@@ -42,6 +42,7 @@ export class MessagingComponent implements OnInit {
 
   }
 
+  // Grabing all of the messages and storing the account
   getMessaging() {
     const messaging = localStorage.getItem('messages')
     if (messaging != undefined) {
@@ -51,6 +52,7 @@ export class MessagingComponent implements OnInit {
 
   }
 
+  // Grabing the particapants  of the messaging 
   getParticipants() {
     const participants = localStorage.getItem('participants')
     if (participants != undefined) {
@@ -59,6 +61,7 @@ export class MessagingComponent implements OnInit {
     }
   }
 
+  //Finding the exact messaging log of the particapants 
   getSpecificMessages() {
     for (let i = 0; i < this.Converstion.length; i++) {
       const conversation = this.Converstion[i]
@@ -78,6 +81,7 @@ export class MessagingComponent implements OnInit {
 
   }
 
+  //Send a message and add it to the list 
   sendMessage() {
     const Messages: Messages = {
       sender: this.ProfileUser.username,
@@ -120,6 +124,7 @@ export class MessagingComponent implements OnInit {
     location.reload()
   }
 
+  //Grabing your specific account 
   grabUser() {
     const profile = localStorage.getItem('profileUser')
     if (profile != null || profile != undefined) {
@@ -129,6 +134,7 @@ export class MessagingComponent implements OnInit {
     }
   }
 
+  //Change the time stamp to make it more readable for the user
   TimeStamp(timestamp: string) {
     // 2023-12-01T18:25:00
     const dateStr = timestamp.slice(0, 10);
@@ -147,6 +153,7 @@ export class MessagingComponent implements OnInit {
 
   }
 
+    //Change the time stamp to fit the format of the backend 
   TimeStampReturn(timestamp: string) {
     // 2023-12-01T18:25:00
     const dateString = timestamp;
@@ -179,6 +186,7 @@ export class MessagingComponent implements OnInit {
 
   }
 
+  //Appling the filter to every message for the user 
   changeTimeStamp() {
     for (let i = 0; i < this.Specific.messages.length; i++) {
       var Timestamp = this.Specific.messages[i].timestamp
@@ -187,6 +195,7 @@ export class MessagingComponent implements OnInit {
     }
   }
 
+  //Appling the filter to every message for the backend 
   ReturnTimeStamp() {
     for (let i = 0; i < this.Specific.messages.length; i++) {
       var Timestamp = this.Specific.messages[i].timestamp
@@ -196,7 +205,7 @@ export class MessagingComponent implements OnInit {
   }
 
 
-
+//Adding the date to any post created 
   getDate() {
     const now = new Date();
     const year = now.getFullYear();
@@ -224,6 +233,7 @@ export class MessagingComponent implements OnInit {
 
   }
 
+  
   sendBack() {
     this.router.navigateByUrl("/user")
   }

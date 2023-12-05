@@ -37,6 +37,7 @@ export class MessagingLogsComponent implements OnInit {
     this.router.navigateByUrl("/user")
   }
 
+  //Store the user that will be the particates for the direct messaging 
   messageUser(friend:String){
     const participants = [friend,this.ProfileUser.username]
 
@@ -45,6 +46,7 @@ export class MessagingLogsComponent implements OnInit {
     this.router.navigateByUrl('user/messaging')
   }
 
+  
   grabUser() {
     const profile = localStorage.getItem('profileUser')
     if (profile != null || profile != undefined) {

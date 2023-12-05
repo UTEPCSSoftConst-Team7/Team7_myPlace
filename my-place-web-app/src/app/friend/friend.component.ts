@@ -36,15 +36,17 @@ export class FriendComponent implements OnInit {
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.grabUser()
+    this.grabUser();
+    this.grabFriend();
     this.grabBlogPost();
   }
 
-
+// send you back to the user page 
   sendBack() {
     this.router.navigateByUrl("/user")
   }
 
+  // This will grab All the blog post of the account you click on 
   grabBlogPost() {
     if(this.Blocked){
       this.ProfileBlogPost=[]
@@ -59,6 +61,7 @@ export class FriendComponent implements OnInit {
       var username = this.ProfileUser.username
       var UserPost = this.ProfileBlogPost.filter(u => u.user == username);
 
+      //This will check if the users are close friends with each others
       const profile = localStorage.getItem('profileUser')
       var ClosefriendList = false
       if (profile != null || profile != undefined) {
@@ -86,6 +89,7 @@ export class FriendComponent implements OnInit {
     }
   }
 
+  //This is grabbing the account that you click on
   grabUser() {
     const profile = localStorage.getItem('friend')
     if (profile != null || profile != undefined) {
@@ -98,6 +102,7 @@ export class FriendComponent implements OnInit {
     //  this.ProfileUser.profilePicture = "assert/"+this.ProfileUser.profilePicture
   }
 
+  //This code check if the user is in your blocked account and change everything if you are blocked
   BlockedUser(){
     const profile = localStorage.getItem('profileUser')
     var friendList = false
@@ -118,6 +123,7 @@ export class FriendComponent implements OnInit {
     }
   }
 
+  //This allow you to like any post
   like(post: UserBlogPost) {
     const Blog = localStorage.getItem('Blog')
     var Blogs: BlogPost[] = [];
@@ -151,6 +157,7 @@ export class FriendComponent implements OnInit {
 
   }
 
+  //Allow you to block this account right away 
   blocked(){
     var Friend=this.ProfileUser.username
     if(Friend=='Team_MyPlace'){
@@ -190,11 +197,22 @@ export class FriendComponent implements OnInit {
         }
       }
     }
+    console.log(this.Friend)
     localStorage.setItem('Users', JSON.stringify(users));
     localStorage.setItem('profileUser', JSON.stringify(this.Friend));
     location.reload()
   }
-
+  grabFriend(){
+    const profile = localStorage.getItem('profileUser')
+    var friendList = false
+    if (profile != null || profile != undefined) {
+      console.log('p', profile)
+      var profileUser = JSON.parse(profile)
+      console.log('profile', profileUser)
+      this.Friend = profileUser
+    }
+  }
+  // This code is to add this account to your friends list and then send you back to your page 
   friend() {
     const profile = localStorage.getItem('profileUser')
     var friendList = false

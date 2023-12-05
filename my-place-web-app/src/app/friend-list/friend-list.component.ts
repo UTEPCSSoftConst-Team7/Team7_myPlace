@@ -61,13 +61,21 @@ export class FriendListComponent implements OnInit {
     }
   }
 
+  //This code will add to close friends 
   closeFrined(Friend:String){
+    //check if the list was created and added the user to the information
     if (this.ProfileUser.closeFriend==undefined){
       this.ProfileUser.closeFriend=[Friend]
     }
     else{
+      for(let i=0;i<this.ProfileUser.closeFriend.length;i++){
+        if (Friend==this.ProfileUser.closeFriend[i]){
+          return 
+        }
+      }
       this.ProfileUser.closeFriend.push(Friend)
     }
+    //added to the User information to store the information
     var storedUsers = localStorage.getItem('Users');
     let users: any[] = [];
 
@@ -88,12 +96,13 @@ export class FriendListComponent implements OnInit {
     localStorage.setItem('profileUser', JSON.stringify(this.ProfileUser));
 
   }
-
+//Removing friend from the friend list 
   RemoveFrined(Friend:String){
     if(Friend=='Team_MyPlace'){
       alert("Cant delete admin account")
       return
     }
+
     if(this.ProfileUser.friends!=undefined){
     this.ProfileUser.friends = this.ProfileUser.friends .filter((item: String) => item != Friend);
     }
@@ -115,7 +124,7 @@ export class FriendListComponent implements OnInit {
     localStorage.setItem('Users', JSON.stringify(users));
     localStorage.setItem('profileUser', JSON.stringify(this.ProfileUser));
   }
-
+//removing someone from the close friends 
   RemovecloseFrined(Friend:String){
     this.ProfileUser.closeFriend = this.ProfileUser.closeFriend .filter((item: String) => item != Friend);
     var storedUsers = localStorage.getItem('Users');
@@ -135,7 +144,7 @@ export class FriendListComponent implements OnInit {
     localStorage.setItem('profileUser', JSON.stringify(this.ProfileUser));
   }
 
-
+//adding someone to the blocked playlist
   blocked(Friend:String){
     if(Friend=='Team_MyPlace'){
       alert("Cant delete admin account")
@@ -181,6 +190,7 @@ export class FriendListComponent implements OnInit {
     localStorage.setItem('profileUser', JSON.stringify(this.ProfileUser));
   }
 
+//unblocking someone from the blocked but they are not added back to the frined account
   unblock(friend:String){
     this.ProfileUser.Blocked = this.ProfileUser.Blocked .filter((item: String) => item != friend);
 
