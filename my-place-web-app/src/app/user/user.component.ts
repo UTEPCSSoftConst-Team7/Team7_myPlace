@@ -75,7 +75,7 @@ export class UserComponent implements OnInit {
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
       this.ProfileBlogPost=profileBlog
     }
-    
+
     this.textAreaContent = '';
     this.showTextArea = false;
   }
@@ -94,7 +94,7 @@ export class UserComponent implements OnInit {
       profileBlog.push(Post);
       console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
-      this.ProfileBlogPost=profileBlog
+      this.ProfileBlogPost=profileBlog.filter((u: { user: any; }) => u.user == this.ProfileUser.username)
     }
 
     this.textAreaCloseContent = '';
