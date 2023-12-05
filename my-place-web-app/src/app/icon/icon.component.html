@@ -1,3 +1,4 @@
+<!-- MyPlace header -->
 <body class="ultra-mode" style="background-color: white;">
     <div class="banner">
         <div class="left-content">
@@ -13,9 +14,11 @@
 
         </div>
     </div>
-
+    
+    <!-- Change Icon  -->
     <h1 style="color: black;text-align: center;"><b> Select Your New Icon</b></h1>
-
+    
+    <!-- Icons are displayed as buttons -->
     <div class="image-container">
         <div *ngFor="let icon of icons" class="image-wrapper">
           <button class="image-button" (click)="changeIcon(icon)" type="button">
