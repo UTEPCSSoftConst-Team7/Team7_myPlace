@@ -112,6 +112,30 @@
             border-radius: 3px;
         }
 
+        .friend-search-label {
+            display: flex;
+            margin-top: -200px;
+            margin-left: 960px;
+            margin-bottom: 0px;
+        }
+        
+        .friend-search {
+            display: flex;
+            margin-top: 0px;
+            margin-left: 960px;
+        }
+
+        .friend-options{
+            margin-top: 10px;
+
+        }
+        
+        .blogs {
+            margin-top: 20px; /* Add margin to the top of each blog post */
+            margin-bottom: 20px; /* Add margin to the bottom of each blog post */
+            margin-right: 30px;
+            margin-left: 30px;
+        }
         /* button {
             padding: 10px 15px;
             border: none;
@@ -143,43 +167,57 @@
             <ng-template #defaultImage>
                 <img src="ProfileUser.profilePicture" alt="Default Profile Picture">
             </ng-template>
-            <div class="profilepic">
+            <div class="profilepic" style="margin-left: 40px;">
                 <img *ngIf="ProfileUser.profilePicture; else defaultImage" [src]="ProfileUser.profilePicture"
                     alt="Profile Picture">
             </div>
-            <h2>{{ ProfileUser.username }}</h2>
-            <div *ngIf="ProfileUser.friends">
+            <h2 style="margin-left: 55px; margin-bottom: -1px">{{ ProfileUser.username }}</h2>
+            <!-- <div *ngIf="ProfileUser.friends">
                 <label>Friends: {{ProfileUser.friends.length}}</label>
-            </div>
+            </div> -->
+            
         </div>
-        <br>
         <div class="bio">
             <h3>My Bio</h3>
             <p style="color: black ">{{ProfileUser.bio}}</p>
         </div>
-
-        <br>
+        
     </div>
-    <br>
-    <br>
-    <button mat-raised-button color="primary" class="medium-button" (click)="friend()">Add me</button>
-    <br>
-    <br>
-    <button mat-raised-button color="primary" class="block-medium-button" (click)="blocked()">Block me</button>
 
-    <br>
-    <br>
-    <br>
+    <div class="friend-options">
+        <button style="margin-left: 15px; margin-top: 15px" mat-raised-button color="primary" class="medium-button" (click)="friend()">Add me</button>
+        <br>
+        <br>
+        <button style="margin-left: 15px;" mat-raised-button color="primary" class="block-medium-button" (click)="blocked()">Block me</button>
+        <div class="friend-search-label">
+            <div *ngIf="ProfileUser.friends">
+              <label>Friends: {{ ProfileUser.friends.length }}</label>
+            </div>
+        </div>
+    </div>
+
+    
+      <div class="friend-search">
+        <app-search-bar></app-search-bar>
+    </div>
+
+    <!-- <div class="friend-options">
+        <button style="margin-left: 15px;" mat-raised-button color="primary" class="medium-button" (click)="friend()">Add me</button>
+        <br>
+        <br>
+        <button style="margin-left: 15px;" mat-raised-button color="primary" class="block-medium-button" (click)="blocked()">Block me</button>
+    </div> -->
+    
 
 
     <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2>  -->
 
-    <h2 style="text-align: center;">{{ ProfileUser.username }}'s Blog Posts</h2>
+    <h2 style="text-align: left; margin-left: 300px;">{{ ProfileUser.username }}'s Blog Posts</h2>
     <ul>
-        <div class="blogs">
+        <div class="blogs" style="margin-left: 250px;">
             <li *ngFor="let post of ProfileBlogPost">
                 <div class="blogs" style="color: black;">
-                    <p style="color: black;">
+                    <p style="color: black; margin-bottom: 15px; margin-right: 0px; margin-left: 0px">
                         {{ post.content }}
                     </p>
                     <button (click)="like(post)">
