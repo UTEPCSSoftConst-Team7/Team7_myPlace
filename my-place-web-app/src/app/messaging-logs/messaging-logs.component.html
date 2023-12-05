@@ -138,12 +138,14 @@
     </div>
 <br>
 <br>
+
         <h2 style="text-align: center;">Which of your friends would you like to message.</h2>
 
     <ul>
+        <!--  This will show every user  that you have in friends list -->
         <div class="blogs">
             <li *ngFor="let friends of ProfileUser.friends">
-
+            <!-- Allow you click on any user and view their data -->
                 <div class="blogs" style="color: black;">
                     <button class="users" (click)="messageUser(friends)">
                         <p style="color: black;">

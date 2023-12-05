@@ -1,15 +1,18 @@
 
 <div>
+    <!-- Input box to type out any username -->
     <input
         required
         [(ngModel)]="inputText" name="inputField"
         (ngModelChange)="onInputChange($event, inputModel)"
         #inputModel="ngModel"
     /> 
+    <!-- This will actually make the search for  user  and go to the account-->
     <button (click)="search()">Search User</button>
     <br>
     <ul>
         <div class="blogs">
+            <!-- This will show every account and filter the list base on what you type -->
             <li *ngFor="let post of filteredOptions" >
                 <p style="color: black;">
                     <button  (click)="Search(post)" class="borderless-button">{{post}}</button>

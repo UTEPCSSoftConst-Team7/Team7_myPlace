@@ -51,6 +51,7 @@
 </head>
 
 <body class="ultra-mode" style="background-color: white;">
+    <!-- The banner added to every page to allow you to go back to any page -->
     <div class="banner">
         <div class="left-content">
           <img src="assets/peopleiconmp.png" alt="logo" width="115px" height="115px">
@@ -62,12 +63,14 @@
           <button [routerLink] = "['/homepage']"><i class="fa fa-home"></i>SignOut</button>
         </div>
       </div>
-
+<!-- allow you to delete your specific account base on is base on the methods created in the ts file -->
       <br>
       <h1 style="color: black;">{{ProfileUser.username}}</h1>
       <button mat-raised-button color="primary" class="small-button" (click)="deleteUsers()">Delete Account</button>
     <br>
     <br>  
+    <!-- Shows every account you have added to your friends list and allow you to added them to close friends, delete them, and block them 
+    each one is base on the methods created in the ts file-->
     <div class="Friends">
         <h3 style="color: black; text-align: center;">Friends List:</h3>
         <div *ngFor="let friend of this.ProfileUser.friends" class="friend">
@@ -86,7 +89,7 @@
 
     <br>
     <br> 
-
+<!-- This is the close friends list you can remove any account using the methods -->
     <div class="Friends">
         <h3 style="color: black; text-align: center;"> Close Friends List:</h3>
         <div *ngFor="let friends of this.ProfileUser.closeFriend" class="closeFriend">
@@ -102,6 +105,7 @@
     <br>
     <br> 
 
+<!-- This is the blocked friends list you can remove any account using the methods -->
     <div class="Friends">
         <h3 style="color: black; text-align: center;">Blocked List:</h3>
         <div *ngFor="let friend of this.ProfileUser.Blocked" class="blocked">

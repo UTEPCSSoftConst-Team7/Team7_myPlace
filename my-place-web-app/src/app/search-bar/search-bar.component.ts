@@ -37,7 +37,7 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit() {
     this.grabUser()
-
+    // Getting all of the username of every account created
     const storedUsers = localStorage.getItem('Users');
     if (storedUsers != null) {
       this.users = JSON.parse(storedUsers);
@@ -50,6 +50,7 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
+  //This is to grab your account 
   grabUser() {
     const profile = localStorage.getItem('profileUser');
     if (profile) {
@@ -57,10 +58,14 @@ export class SearchBarComponent implements OnInit {
       this.ProfileUser = profileUser;
     }
   }
+
+  //take out any spaces you add to the search 
   checkInput() {
     this.isInputValid = this.inputText.trim() !== '';
   }
 
+
+  //check the list of friends base on every letter you typel
   onInputChange(event: any, ngModel: NgModel) {
     this.searchUser = ngModel.value;
     this.filteredOptions = this.options.filter((user) =>
@@ -69,6 +74,7 @@ export class SearchBarComponent implements OnInit {
     this.autoFilterTop = this.filteredOptions[0];
   }
 
+  //if the user exist then you can go to the friend page
   search() {
     const user = this.users.find((u) => u.username === this.autoFilterTop);
     if (user) {
@@ -79,6 +85,7 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
+//if the user exist then you can go to the friend page  
   Search(user: string) {
     const User = this.users.find((u) => u.username == user);
     if (User) {

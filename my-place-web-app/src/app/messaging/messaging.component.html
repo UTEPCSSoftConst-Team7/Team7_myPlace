@@ -143,6 +143,8 @@
     <br>
     <br>
 
+    <!-- This will show every message from the user account one the right and every message from the other accounts on the left
+     -->
     <div *ngFor="let message of this.Specific.messages" class="message-container">
         <div *ngIf="message.sender === this.ProfileUser.username; else otherUserMessage" class="message message-right">
             <div class="message-content">{{ message.content }}</div>
@@ -159,7 +161,8 @@
         </ng-template>
     </div>
 
-
+    
+<!-- This will be the message you can send to the chat. -->
     <div class="text-area-button-container">
         <div class="text-area-container">
             <textarea class="text-area" placeholder="Type a message..." [(ngModel)]="sentMessage"></textarea>
