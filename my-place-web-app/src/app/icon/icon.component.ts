@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.css']
 })
+
+
 export class IconComponent implements OnInit{
 icons: string[]=['assets/dice.png','assets/cat.png','assets/catFist.png','assets/joji.png','assets/mfDoom.png',
 'assets/peopleiconmp.png','assets/pizzabella.png','assets/sandy.png','assets/spiderman.png','assets/amongUs.png']
@@ -22,9 +24,7 @@ icons: string[]=['assets/dice.png','assets/cat.png','assets/catFist.png','assets
 
   }
 
-
-
-
+  // Change Profile Pic 
   changeIcon(icon:string){
     // alert('button works '+icon)
     const profile = localStorage.getItem('profileUser')
@@ -39,7 +39,8 @@ icons: string[]=['assets/dice.png','assets/cat.png','assets/catFist.png','assets
           //change it in all of the users 
     var storedUsers = localStorage.getItem('Users');
     let users: User[] = [];
-
+    
+    // Display from other users pov
     if (storedUsers != null){
       users = JSON.parse(storedUsers);
       for(let i =0;i<users.length;i++){

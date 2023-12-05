@@ -9,6 +9,7 @@ import { Router, ActivatedRoute  } from '@angular/router';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })
+
 export class UserComponent implements OnInit {
   ProfileUser: User = {
     username: 'isaba3lla',
@@ -80,6 +81,7 @@ export class UserComponent implements OnInit {
     this.showTextArea = false;
   }
 
+  // Submit close friends blog post 
   submitCloseFriendText() {
     var Post: BlogPost = {
       user: this.ProfileUser.username,
@@ -94,6 +96,7 @@ export class UserComponent implements OnInit {
       profileBlog.push(Post);
       console.log(profileBlog);
       localStorage.setItem('Blog', JSON.stringify(profileBlog));
+      // Display personal blog posts
       this.ProfileBlogPost=profileBlog.filter((u: { user: any; }) => u.user == this.ProfileUser.username)
     }
 
@@ -101,6 +104,7 @@ export class UserComponent implements OnInit {
     this.showFrindPost = false;
   }
 
+  // Change Bio Text 
   ChangeBio() {
     this.ProfileUser.bio = this.NewBio;
     var storedUsers = localStorage.getItem('Users');
@@ -120,6 +124,7 @@ export class UserComponent implements OnInit {
     }
   }
 
+  // Get user 
   grabUser() {
     const profile = localStorage.getItem('profileUser');
     if (profile) {
@@ -128,10 +133,12 @@ export class UserComponent implements OnInit {
     }
   }
 
+  // Get message log
   sendMessageLog(){
     this.router.navigateByUrl("/user/messagingLog")
   }
 
+  // Get Blog Post 
   grabBlogPost() {
     const Blog = localStorage.getItem('Blog');
     if (Blog != undefined) {
@@ -145,6 +152,7 @@ export class UserComponent implements OnInit {
     }
   }
 
+  // Like Blog Post 
   like(post: UserBlogPost) {
     const Blog = localStorage.getItem('Blog')
     var Blogs:BlogPost[]=[];
@@ -175,6 +183,7 @@ export class UserComponent implements OnInit {
     localStorage.setItem('Blog', JSON.stringify(Blogs));
   }
 
+  // Delete Blog Post
   delete(post: UserBlogPost) {
     const Blog = localStorage.getItem('Blog');
     console.log(post);

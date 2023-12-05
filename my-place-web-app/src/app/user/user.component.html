@@ -198,6 +198,7 @@
         </div>
       </div>
 
+    <!-- Displaying User Profile Top components -->
     <div class="userspecs">
       <div class="userprofile" style="margin-top: 10px">
         <!-- TODO: Change for the actual value for username in the JSON -->
@@ -258,8 +259,7 @@
       <app-search-bar></app-search-bar>
     </div>
 
-    <!-- <h2>{{ ProfileUser.username }}'s Blog Posts</h2> -->
-
+    <!-- Blog Post Components  -->
     <h2 style="text-align: left; margin-left: 50px">
       {{ ProfileUser.username }}'s Blog Posts
     </h2>
@@ -274,7 +274,6 @@
               {{ post.content }}
             </p>
             <br />
-            <!-- need an if lese statment to ma ke the heart red -->
             <button (click)="like(post)">
               <i style="text-align: center" class="fa fa-heart"></i>
             </button>
