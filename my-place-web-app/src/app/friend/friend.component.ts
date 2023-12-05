@@ -36,7 +36,8 @@ export class FriendComponent implements OnInit {
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.grabUser()
+    this.grabUser();
+    this.grabFriend();
     this.grabBlogPost();
   }
 
@@ -196,11 +197,21 @@ export class FriendComponent implements OnInit {
         }
       }
     }
+    console.log(this.Friend)
     localStorage.setItem('Users', JSON.stringify(users));
     localStorage.setItem('profileUser', JSON.stringify(this.Friend));
     location.reload()
   }
-
+  grabFriend(){
+    const profile = localStorage.getItem('profileUser')
+    var friendList = false
+    if (profile != null || profile != undefined) {
+      console.log('p', profile)
+      var profileUser = JSON.parse(profile)
+      console.log('profile', profileUser)
+      this.Friend = profileUser
+    }
+  }
   // This code is to add this account to your friends list and then send you back to your page 
   friend() {
     const profile = localStorage.getItem('profileUser')
