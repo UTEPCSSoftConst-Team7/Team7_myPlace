@@ -7,12 +7,7 @@ import { User,BlogPost } from './User';
   providedIn: 'root',
 })
 export class UserService {
-  createUser(user: User) {
-    throw new Error('Method not implemented.');
-  }
-  storeUserInLocalStorage(user: User) {
-    throw new Error('Method not implemented.');
-  }
+
   private usersUrl = 'assets/UserFile.json';
   private UserUrl = 'assets/User.Json';
   private blogUrl = 'assets/BlogPost.JSON';

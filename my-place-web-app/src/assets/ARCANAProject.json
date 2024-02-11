@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Project Alpha",
+        "initials": "PA",
+        "location": "NYC", 
+        "start_date": "2-7-2024",
+        "end_date": "2-9-2024",
+        "_id": "102342123124"
+    },
+    {
+        "name": "Project Beta",
+        "initials": "PB",
+        "location": "LA", 
+        "start_date": "3-7-2024",
+        "end_date": "3-9-2024",
+        "_id": "204684246248"
+    },
+    {
+        "name": "Project Gamma",
+        "initials": "PG",
+        "location": "CHI", 
+        "start_date": "4-7-2024",
+        "end_date": "4-9-2024",
+        "_id": "306926369372"
+    }
+]
